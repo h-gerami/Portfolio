@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -269,7 +269,124 @@
 .contact-info .info-item:nth-child(2) .icon-circle { background-color: #dc3545; } /* Email */
 .contact-info .info-item:nth-child(3) .icon-circle { background-color: #0a66c2; } /* LinkedIn */
 .contact-info .info-item:nth-child(4) .icon-circle { background-color: #6f42c1; } /* Resume */
+@media (max-width: 768px) {
+  .intro img {
+    animation: none !important;
+  }
 
+  #zoomMagnifier {
+    display: none !important;
+  }
+
+  .zoom-circle {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column !important;
+    align-items: flex-start;
+  }
+}
+/* Base adjustments for mobile */
+@media (max-width: 768px) {
+  .intro {
+    text-align: left !important;
+    align-items: flex-start !important;
+    padding: 1rem !important;
+  }
+
+  .intro img {
+    animation: slideFadeIn 1.2s ease forwards;
+    margin-bottom: 1rem;
+  }
+
+  @keyframes slideFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .intro h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .social-icons {
+    padding-top: 0.7rem;
+  }
+
+  .contact-info {
+    flex-direction: column !important;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  #zoomMagnifier,
+  .zoom-circle {
+    display: none !important;
+  }
+}
+
+/* Mobile Welcome Message */
+.mobile-welcome {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-welcome {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .welcome-box {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    max-width: 90%;
+    width: 100%;
+    font-family: sans-serif;
+  }
+
+  .welcome-box p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1.4rem;
+    line-height: 1.5;
+  }
+
+  .welcome-box button {
+    background: #0057a3;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+  }
+
+  .welcome-box button:hover {
+    background: #004072;
+  }
+}
 
   </style>
 </head>
@@ -458,7 +575,29 @@
     modalImg.addEventListener('mouseleave', () => {
       zoomCircle.classList.add('hidden');
     });
+    function closeWelcome() {
+    document.getElementById('mobileWelcome').style.display = 'none';
+  }
+
+  // Auto-show on small screens
+  if (window.innerWidth <= 768) {
+    window.onload = () => {
+      document.getElementById('mobileWelcome').style.display = 'flex';
+    };
+  
+}
+
   </script>
+<div class="mobile-welcome" id="mobileWelcome">
+  <div class="welcome-box">
+    <p>
+      You're very welcome! 🌟<br>
+      You might find it even more exciting and entertaining on a bigger screen...<br>
+      Because of some hidden cool stuff!!! 😎✨
+    </p>
+    <button onclick="closeWelcome()">Continue</button>
+  </div>
+</div>
 
 </body>
 </html>
