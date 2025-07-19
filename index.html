@@ -24,13 +24,26 @@
       margin-bottom: 2rem;
     }
 
-    .intro img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
+  .intro img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  /* opacity: 0; */
+  animation: rollInLeft 3.2s ease-out forwards;
+}
+
+   @keyframes rollInLeft {
+  0% {
+    transform: translateX(100vw) rotate(0deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(0) rotate(-1080deg); /* 3 full counterclockwise spins */
+    opacity: 1;
+  }
+}
 
     .intro h1 {
       margin: 1rem 0 0.3rem;
@@ -97,6 +110,7 @@
       transform: scale(1.03);
     }
 
+    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
@@ -119,6 +133,7 @@
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.5);
       animation: zoomIn 0.3s ease;
+      object-fit: contain;
     }
 
     .close, .prev, .next {
@@ -154,6 +169,24 @@
       display: none;
     }
 
+    .zoom-circle {
+      position: fixed;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      z-index: 1001;
+      right: 30px;
+      bottom: 30px;
+      background-color: #000;
+      background-repeat: no-repeat;
+      background-size: 400%;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
     @keyframes zoomIn {
       from { transform: scale(0.7); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
@@ -174,41 +207,92 @@
         margin-bottom: 1rem;
       }
     }
-
-    #zoomResult {
-      display: none;
-      position: fixed;
-      right: 40px;
-      top: 60px;
-      width: 300px;
-      height: 300px;
-      border: 2px solid #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      z-index: 1000;
-      box-shadow: 0 0 10px rgba(255,255,255,0.3);
-      background-repeat: no-repeat;
-      background-size: 200%;
-    }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <!-- Intro and project sections here (same as before) -->
-    <!-- ... omitted for brevity ... -->
+    <div class="intro">
+      <img src="image001.jpg" alt="Hossein Gerami">
+      <h1>Hossein Gerami</h1>
+      <p>React & React Native Developer | Mobile & Web App Enthusiast</p>
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <h2>Gardenia</h2>
+        <p>Gardenia is an IoT-enabled app that controls devices over Bluetooth and WiFi. It includes a built-in shop and notification system, developed for a UK company making smart hoods and fresheners.</p>
+      </div>
+      <div class="gallery">
+        <img src="image002.jpg" alt="Gardenia 1">
+        <img src="image003.jpg" alt="Gardenia 2">
+        <img src="image004.jpg" alt="Gardenia 3">
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <h2>QuickClaim</h2>
+        <p>QuickClaim is a complete NDIS SaaS platform built in Australia. I developed mobile apps (QC Card & QC Pay) and provider dashboards with live integration to the NDIS API and finance systems.</p>
+      </div>
+      <div class="gallery">
+        <img src="image005.jpg" alt="QuickClaim 1">
+        <img src="image006.jpg" alt="QuickClaim 2">
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <h2>Lerne24</h2>
+        <p>Lerne24 is a language learning app focused on German and French. Built using Ionic React, it features gamified learning, multi-language support, and a clean UI.</p>
+      </div>
+      <div class="gallery">
+        <img src="image007.jpg" alt="Lerne24">
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <h2>Hihab</h2>
+        <p>Hihab is a cross-platform habit tracker app, designed with support for English and Persian. It helps users build routines and stay motivated with simple, clean design.</p>
+      </div>
+      <div class="gallery">
+        <img src="image008.jpg" alt="Hihab 1">
+        <img src="image009.jpg" alt="Hihab 2">
+        <img src="image010.jpg" alt="Hihab 3">
+        <img src="image011.jpg" alt="Hihab 4">
+        <img src="image012.jpg" alt="Hihab 5">
+        <img src="image013.jpg" alt="Hihab 6">
+        <img src="image014.jpg" alt="Hihab 7">
+        <img src="image015.jpg" alt="Hihab 8">
+        <img src="image016.jpg" alt="Hihab 9">
+        <img src="image017.jpg" alt="Hihab 10">
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <h2>HoomQC</h2>
+        <p>HoomQC is an internal tool to test SmartHoom Bluetooth IoT devices. It supports signal strength checks, command testing, and firmware-level communication via custom native modules.</p>
+      </div>
+      <div class="gallery">
+        <img src="image018.jpg" alt="HoomQC 1">
+        <img src="image019.jpg" alt="HoomQC 2">
+        <img src="image020.jpg" alt="HoomQC 3">
+        <img src="image021.jpg" alt="HoomQC 4">
+        <img src="image022.jpg" alt="HoomQC 5">
+        <img src="image023.jpg" alt="HoomQC 6">
+      </div>
+    </div>
   </div>
 
-  <!-- Modal -->
   <div id="imgModal" class="modal">
     <span class="close">&times;</span>
     <span class="prev hidden">&#10094;</span>
     <img class="modal-content" id="modalImage">
     <span class="next hidden">&#10095;</span>
   </div>
-
-  <!-- Zoom Result Box -->
-  <div id="zoomResult"></div>
+  <div id="zoomMagnifier" class="zoom-circle hidden"></div>
 
   <script>
     const modal = document.getElementById("imgModal");
@@ -216,7 +300,7 @@
     const closeBtn = document.querySelector(".close");
     const prevBtn = document.querySelector(".prev");
     const nextBtn = document.querySelector(".next");
-    const zoomResult = document.getElementById("zoomResult");
+    const zoomCircle = document.getElementById("zoomMagnifier");
     let currentImg = null;
     let currentGallery = [];
 
@@ -254,24 +338,15 @@
       }
     };
 
-    closeBtn.onclick = () => {
-      modal.style.display = "none";
-      zoomResult.style.display = "none";
-    };
+    closeBtn.onclick = () => modal.style.display = "none";
 
     window.onclick = (e) => {
-      if (e.target === modal) {
-        modal.style.display = "none";
-        zoomResult.style.display = "none";
-      }
+      if (e.target === modal) modal.style.display = "none";
     };
 
     document.addEventListener('keydown', (e) => {
       if (modal.style.display === "block") {
-        if (e.key === "Escape") {
-          modal.style.display = "none";
-          zoomResult.style.display = "none";
-        }
+        if (e.key === "Escape") modal.style.display = "none";
         if (e.key === "ArrowLeft" && currentImg > 0) {
           currentImg--;
           openModal(currentImg);
@@ -283,21 +358,21 @@
       }
     });
 
-    modalImg.addEventListener("mousemove", (e) => {
-      if (!modalImg.src) return;
-      zoomResult.style.display = "block";
-      zoomResult.style.backgroundImage = `url('${modalImg.src}')`;
+    modalImg.addEventListener('mousemove', function(e) {
       const rect = modalImg.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
       const xPercent = (x / modalImg.width) * 100;
       const yPercent = (y / modalImg.height) * 100;
-      zoomResult.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
+      zoomCircle.style.backgroundImage = `url('${modalImg.src}')`;
+      zoomCircle.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
+      zoomCircle.classList.remove('hidden');
     });
 
-    modalImg.addEventListener("mouseleave", () => {
-      zoomResult.style.display = "none";
+    modalImg.addEventListener('mouseleave', () => {
+      zoomCircle.classList.add('hidden');
     });
   </script>
+
 </body>
 </html>
