@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hossein Gerami – Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -29,7 +31,7 @@
   height: 120px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  /* box-shadow: 0 4px 10px rgba(0,0,0,0.1); */
   /* opacity: 0; */
   animation: rollInLeft 3.2s ease-out forwards;
 }
@@ -37,11 +39,11 @@
    @keyframes rollInLeft {
   0% {
     transform: translateX(100vw) rotate(0deg);
-    opacity: 0.6;
+    
   }
   100% {
     transform: translateX(0) rotate(-1080deg); /* 3 full counterclockwise spins */
-    opacity: 1;
+    /* opacity: 1; */
   }
 }
 
@@ -207,16 +209,100 @@
         margin-bottom: 1rem;
       }
     }
+
+    .intro .tagline {
+  max-width: 600px;
+  margin: 1rem auto;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+      text-align: justify;
+
+}
+
+.contact-info {
+      display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none; /* removes underline */
+  color: #222; /* a cleaner, more modern dark grey */
+  transition: color 0.3s ease;
+}
+
+.info-item:hover {
+  color: #000; /* slightly darker on hover */
+}
+
+.info-item:hover {
+  color: #000;
+}
+
+.icon-circle {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  color: white;
+  transition: transform 0.3s ease;
+  font-size: 14px;
+}
+
+/* Icon bounce on hover */
+.info-item:hover .icon-circle {
+  transform: translateY(-5px);
+}
+
+/* Icon colors */
+.contact-info .info-item:nth-child(1) .icon-circle { background-color: #28a745; } /* Phone */
+.contact-info .info-item:nth-child(2) .icon-circle { background-color: #dc3545; } /* Email */
+.contact-info .info-item:nth-child(3) .icon-circle { background-color: #0a66c2; } /* LinkedIn */
+.contact-info .info-item:nth-child(4) .icon-circle { background-color: #6f42c1; } /* Resume */
+
+
   </style>
 </head>
 <body>
 
   <div class="container">
     <div class="intro">
-      <img src="image001.jpg" alt="Hossein Gerami">
-      <h1>Hossein Gerami</h1>
-      <p>React & React Native Developer | Mobile & Web App Enthusiast</p>
-    </div>
+  <img src="image001.jpg" alt="Hossein Gerami">
+  <h1>Hossein Gerami</h1>
+  <p class="tagline">
+    Here are some of my best projects — each one a fond memory from building mobile apps with React Native. Through these samples, you'll see that I've implemented nearly every kind of feature, design, and functionality mobile apps can offer. For more, please check my resume.
+  </p>
+  
+  <div class="contact-info">
+  <a href="tel:+61435827842" class="info-item">
+    <span class="icon-circle"><i class="fas fa-phone"></i></span>
+    +61 0435 827 842
+  </a>
+  <a href="mailto:h.gerami100@gmail.com" class="info-item">
+    <span class="icon-circle"><i class="fas fa-envelope"></i></span>
+    h.gerami100@gmail.com
+  </a>
+  <a href="https://www.linkedin.com/in/hossein-gerami/" class="info-item" target="_blank">
+    <span class="icon-circle"><i class="fab fa-linkedin"></i></span>
+    linkedin.com/in/hossein-gerami
+  </a>
+  <a href="HoseinGerami_Resume.pdf" class="info-item" download>
+    <span class="icon-circle"><i class="fas fa-file-download"></i></span>
+    Download Resume
+  </a>
+</div>
+
+</div>
 
     <div class="project">
       <div class="project-content">
