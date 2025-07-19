@@ -43,20 +43,20 @@
     }
 
     .project {
-      background: #fff;
-      margin-bottom: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      overflow: hidden;
-      transition: 0.3s;
-    }
-
-    .project:hover {
-      transform: scale(1.01);
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 2rem;
+      margin-bottom: 4rem;
     }
 
     .project-content {
+      position: sticky;
+      top: 2rem;
+      background: #fff;
       padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      align-self: start;
     }
 
     .project h2 {
@@ -74,7 +74,9 @@
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1rem;
       padding: 1rem;
-      background: #fafafa;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     .gallery img {
@@ -161,6 +163,17 @@
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .project {
+        grid-template-columns: 1fr;
+      }
+
+      .project-content {
+        position: static;
+        margin-bottom: 1rem;
+      }
     }
   </style>
 </head>
