@@ -397,11 +397,12 @@
   position: absolute;
   top: 10px;
   right: 10px;
+  z-index: 10; /* Ensure it's above other content */
 }
-.dots-icon i
-{
+
+.dots-icon i {
   font-size: 25px;
-    margin: 10px 10px 0 0;
+  margin: 10px 10px 0 0;
 }
 
 .dots-icon:hover {
@@ -477,7 +478,29 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+/* Responsive Styling for Mobile */
+@media (max-width: 768px) {
+  .project {
+    grid-template-columns: 1fr;
+  }
 
+  /* Adjust the project content to make sure the dots icon stays inside */
+  .project-content {
+    position: relative;  /* Ensure the dots icon is relative to the project content */
+    padding: 1.5rem 1rem;
+  }
+
+  /* Adjust the position of the dots icon on small screens */
+  .dots-icon {
+    top: 5px; /* Slight adjustment to top */
+    right: 5px; /* Slight adjustment to right */
+  }
+
+  /* Optional: Increase the font size of the icon on mobile for better visibility */
+  .dots-icon i {
+    font-size: 30px;
+  }
+}
 
   </style>
 </head>
@@ -780,4 +803,3 @@ function openTechModal(projectName) {
 
 </body>
 </html>
-
