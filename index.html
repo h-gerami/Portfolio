@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -6,72 +6,111 @@
   <title>Hossein Gerami – Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap" rel="stylesheet">
-
-<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   <style>
+    :root {
+      --primary: #0057a3;
+      --primary-dark: #004072;
+      --bg-light: #f9f9f9;
+      --bg-dark: #121821;
+      --text-light: #333;
+      --text-dark: #f3f3f3;
+      --box-light: #fff;
+      --box-dark: #232b37;
+      --shadow: 0 4px 12px rgba(0,0,0,0.05);
+      --shadow-dark: 0 4px 18px rgba(0,0,0,0.25);
+      --border-light: #eaeaea;
+      --border-dark: #2a3645;
+      --accent: #0057a3;
+      --accent-dark: #3899ec;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Sour Gummy', sans-serif;
-      background-color: #f9f9f9;
+      background-color: var(--bg-light);
       margin: 0;
       padding: 0;
-      color: #333;
+      color: var(--text-light);
+      transition: background 0.3s, color 0.3s;
     }
-  
-
-/* If you want to apply the font to specific elements, you can target them like this: */
-h1, h2, h3, .project h2 {
-  font-family: 'Sour Gummy', sans-serif;
-}
-
-p {
-  font-family: 'Sour Gummy', sans-serif;
-}
-
-
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    h1, h2, h3, .project h2, p {
+      font-family: 'Sour Gummy', sans-serif;
+    }
     .container {
       max-width: 100%;
       margin: auto;
       padding: 2rem;
+      transition: background 0.3s, color 0.3s;
     }
-
     .intro {
       text-align: center;
       margin-bottom: 2rem;
     }
+    .intro img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      animation: rollInLeft 5s ease-out forwards;
+    }
+    @keyframes rollInLeft {
+      0% { transform: translateX(100vw) rotate(0deg);}
+      100% { transform: translateX(0) rotate(-1080deg);}
+    }
+    .intro h1 { margin: 1rem 0 0.3rem; font-size: 2rem; color: #222;}
+    .intro .tagline {
+      max-width: 600px;
+      margin: 1rem auto;
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+      text-align: justify;
+    }
+    body.dark .intro h1 { color: #e3e9f3; }
+    body.dark .intro .tagline { color: #bfcce2; }
 
-  .intro img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  /* box-shadow: 0 4px 10px rgba(0,0,0,0.1); */
-  /* opacity: 0; */
-  animation: rollInLeft 5s ease-out forwards;
-}
-
-   @keyframes rollInLeft {
-  0% {
-    transform: translateX(100vw) rotate(0deg);
-    
-  }
-  100% {
-    transform: translateX(0) rotate(-1080deg); /* 3 full counterclockwise spins */
-    /* opacity: 1; */
-  }
-}
-
-    .intro h1 {
-      margin: 1rem 0 0.3rem;
-      font-size: 2rem;
+    .contact-info {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
       color: #222;
+      transition: color 0.3s ease;
     }
-
-    .intro p {
-      color: #666;
+    .info-item:hover { color: #000; }
+    .icon-circle {
+      width: 32px;
+      height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      color: white;
+      font-size: 14px;
+      transition: transform 0.3s ease;
+      background: var(--primary);
     }
+    .info-item:hover .icon-circle { transform: translateY(-5px);}
+    body.dark .info-item { color: #e3e3e3; }
+    body.dark .info-item:hover { color: #fff; }
 
     .project {
       display: grid;
@@ -79,71 +118,81 @@ p {
       gap: 2rem;
       margin-bottom: 4rem;
     }
-
     .project-content {
       position: sticky;
       top: 2rem;
-      background: #fff;
+      background: var(--box-light);
       padding: 1.5rem;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: var(--shadow);
       align-self: start;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
     }
-
+    body.dark .project-content {
+      background: var(--box-dark);
+      box-shadow: var(--shadow-dark);
+    }
     .project h2 {
       margin-top: 0;
-      color: #0057a3;
+      color: var(--primary);
+      position: relative;
+      font-size: 1.45rem;
+      font-weight: 700;
     }
-
-    .project p {
-      line-height: 1.6;
-      color: #444;
+    body.dark .project h2 { color: var(--accent-dark); }
+    .dots-icon {
+      cursor: pointer;
+      color: var(--primary);
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 10;
+      font-size: 25px;
+      transition: color 0.2s;
     }
-
+    .dots-icon:hover { color: var(--primary-dark);}
+    body.dark .dots-icon { color: var(--accent-dark);}
+    .project p { line-height: 1.6; color: #444; }
+    body.dark .project p { color: #ccd5e3; }
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1rem;
       padding: 1rem;
-      background: #fff;
+      background: var(--box-light);
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: var(--shadow);
+      transition: background 0.3s, box-shadow 0.3s;
     }
-
+    body.dark .gallery {
+      background: var(--box-dark);
+      box-shadow: var(--shadow-dark);
+    }
     .gallery img {
       width: 100%;
       height: auto;
       max-height: 500px;
       object-fit: contain;
       border-radius: 8px;
-      background-color: #eaeaea;
+      background-color: var(--border-light);
       padding: 6px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
       transition: 0.3s ease;
       cursor: pointer;
     }
-
-    .gallery img:hover {
-      opacity: 0.9;
-      transform: scale(1.03);
-    }
-
+    .gallery img:hover { opacity: 0.9; transform: scale(1.03); }
+    body.dark .gallery img { background-color: var(--border-dark);}
     /* Modal Styles */
-    .modal {
+    .modal, .tech-modal {
       display: none;
       position: fixed;
       z-index: 999;
-      padding-top: 60px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
+      left: 0; top: 0; width: 100%; height: 100%;
       background-color: rgba(0,0,0,0.85);
       animation: fadeIn 0.3s ease;
+      overflow: auto;
     }
-
-    .modal-content {
+    .modal-content, .tech-modal-content {
       display: block;
       margin: auto;
       max-width: 90%;
@@ -151,10 +200,20 @@ p {
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.5);
       animation: zoomIn 0.3s ease;
-      object-fit: contain;
+      background: #fff;
     }
-
-    .close, .prev, .next {
+    body.dark .modal-content, body.dark .tech-modal-content { background: var(--box-dark);}
+    .close, .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 35px;
+      font-weight: bold;
+      color: #aaa;
+      cursor: pointer;
+    }
+    .close:hover, .close-modal:hover { color: var(--primary-dark);}
+    .prev, .next {
       position: absolute;
       top: 50%;
       color: white;
@@ -162,31 +221,14 @@ p {
       font-weight: bold;
       cursor: pointer;
       user-select: none;
-      transform: translateY(-50%);
       background: rgba(0,0,0,0.4);
       padding: 0.4em 0.6em;
       border-radius: 50%;
+      transform: translateY(-50%);
     }
-
-    .close {
-      top: 20px;
-      right: 30px;
-      transform: none;
-      font-size: 35px;
-    }
-
-    .prev {
-      left: 20px;
-    }
-
-    .next {
-      right: 20px;
-    }
-
-    .hidden {
-      display: none;
-    }
-
+    .prev { left: 20px;}
+    .next { right: 20px;}
+    .hidden { display: none; }
     .zoom-circle {
       position: fixed;
       width: 250px;
@@ -204,368 +246,196 @@ p {
       pointer-events: none;
       transition: opacity 0.2s ease;
     }
+    .tech-modal-content {
+      position: relative;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      max-width: 600px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s;
+    }
+    body.dark .tech-modal-content { background: var(--box-dark);}
+    #techTags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      padding: 10px 0;
+    }
+    .tech-tag {
+      background-color: var(--primary);
+      color: white;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      border: 1px solid var(--primary);
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .tech-tag:hover { background-color: var(--primary-dark);}
+    body.dark .tech-tag {
+      background-color: var(--accent-dark);
+      border-color: var(--accent-dark);
+    }
+    .tech-tag:hover { background-color: var(--primary-dark); }
 
-    @keyframes zoomIn {
-      from { transform: scale(0.7); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+    /* Floating dark mode button */
+    .dark-toggle-btn {
+      position: fixed;
+      bottom: 2.6rem;
+      left: 2.3rem;
+      z-index: 1200;
+      background: var(--box-light);
+      color: var(--primary);
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+      width: 50px; height: 50px;
+      font-size: 1.45rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s, color 0.3s;
+    }
+    .dark-toggle-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    body.dark .dark-toggle-btn {
+      background: var(--box-dark);
+      color: var(--accent-dark);
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    /* Scroll to Top Button */
+    .scroll-top-btn {
+      display: none;
+      position: fixed;
+      bottom: 1rem;
+      right: 2.2rem;
+      z-index: 1201;
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 1.7rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      border: none;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+      opacity: 0.92;
     }
-
+    .scroll-top-btn:hover {
+      background: var(--primary-dark);
+      opacity: 1;
+    }
+    body.dark .scroll-top-btn {
+      background: var(--accent-dark);
+      color: #232b37;
+    }
+    /* Responsive */
     @media (max-width: 768px) {
       .project {
         grid-template-columns: 1fr;
       }
-
       .project-content {
-        position: static;
-        margin-bottom: 1rem;
+        position: relative;
+        padding: 1.5rem 1rem;
+      }
+      .dots-icon { top: 5px; right: 5px; font-size: 30px; }
+      .intro { text-align: left !important; padding: 1rem !important;}
+      .intro img { animation: slideFadeIn 1.2s ease forwards; margin-bottom: 1rem;}
+      @keyframes slideFadeIn {
+        from { opacity: 0; transform: translateY(40px);}
+        to { opacity: 1; transform: translateY(0);}
+      }
+      .contact-info { flex-direction: column !important; align-items: flex-start; gap: 1rem; margin-top: 1rem;}
+      .zoom-circle, #zoomMagnifier { display: none !important;}
+      .dark-toggle-btn, .scroll-top-btn {
+        right: 1.2rem;
+        bottom: 1.2rem;
+        width: 44px; height: 44px;
+        font-size: 1.25rem;
       }
     }
-
-    .intro .tagline {
-  max-width: 600px;
-  margin: 1rem auto;
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.6;
-      text-align: justify;
-
-}
-
-.contact-info {
-      display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.6rem;
-    margin-top: 1.5rem;
-    font-size: 0.95rem;
-}
-
-.info-item {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none; /* removes underline */
-  color: #222; /* a cleaner, more modern dark grey */
-  transition: color 0.3s ease;
-}
-
-.info-item:hover {
-  color: #000; /* slightly darker on hover */
-}
-
-.info-item:hover {
-  color: #000;
-}
-
-.icon-circle {
-  width: 32px;
-  height: 32px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  color: white;
-  transition: transform 0.3s ease;
-  font-size: 14px;
-}
-
-/* Icon bounce on hover */
-.info-item:hover .icon-circle {
-  transform: translateY(-5px);
-}
-
-/* Icon colors */
-.contact-info .info-item:nth-child(1) .icon-circle { background-color: #0057a3; } /* Phone */
-.contact-info .info-item:nth-child(2) .icon-circle { background-color: #0057a3; } /* Email */
-.contact-info .info-item:nth-child(3) .icon-circle { background-color: #0057a3; } /* LinkedIn */
-.contact-info .info-item:nth-child(4) .icon-circle { background-color: #0057a3; } /* Resume */
-@media (max-width: 768px) {
-  .intro img {
-    animation: none !important;
-  }
-
-  #zoomMagnifier {
-    display: none !important;
-  }
-
-  .zoom-circle {
-    display: none !important;
-  }
-}
-@media (max-width: 768px) {
-  .contact-info {
-    flex-direction: column !important;
-    align-items: flex-start;
-  }
-}
-/* Base adjustments for mobile */
-@media (max-width: 768px) {
-  .intro {
-    text-align: left !important;
-    align-items: flex-start !important;
-    padding: 1rem !important;
-  }
-
-  .intro img {
-    animation: slideFadeIn 1.2s ease forwards;
-    margin-bottom: 1rem;
-  }
-
-  @keyframes slideFadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
+    /* Mobile Welcome Message */
+    .mobile-welcome { display: none;}
+    @media (max-width: 768px) {
+      .mobile-welcome {
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999;
+        background: rgba(255,255,255,0.95); backdrop-filter: blur(6px);
+        display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem;
+      }
+      .welcome-box {
+        background: white;
+        padding: 2rem 1.5rem;
+        border-radius: 14px;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        max-width: 90%; width: 100%; font-family: sans-serif;
+      }
+      .welcome-box p { font-size: 1rem; color: #333; margin-bottom: 1.4rem; line-height: 1.5;}
+      .welcome-box button {
+        background: #0057a3; color: white; border: none;
+        padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer;
+        font-weight: bold; transition: background 0.2s;
+      }
+      .welcome-box button:hover { background: #004072;}
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .intro h1 {
-    margin-bottom: 0.5rem;
-  }
-
-  .social-icons {
-    padding-top: 0.7rem;
-  }
-
-  .contact-info {
-    flex-direction: column !important;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  #zoomMagnifier,
-  .zoom-circle {
-    display: none !important;
-  }
-}
-
-/* Mobile Welcome Message */
-.mobile-welcome {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .mobile-welcome {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(6px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 1rem;
-  }
-
-  .welcome-box {
-    background: white;
-    padding: 2rem 1.5rem;
-    border-radius: 14px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-    max-width: 90%;
-    width: 100%;
-    font-family: sans-serif;
-  }
-
-  .welcome-box p {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 1.4rem;
-    line-height: 1.5;
-  }
-
-  .welcome-box button {
-    background: #0057a3;
-    color: white;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.2s;
-  }
-
-  .welcome-box button:hover {
-    background: #004072;
-  }
-}
-.dots-icon {
-  cursor: pointer;
-  font-size: 20px;
-  color: #0057a3;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 10; /* Ensure it's above other content */
-}
-
-.dots-icon i {
-  font-size: 25px;
-  margin: 10px 10px 0 0;
-}
-
-.dots-icon:hover {
-  color: #004072;
-}
-
-/* Modal Styles */
-.tech-modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding-top: 60px;
-  animation: fadeIn 0.3s ease;
-}
-
-.tech-modal-content {
-  position: relative;
-  margin: auto;
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  max-width: 600px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-.close-modal {
-  color: #aaa;
-  font-size: 30px;
-  font-weight: bold;
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  cursor: pointer;
-}
-
-.close-modal:hover,
-.close-modal:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Tech Tags Styling */
-#techTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  padding: 10px 0;
-}
-
-.tech-tag {
-  background-color: #0057a3;
-  color: white;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
-  border: 1px solid #0057a3;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.tech-tag:hover {
-  background-color: #004072;
-}
-
-/* Modal fade-in effect */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-/* Responsive Styling for Mobile */
-@media (max-width: 768px) {
-  .project {
-    grid-template-columns: 1fr;
-  }
-
-  /* Adjust the project content to make sure the dots icon stays inside */
-  .project-content {
-    position: relative;  /* Ensure the dots icon is relative to the project content */
-    padding: 1.5rem 1rem;
-  }
-
-  /* Adjust the position of the dots icon on small screens */
-  .dots-icon {
-    top: 5px; /* Slight adjustment to top */
-    right: 5px; /* Slight adjustment to right */
-  }
-
-  /* Optional: Increase the font size of the icon on mobile for better visibility */
-  .dots-icon i {
-    font-size: 30px;
-  }
-}
-
+    @keyframes fadeIn { from { opacity: 0;} to { opacity: 1;} }
+    @keyframes zoomIn { from { transform: scale(0.7); opacity: 0;} to { transform: scale(1); opacity: 1;} }
   </style>
 </head>
 <body>
 
+  <!-- DARK MODE BUTTON -->
+  <button class="dark-toggle-btn" id="darkToggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- SCROLL TO TOP BUTTON -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <div class="container">
     <div class="intro">
-  <!-- <img src="image001.jpg" alt="Hossein Gerami">
-  <h1>Hossein Gerami</h1>
-  <p class="tagline">
-    Here are some of my best projects — each one a fond memory from building mobile apps with React Native. Through these samples, you'll see that I've implemented nearly every kind of feature, design, and functionality mobile apps can offer. For more, please check my resume.
-  </p> -->
-
-  <div class="profile">
-      <img src="image001.jpg" alt="Hossein Gerami">
-      <div class="text">
-        <h1>Hossein Gerami</h1>
-        <p class="tagline">
-          Here are some of my best projects — each one a fond memory from building mobile apps with React Native. Through these samples, you'll see that I've implemented nearly every kind of feature, design, and functionality mobile apps can offer. For more, please check my resume.
-        </p>
+      <div class="profile">
+        <img src="image001.jpg" alt="Hossein Gerami">
+        <div class="text">
+          <h1>Hossein Gerami</h1>
+          <p class="tagline">
+            Here are some of my best projects — each one a fond memory from building mobile apps with React Native. Through these samples, you'll see that I've implemented nearly every kind of feature, design, and functionality mobile apps can offer. For more, please check my resume.
+          </p>
+        </div>
+      </div>
+      <div class="contact-info">
+        <a href="tel:+61435827842" class="info-item">
+          <span class="icon-circle"><i class="fas fa-phone"></i></span> +61 0435 827 842
+        </a>
+        <a href="mailto:h.gerami100@gmail.com" class="info-item">
+          <span class="icon-circle"><i class="fas fa-envelope"></i></span> h.gerami100@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/hossein-gerami/" class="info-item" target="_blank">
+          <span class="icon-circle"><i class="fab fa-linkedin"></i></span> linkedin.com/in/hossein-gerami
+        </a>
+        <a href="HoseinGerami_Resume.pdf" class="info-item" download>
+          <span class="icon-circle"><i class="fas fa-file-download"></i></span> Download Resume
+        </a>
       </div>
     </div>
-  
-  <div class="contact-info">
-  <a href="tel:+61435827842" class="info-item">
-    <span class="icon-circle"><i class="fas fa-phone"></i></span>
-    +61 0435 827 842
-  </a>
-  <a href="mailto:h.gerami100@gmail.com" class="info-item">
-    <span class="icon-circle"><i class="fas fa-envelope"></i></span>
-    h.gerami100@gmail.com
-  </a>
-  <a href="https://www.linkedin.com/in/hossein-gerami/" class="info-item" target="_blank">
-    <span class="icon-circle"><i class="fab fa-linkedin"></i></span>
-    linkedin.com/in/hossein-gerami
-  </a>
-  <a href="HoseinGerami_Resume.pdf" class="info-item" download>
-    <span class="icon-circle"><i class="fas fa-file-download"></i></span>
-    Download Resume
-  </a>
-</div>
 
-</div>
-
+    <!-- PROJECTS -->
     <div class="project">
       <div class="project-content">
-         <h2>Gardenia
-      <span class="dots-icon" onclick="openTechModal('gardenia')">
-        
-        <i class="fas fa-solid fa-microchip"></i>
-      </span>
-    </h2>
+        <h2>
+          Gardenia
+          <span class="dots-icon" onclick="openTechModal('gardenia')">
+            <i class="fas fa-microchip"></i>
+          </span>
+        </h2>
         <p>Gardenia is an IoT-enabled app that controls devices over Bluetooth and WiFi. It includes a built-in shop and notification system, developed for a UK company making smart hoods and fresheners.</p>
       </div>
       <div class="gallery">
@@ -574,16 +444,14 @@ p {
         <img src="image004.jpg" alt="Gardenia 3">
       </div>
     </div>
-
     <div class="project">
       <div class="project-content">
-        <h2>quickclaim
+        <h2>
+          quickclaim
           <span class="dots-icon" onclick="openTechModal('quickclaim')">
-        
-        <i class="fas fa-solid fa-microchip"></i>
-      </span>
+            <i class="fas fa-microchip"></i>
+          </span>
         </h2>
-        
         <p>quickclaim is a complete NDIS SaaS platform built in Australia. I developed mobile apps (QC Card & QC Pay) and provider dashboards with live integration to the NDIS API and finance systems.</p>
       </div>
       <div class="gallery">
@@ -591,15 +459,13 @@ p {
         <img src="image006.jpg" alt="quickclaim 2">
       </div>
     </div>
-    
-
     <div class="project">
       <div class="project-content">
-        <h2>Lerne24
+        <h2>
+          Lerne24
           <span class="dots-icon" onclick="openTechModal('lerne24')">
-        
-        <i class="fas fa-solid fa-microchip"></i>
-      </span>
+            <i class="fas fa-microchip"></i>
+          </span>
         </h2>
         <p>Lerne24 is a language learning app focused on German and French. Built using Ionic React, it features gamified learning, multi-language support, and a clean UI.</p>
       </div>
@@ -607,14 +473,13 @@ p {
         <img src="image007.jpg" alt="Lerne24">
       </div>
     </div>
-
     <div class="project">
       <div class="project-content">
-        <h2>Hihab
+        <h2>
+          Hihab
           <span class="dots-icon" onclick="openTechModal('hihab')">
-        
-        <i class="fas fa-solid fa-microchip"></i>
-      </span>
+            <i class="fas fa-microchip"></i>
+          </span>
         </h2>
         <p>Hihab is a cross-platform habit tracker app, designed with support for English and Persian. It helps users build routines and stay motivated with simple, clean design.</p>
       </div>
@@ -631,14 +496,13 @@ p {
         <img src="image017.jpg" alt="Hihab 10">
       </div>
     </div>
-
     <div class="project">
       <div class="project-content">
-        <h2>HoomQC
+        <h2>
+          HoomQC
           <span class="dots-icon" onclick="openTechModal('hoomqc')">
-        
-        <i class="fas fa-solid fa-microchip"></i>
-      </span>
+            <i class="fas fa-microchip"></i>
+          </span>
         </h2>
         <p>HoomQC is an internal tool to test SmartHoom Bluetooth IoT devices. It supports signal strength checks, command testing, and firmware-level communication via custom native modules.</p>
       </div>
@@ -653,6 +517,7 @@ p {
     </div>
   </div>
 
+  <!-- Image Modal -->
   <div id="imgModal" class="modal">
     <span class="close">&times;</span>
     <span class="prev hidden">&#10094;</span>
@@ -660,17 +525,64 @@ p {
     <span class="next hidden">&#10095;</span>
   </div>
   <div id="zoomMagnifier" class="zoom-circle hidden"></div>
-<!-- Modal for Tech Tags -->
-<div id="techModal" class="tech-modal">
-  <div class="tech-modal-content">
-    <span class="close-modal">&times;</span>
-    <h2>Technologies Used</h2>
-    <div id="techTags" class="tech-tags">
-      <!-- Tags will be dynamically added here -->
+
+  <!-- Modal for Tech Tags -->
+  <div id="techModal" class="tech-modal">
+    <div class="tech-modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Technologies Used</h2>
+      <div id="techTags" class="tech-tags"></div>
     </div>
   </div>
-</div>
+
+  <!-- Mobile welcome -->
+  <div class="mobile-welcome" id="mobileWelcome">
+    <div class="welcome-box">
+      <p>
+        You're very welcome! 🌟<br>
+        You might find it even more exciting and entertaining on a bigger screen...<br>
+        Because of some hidden cool stuff!!! 😎✨
+      </p>
+      <button onclick="closeWelcome()">Continue</button>
+    </div>
+  </div>
+
   <script>
+    // DARK MODE LOGIC
+    const body = document.body;
+    const darkToggleBtn = document.getElementById('darkToggle');
+    const darkIcon = darkToggleBtn.querySelector('i');
+    // Save mode in localStorage (optional, for remembering on reload)
+    if (localStorage.getItem('darkmode') === 'true') {
+      body.classList.add('dark');
+      darkIcon.classList.remove('fa-moon');
+      darkIcon.classList.add('fa-sun');
+    }
+    darkToggleBtn.onclick = function() {
+      body.classList.toggle('dark');
+      const dark = body.classList.contains('dark');
+      if (dark) {
+        darkIcon.classList.remove('fa-moon');
+        darkIcon.classList.add('fa-sun');
+      } else {
+        darkIcon.classList.remove('fa-sun');
+        darkIcon.classList.add('fa-moon');
+      }
+      localStorage.setItem('darkmode', dark);
+    };
+
+    // SCROLL TO TOP BUTTON LOGIC
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 250) {
+        scrollBtn.style.display = "flex";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    });
+    scrollBtn.onclick = () => window.scrollTo({top:0, behavior:'smooth'});
+
+    // IMAGE MODAL LOGIC
     const modal = document.getElementById("imgModal");
     const modalImg = document.getElementById("modalImage");
     const closeBtn = document.querySelector(".close");
@@ -694,46 +606,21 @@ p {
       modalImg.alt = currentGallery[index].alt;
       updateArrows();
     }
-
     function updateArrows() {
       prevBtn.classList.toggle("hidden", currentImg <= 0);
       nextBtn.classList.toggle("hidden", currentImg >= currentGallery.length - 1);
     }
-
-    prevBtn.onclick = () => {
-      if (currentImg > 0) {
-        currentImg--;
-        openModal(currentImg);
-      }
-    };
-
-    nextBtn.onclick = () => {
-      if (currentImg < currentGallery.length - 1) {
-        currentImg++;
-        openModal(currentImg);
-      }
-    };
-
+    prevBtn.onclick = () => { if (currentImg > 0) { currentImg--; openModal(currentImg); } };
+    nextBtn.onclick = () => { if (currentImg < currentGallery.length - 1) { currentImg++; openModal(currentImg); } };
     closeBtn.onclick = () => modal.style.display = "none";
-
-    window.onclick = (e) => {
-      if (e.target === modal) modal.style.display = "none";
-    };
-
+    window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
     document.addEventListener('keydown', (e) => {
       if (modal.style.display === "block") {
         if (e.key === "Escape") modal.style.display = "none";
-        if (e.key === "ArrowLeft" && currentImg > 0) {
-          currentImg--;
-          openModal(currentImg);
-        }
-        if (e.key === "ArrowRight" && currentImg < currentGallery.length - 1) {
-          currentImg++;
-          openModal(currentImg);
-        }
+        if (e.key === "ArrowLeft" && currentImg > 0) { currentImg--; openModal(currentImg);}
+        if (e.key === "ArrowRight" && currentImg < currentGallery.length - 1) { currentImg++; openModal(currentImg);}
       }
     });
-
     modalImg.addEventListener('mousemove', function(e) {
       const rect = modalImg.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -744,75 +631,40 @@ p {
       zoomCircle.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
       zoomCircle.classList.remove('hidden');
     });
+    modalImg.addEventListener('mouseleave', () => { zoomCircle.classList.add('hidden'); });
 
-    modalImg.addEventListener('mouseleave', () => {
-      zoomCircle.classList.add('hidden');
-    });
-    function closeWelcome() {
-    document.getElementById('mobileWelcome').style.display = 'none';
-  }
-
-  // Auto-show on small screens
-  if (window.innerWidth <= 768) {
-    window.onload = () => {
-      document.getElementById('mobileWelcome').style.display = 'flex';
-    };
-  
-}
-// Function to open the modal and display the tech tags
-function openTechModal(projectName) {
-  const techModal = document.getElementById("techModal");
-  const techTags = document.getElementById("techTags");
-
-  // Define technology tags based on the project clicked
-  const techs = {
-    gardenia: ["React Native","Redux", "IoT", "Bluetooth", "WiFi", "Shop Integration" , "API", "security","Typescript"],
-    quickclaim: ["React Native","Redux", "NDIS", "API Integration", "SaaS", "Finance Systems", "AWS Lambda", "QR Code","Typescript"],
-    lerne24: ["Ionic React", "React hooks","Feathers JS","Firebase",  "Gamified Learning", "Multi-language", "Clean UI", "Typescript"],
-    hihab: ["Cross-Platform","Redux", "Habit Tracker", "English and Persian", "Motivational Design","Typescript", "React Native SVG"],
-    hoomqc: ["Bluetooth IoT", "Signal Strength Testing", "Native Modules", "Firmware Communication"]
-  };
-
-  // Clear previous tech tags
-  techTags.innerHTML = '';
-
-  // Add the tags dynamically
-  techs[projectName].forEach(tech => {
-    const tag = document.createElement("span");
-    tag.className = "tech-tag";
-    tag.textContent = tech;
-    techTags.appendChild(tag);
-  });
-
-  // Show the modal
-  techModal.style.display = "block";
-
-  // Close modal when clicking on close button
-  const closeBtn = document.querySelector(".close-modal");
-  closeBtn.onclick = () => {
-    techModal.style.display = "none";
-  };
-
-  // Close modal when clicking anywhere outside the modal content
-  window.onclick = (event) => {
-    if (event.target === techModal) {
-      techModal.style.display = "none";
+    // TECH MODAL LOGIC
+    function openTechModal(projectName) {
+      const techModal = document.getElementById("techModal");
+      const techTags = document.getElementById("techTags");
+      const techs = {
+        gardenia: ["React Native","Redux","IoT","Bluetooth","WiFi","Shop Integration","API","Security","Typescript"],
+        quickclaim: ["React Native","Redux","NDIS","API Integration","SaaS","Finance Systems","AWS Lambda","QR Code","Typescript"],
+        lerne24: ["Ionic React","React hooks","Feathers JS","Firebase","Gamified Learning","Multi-language","Clean UI","Typescript"],
+        hihab: ["Cross-Platform","Redux","Habit Tracker","English and Persian","Motivational Design","Typescript","React Native SVG"],
+        hoomqc: ["Bluetooth IoT","Signal Strength Testing","Native Modules","Firmware Communication"]
+      };
+      techTags.innerHTML = '';
+      techs[projectName].forEach(tech => {
+        const tag = document.createElement("span");
+        tag.className = "tech-tag";
+        tag.textContent = tech;
+        techTags.appendChild(tag);
+      });
+      techModal.style.display = "block";
+      document.querySelector(".close-modal").onclick = () => techModal.style.display = "none";
+      window.onclick = (event) => {
+        if (event.target === techModal) techModal.style.display = "none";
+      };
     }
-  };
-}
 
-
+    // MOBILE WELCOME MESSAGE LOGIC
+    function closeWelcome() { document.getElementById('mobileWelcome').style.display = 'none'; }
+    if (window.innerWidth <= 768) {
+      window.onload = () => {
+        document.getElementById('mobileWelcome').style.display = 'flex';
+      };
+    }
   </script>
-<div class="mobile-welcome" id="mobileWelcome">
-  <div class="welcome-box">
-    <p>
-      You're very welcome! 🌟<br>
-      You might find it even more exciting and entertaining on a bigger screen...<br>
-      Because of some hidden cool stuff!!! 😎✨
-    </p>
-    <button onclick="closeWelcome()">Continue</button>
-  </div>
-</div>
-
 </body>
 </html>
