@@ -390,6 +390,94 @@
     background: #004072;
   }
 }
+.dots-icon {
+  cursor: pointer;
+  font-size: 20px;
+  color: #0057a3;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.dots-icon i
+{
+  font-size: 25px;
+    margin: 10px 10px 0 0;
+}
+
+.dots-icon:hover {
+  color: #004072;
+}
+
+/* Modal Styles */
+.tech-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-top: 60px;
+  animation: fadeIn 0.3s ease;
+}
+
+.tech-modal-content {
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.close-modal {
+  color: #aaa;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Tech Tags Styling */
+#techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding: 10px 0;
+}
+
+.tech-tag {
+  background-color: #0057a3;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: 1px solid #0057a3;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tech-tag:hover {
+  background-color: #004072;
+}
+
+/* Modal fade-in effect */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 
   </style>
 </head>
@@ -436,7 +524,12 @@
 
     <div class="project">
       <div class="project-content">
-        <h2>Gardenia</h2>
+         <h2>Gardenia
+      <span class="dots-icon" onclick="openTechModal('gardenia')">
+        
+        <i class="fas fa-solid fa-microchip"></i>
+      </span>
+    </h2>
         <p>Gardenia is an IoT-enabled app that controls devices over Bluetooth and WiFi. It includes a built-in shop and notification system, developed for a UK company making smart hoods and fresheners.</p>
       </div>
       <div class="gallery">
@@ -448,18 +541,30 @@
 
     <div class="project">
       <div class="project-content">
-        <h2>QuickClaim</h2>
-        <p>QuickClaim is a complete NDIS SaaS platform built in Australia. I developed mobile apps (QC Card & QC Pay) and provider dashboards with live integration to the NDIS API and finance systems.</p>
+        <h2>quickclaim
+          <span class="dots-icon" onclick="openTechModal('quickclaim')">
+        
+        <i class="fas fa-solid fa-microchip"></i>
+      </span>
+        </h2>
+        
+        <p>quickclaim is a complete NDIS SaaS platform built in Australia. I developed mobile apps (QC Card & QC Pay) and provider dashboards with live integration to the NDIS API and finance systems.</p>
       </div>
       <div class="gallery">
-        <img src="image005.jpg" alt="QuickClaim 1">
-        <img src="image006.jpg" alt="QuickClaim 2">
+        <img src="image005.jpg" alt="quickclaim 1">
+        <img src="image006.jpg" alt="quickclaim 2">
       </div>
     </div>
+    
 
     <div class="project">
       <div class="project-content">
-        <h2>Lerne24</h2>
+        <h2>Lerne24
+          <span class="dots-icon" onclick="openTechModal('lerne24')">
+        
+        <i class="fas fa-solid fa-microchip"></i>
+      </span>
+        </h2>
         <p>Lerne24 is a language learning app focused on German and French. Built using Ionic React, it features gamified learning, multi-language support, and a clean UI.</p>
       </div>
       <div class="gallery">
@@ -469,7 +574,12 @@
 
     <div class="project">
       <div class="project-content">
-        <h2>Hihab</h2>
+        <h2>Hihab
+          <span class="dots-icon" onclick="openTechModal('hihab')">
+        
+        <i class="fas fa-solid fa-microchip"></i>
+      </span>
+        </h2>
         <p>Hihab is a cross-platform habit tracker app, designed with support for English and Persian. It helps users build routines and stay motivated with simple, clean design.</p>
       </div>
       <div class="gallery">
@@ -488,7 +598,12 @@
 
     <div class="project">
       <div class="project-content">
-        <h2>HoomQC</h2>
+        <h2>HoomQC
+          <span class="dots-icon" onclick="openTechModal('hoomqc')">
+        
+        <i class="fas fa-solid fa-microchip"></i>
+      </span>
+        </h2>
         <p>HoomQC is an internal tool to test SmartHoom Bluetooth IoT devices. It supports signal strength checks, command testing, and firmware-level communication via custom native modules.</p>
       </div>
       <div class="gallery">
@@ -509,7 +624,16 @@
     <span class="next hidden">&#10095;</span>
   </div>
   <div id="zoomMagnifier" class="zoom-circle hidden"></div>
-
+<!-- Modal for Tech Tags -->
+<div id="techModal" class="tech-modal">
+  <div class="tech-modal-content">
+    <span class="close-modal">&times;</span>
+    <h2>Technologies Used</h2>
+    <div id="techTags" class="tech-tags">
+      <!-- Tags will be dynamically added here -->
+    </div>
+  </div>
+</div>
   <script>
     const modal = document.getElementById("imgModal");
     const modalImg = document.getElementById("modalImage");
@@ -599,6 +723,48 @@
     };
   
 }
+// Function to open the modal and display the tech tags
+function openTechModal(projectName) {
+  const techModal = document.getElementById("techModal");
+  const techTags = document.getElementById("techTags");
+
+  // Define technology tags based on the project clicked
+  const techs = {
+    gardenia: ["React Native","Redux", "IoT", "Bluetooth", "WiFi", "Shop Integration" , "API", "security","Typescript"],
+    quickclaim: ["React Native","Redux", "NDIS", "API Integration", "SaaS", "Finance Systems", "AWS Lambda", "QR Code","Typescript"],
+    lerne24: ["Ionic React", "React hooks","Feathers JS","Firebase",  "Gamified Learning", "Multi-language", "Clean UI", "Typescript"],
+    hihab: ["Cross-Platform","Redux", "Habit Tracker", "English and Persian", "Motivational Design","Typescript", "React Native SVG"],
+    hoomqc: ["Bluetooth IoT", "Signal Strength Testing", "Native Modules", "Firmware Communication"]
+  };
+
+  // Clear previous tech tags
+  techTags.innerHTML = '';
+
+  // Add the tags dynamically
+  techs[projectName].forEach(tech => {
+    const tag = document.createElement("span");
+    tag.className = "tech-tag";
+    tag.textContent = tech;
+    techTags.appendChild(tag);
+  });
+
+  // Show the modal
+  techModal.style.display = "block";
+
+  // Close modal when clicking on close button
+  const closeBtn = document.querySelector(".close-modal");
+  closeBtn.onclick = () => {
+    techModal.style.display = "none";
+  };
+
+  // Close modal when clicking anywhere outside the modal content
+  window.onclick = (event) => {
+    if (event.target === techModal) {
+      techModal.style.display = "none";
+    }
+  };
+}
+
 
   </script>
 <div class="mobile-welcome" id="mobileWelcome">
@@ -614,3 +780,4 @@
 
 </body>
 </html>
+
