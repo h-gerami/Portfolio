@@ -230,7 +230,32 @@
     }
     @keyframes fadeIn { from { opacity: 0;} to { opacity: 1;} }
     @keyframes zoomIn { from { transform: scale(0.7); opacity: 0;} to { transform: scale(1); opacity: 1;} }
+
+    .magnifier-hint-text {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  background: rgba(0,87,163,0.92);
+  color: #fff;
+  padding: 0.7em 1.4em;
+  border-radius: 24px;
+  font-size: 1.15em;
+  box-shadow: 0 3px 24px rgba(0,0,0,0.18);
+  pointer-events: none;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  font-family: inherit;
+  animation: popHint 0.7s cubic-bezier(.22,1.02,.39,1.07);
+}
+@keyframes popHint {
+  from { opacity: 0; transform: translate(-50%,-60%) scale(0.8);}
+  to   { opacity: 1; transform: translate(-50%,-50%) scale(1);}
+}
+
   </style>
+
 </head>
 <body>
 
@@ -302,6 +327,7 @@
               <li><i class="fa fa-check-circle"></i> Engineered mobile connectivity with three types of IoT devices over WiFi, Bluetooth, and UDP protocols</li>
               <li><i class="fa fa-check-circle"></i> Implemented custom Bluetooth communication protocols using the Ble-Ple library</li>
               <li><i class="fa fa-check-circle"></i> Contributed to microprocessor-level functionality for IoT device interactions</li>
+              <li><i class="fa fa-check-circle"></i> Managed complex state for all device settings and user preferences using Redux, ensuring a smooth and scalable experience across multiple IoT devices.</li>
               <li><i class="fa fa-check-circle"></i> Led Agile collaboration with cross-functional teams using Jira</li>
             </ul>
           </div>
@@ -369,6 +395,7 @@
             <ul class="achievements">
               <li><i class="fa fa-check-circle"></i> Developed the hybrid mobile application with Ionic and React, supporting 4 languages</li>
               <li><i class="fa fa-check-circle"></i> Built custom interactive plugins (e.g. Instagram-style story component)</li>
+              <li><i class="fa fa-check-circle"></i> Designed and implemented a real-time internal chat using FeathersJS and MongoDB, connecting learners at the same level for collaboration and support</li>
               <li><i class="fa fa-check-circle"></i> Implemented push notifications for Android and iOS with Firebase</li>
               <li><i class="fa fa-check-circle"></i> Authored detailed technical documentation for smooth onboarding and handover</li>
               <li><i class="fa fa-check-circle"></i> Collaborated using Jira, Bitbucket, Confluence for project management</li>
@@ -434,7 +461,7 @@
         <img src="image020.png" alt="HoomQC 3">
         <img src="image021.png" alt="HoomQC 4">
         <img src="image022.png" alt="HoomQC 5">
-        <img src="image023.png" alt="HoomQC 6">
+        <!-- <img src="image023.png" alt="HoomQC 6"> -->
       </div>
       <div class="achievements-box">
             <div class="achievements-title">Key Achievements</div>
@@ -457,6 +484,11 @@
     <span class="prev hidden">&#10094;</span>
     <img class="modal-content" id="modalImage">
     <span class="next hidden">&#10095;</span>
+  </div>
+  <div id="magnifierHint" style="display:none;">
+    <span class="magnifier-hint-text">
+      <i class="fa fa-search-plus"></i> Hover to magnify
+    </span>
   </div>
   <div id="zoomMagnifier" class="zoom-circle hidden"></div>
 
@@ -574,7 +606,7 @@
       const techs = {
         gardenia: ["React Native","Redux","IoT","Bluetooth","WiFi","Shop Integration","API","Security","Typescript"],
         quickclaim: ["React Native","Redux","NDIS","API Integration","SaaS","Finance Systems","AWS Lambda","QR Code","Typescript"],
-        lerne24: ["Ionic React","React hooks","Feathers JS","Firebase","Gamified Learning","Multi-language","Clean UI","Typescript"],
+        lerne24: ["Ionic React","React hooks","Feathers JS","MongoDB","Firebase","Gamified Learning","Multi-language","Clean UI","Typescript"],
         hihab: ["Cross-Platform","Redux","Habit Tracker","English and Persian","Motivational Design","Typescript","React Native SVG"],
         hoomqc: ["Bluetooth IoT","Signal Strength Testing","Native Modules","Firmware Communication"]
       };
@@ -597,8 +629,36 @@
     if (window.innerWidth <= 768) {
       window.onload = () => {
         document.getElementById('mobileWelcome').style.display = 'flex';
-      }
+      };
     }
+    // === MAGNIFIER HINT LOGIC ===
+let magnifierHintShown = false;
+const magnifierHint = document.getElementById('magnifierHint');
+const modalContentImg = document.getElementById('modalImage');
+
+function showMagnifierHint() {
+  if (window.innerWidth < 900) return; // Don't show on mobile/tablet
+  if (magnifierHintShown) return;
+  magnifierHint.style.display = "block";
+  const imgRect = modalContentImg.getBoundingClientRect();
+  magnifierHint.style.position = "fixed";
+  magnifierHint.style.left = imgRect.left + imgRect.width/2 + "px";
+  magnifierHint.style.top = imgRect.top + imgRect.height/2 + "px";
+}
+
+function hideMagnifierHint() {
+  magnifierHint.style.display = "none";
+  magnifierHintShown = true;
+}
+
+modalContentImg.addEventListener('mouseenter', hideMagnifierHint);
+
+const origOpenModal = openModal;
+openModal = function(index) {
+  origOpenModal(index);
+  setTimeout(showMagnifierHint, 150);
+};
+
   </script>
 </body>
 </html>
