@@ -4,559 +4,541 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hossein Gerami – Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap" rel="stylesheet">
+
+  <!-- Icons & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-4oVcnk9b2yQ4oO3u6X8G5Ew3UuU8S3i7hP3mJXyQq2x9q8O3n2ZgP2zvF9b0U3Y8lS1x0d0tM0l8gH6x2j3n0w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+  <!-- PWA + Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-  <!-- SEO Meta Tags: -->
-  <meta name="description" content="Portfolio of Hossein Gerami – Mobile App Developer. Showcasing projects built with React Native, Ionic, IoT, NDIS SaaS, and more. Download resume and view project galleries.">
-  <meta name="keywords" content="Hossein Gerami, Portfolio, Mobile Developer, React Native, Ionic, NDIS, IoT, App Development, SaaS, Resume, Australian Developer, UI, UX, Frontend, Backend">
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="color-scheme" content="dark light" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Hossein Gerami – Mobile & Software Engineer. React Native, Integrations, Data Flows, NDIS SaaS, AWS, and AI‑assisted engineering.">
+  <meta name="keywords" content="Hossein Gerami, Portfolio, React Native, Integrations, Node.js, AWS, NDIS, Xero, MYOB, Dynamics, HubSpot, SaaS, Mobile, AI">
   <meta name="author" content="Hossein Gerami">
   <meta name="robots" content="index, follow">
-  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Hossein Gerami – Portfolio">
-  <meta property="og:description" content="Explore Hossein Gerami's top projects in mobile app development, including IoT and SaaS platforms. Download resume and see tech stacks.">
+  <meta property="og:description" content="Explore projects in mobile, integrations, and data engineering. View achievements and tech stacks.">
   <meta property="og:image" content="https://hosseingerami.com/image001.jpg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://hosseingerami.com/">
   <meta property="og:site_name" content="Hossein Gerami Portfolio">
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Hossein Gerami – Portfolio">
-  <meta name="twitter:description" content="React Native and Mobile App Portfolio by Hossein Gerami. Download resume and view gallery.">
+  <meta name="twitter:description" content="React Native, Integrations, Data Flows, and AI‑assisted problem solving.">
   <meta name="twitter:image" content="https://hosseingerami.com/image001.jpg">
+
   <!-- Canonical -->
   <link rel="canonical" href="https://hosseingerami.com/">
 
   <style>
+    /* =============================================================
+       THEME & TOKENS
+       ============================================================= */
     :root {
-      --primary: #0057a3;
-      --primary-dark: #004072;
-      --bg-light: #f9f9f9;
-      --bg-dark: #121821;
-      --text-light: #333;
-      --text-dark: #f3f3f3;
-      --box-light: #fff;
-      --box-dark: #232b37;
-      --shadow: 0 4px 12px rgba(0,0,0,0.05);
-      --shadow-dark: 0 4px 18px rgba(0,0,0,0.25);
-      --border-light: #eaeaea;
-      --border-dark: #2a3645;
-      --accent: #0057a3;
-      --accent-dark: #3899ec;
+      /* Brand */
+      --brand-1: #60a5fa; /* sky-400 */
+      --brand-2: #7dd3fc; /* sky-300 */
+      --brand-3: #2563eb; /* blue-600 */
+      --accent: #22d3ee;  /* cyan-400 */
+
+      /* Elevation & Surfaces */
+      --bg-dark: #0b1220;            /* page */
+      --bg-dark-2: #0f172a;          /* section */
+      --card-dark: rgba(17, 24, 39, .72); /* glass */
+      --card-border-dark: #1e293b;
+      --shadow-dark: 0 10px 30px rgba(0,0,0,0.45);
+
+      --bg-light: #f8fafc;
+      --card-light: #ffffff;
+      --card-border-light: #e5e7eb;
+      --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+
+      /* Text */
+      --text-dark: #e5e7eb;
+      --text-muted-dark: #b7c4dc;
+      --text-light: #0f172a;
+      --text-muted: #4b5563;
+
+      /* Misc */
+      --radius: 16px;
+      --radius-lg: 22px;
+      --ring: 0 0 0 3px rgba(96,165,250,.35);
+      --transition: 200ms cubic-bezier(.2,.7,.3,1);
     }
+
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Sour Gummy', sans-serif;
-      background-color: var(--bg-light);
-      margin: 0;
-      padding: 0;
-      color: var(--text-light);
-      transition: background 0.3s, color 0.3s;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      margin: 0; padding: 0; line-height: 1.6;
+      background: var(--bg-light); color: var(--text-light);
+      transition: background var(--transition), color var(--transition);
+      /* Subtle radial glow in the corner (light) */
+      background-image: radial-gradient(800px 600px at -10% -10%, rgba(99,102,241,.05), transparent),
+                        radial-gradient(600px 400px at 120% 10%, rgba(20,184,166,.06), transparent);
     }
-    body.dark { background-color: var(--bg-dark); color: var(--text-dark);}
-    h1, h2, h3, .project h2, p { font-family: 'Sour Gummy', sans-serif;}
-    .container { max-width: 100%; margin: auto; padding: 2rem; transition: background 0.3s, color 0.3s;}
-    .intro { text-align: center; margin-bottom: 2rem;}
-    .intro img {
-      width: 120px; height: 120px; object-fit: cover; border-radius: 50%;
-      animation: rollInLeft 5s ease-out forwards;
+    /* Default DARK mode */
+    body.dark {
+      color: var(--text-dark);
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(34,211,238,.08), transparent),
+                  radial-gradient(900px 600px at 110% -10%, rgba(96,165,250,.10), transparent),
+                  var(--bg-dark);
     }
-    @keyframes rollInLeft { 0% { transform: translateX(100vw) rotate(0deg);} 100% { transform: translateX(0) rotate(-1080deg);}}
-    .intro h1 { margin: 1rem 0 0.3rem; font-size: 2rem; color: #222;}
-    .intro .tagline { max-width: 600px; margin: 1rem auto; font-size: 1rem; color: #555; line-height: 1.6; text-align: justify;}
-    body.dark .intro h1 { color: #e3e9f3;}
-    body.dark .intro .tagline { color: #bfcce2;}
-    .contact-info {
-      display: inline-flex; flex-direction: row; align-items: center;
-      gap: 0.6rem; margin-top: 1.5rem; font-size: 0.95rem;
-    }
-    .info-item {
-      display: flex; align-items: center; gap: 0.6rem; text-decoration: none;
-      color: #222; transition: color 0.3s ease;
-    }
-    .info-item:hover { color: #000;}
-    .icon-circle {
-      width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;
-      border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-      color: white; font-size: 14px; transition: transform 0.3s ease;
-      background: var(--primary);
-    }
-    .info-item:hover .icon-circle { transform: translateY(-5px);}
-    body.dark .info-item { color: #e3e3e3;}
-    body.dark .info-item:hover { color: #fff;}
 
-    .project { display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; margin-bottom: 4rem;}
-    .project-content {
-      position: sticky; top: 2rem; background: var(--box-light); padding: 1.5rem;
-      border-radius: 10px; box-shadow: var(--shadow); align-self: start;
-      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-    }
-    body.dark .project-content { background: var(--box-dark); box-shadow: var(--shadow-dark);}
-    .project h2 {
-      margin-top: 0; color: var(--primary); position: relative; font-size: 1.45rem; font-weight: 700;
-    }
-    body.dark .project h2 { color: var(--accent-dark);}
-    .dots-icon {
-      cursor: pointer; color: var(--primary); position: absolute;
-      top: 0px; right: 0px; z-index: 10; font-size: 25px; transition: color 0.2s;
-    }
-    .dots-icon:hover { color: var(--primary-dark);}
-    body.dark .dots-icon { color: var(--accent-dark);}
-    .project p { line-height: 1.6; color: #444;}
-    body.dark .project p { color: #ccd5e3;}
-    .gallery {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem; padding: 1rem; background: var(--box-light); border-radius: 10px; box-shadow: var(--shadow);
-      transition: background 0.3s, box-shadow 0.3s;
-    }
-    body.dark .gallery { background: var(--box-dark); box-shadow: var(--shadow-dark);}
-    .gallery img {
-      width: 100%; height: auto; max-height: 500px; object-fit: contain; border-radius: 8px;
-      padding: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); transition: 0.3s ease; cursor: pointer;
-    }
-    .gallery img:hover { opacity: 0.9; transform: scale(1.03);}
+    /* Container */
+    .container { max-width: 1120px; margin: auto; padding: clamp(1rem, 2vw, 2rem); }
 
-    /* Achievements Box Layout */
-    .project-content-inner { display: flex; gap: 2.1rem; align-items: flex-start;}
-    @media (max-width: 900px) {
-      .project-content-inner { flex-direction: column; gap: 1rem;}
+    /* =============================================================
+       UTILITIES
+       ============================================================= */
+    .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 1px, 1px); border: 0; }
+    .chip { display:inline-flex; align-items:center; gap:.5rem; padding:.38rem .7rem; border-radius:999px; font-weight:600; font-size:.85rem; }
+    .chip--brand { color:#041b2b; background: linear-gradient(90deg, var(--brand-2), var(--brand-1)); border:1px solid rgba(255,255,255,.08); }
+
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: none; box-shadow: var(--ring); }
+
+    /* =============================================================
+       INTRO
+       ============================================================= */
+    .intro { display: grid; grid-template-columns: auto 1fr; gap: 1.25rem; align-items: center; margin-bottom: 2rem; }
+
+    .avatar {
+      width: 112px; height: 112px; object-fit: cover; border-radius: 50%;
+      box-shadow: 0 12px 28px rgba(0,0,0,.45);
+      border: 2px solid rgba(255,255,255,.06);
+      transition: transform var(--transition);
     }
-    .achievements-box {
-      background: var(--box-light); border-radius: 10px; box-shadow: var(--shadow);
-      padding: 1.1rem 1.3rem; margin-top: 0.5rem;
-      border-left: 4px solid var(--primary); transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    .avatar:hover { transform: translateY(-2px); }
+
+    .intro h1 { margin: 0; font-size: clamp(1.6rem, 2.5vw, 2.2rem); letter-spacing: -0.02em; }
+    .gradient-text {
+      background: linear-gradient(90deg, var(--brand-1), var(--accent));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
     }
-    body.dark .achievements-box { background: var(--box-dark); box-shadow: var(--shadow-dark); border-left-color: var(--accent-dark);}
-    .achievements-title { font-weight: 600; font-size: 1.05rem; margin: 0 0 0.4rem 0; color: var(--primary);}
-    body.dark .achievements-title { color: var(--accent-dark);}
-    .achievements {
-      margin: 0.3rem 0 0 0; padding-left: 0.2em; color: #32508a; list-style: none;
+    .tagline { margin-top: .5rem; font-size: 1rem; color: var(--text-muted); }
+    body.dark .tagline { color: var(--text-muted-dark); }
+
+    .contact-info { display:flex; flex-wrap:wrap; align-items:center; gap:.6rem; margin-top:.9rem; font-size:.95rem; }
+    .info-item { display:inline-flex; align-items:center; gap:.6rem; padding:.42rem .7rem; border-radius:999px; border:1px solid var(--card-border-light); background: var(--card-light); transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition); }
+    .info-item:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    body.dark .info-item { background: linear-gradient(180deg, rgba(30,41,59,.85), rgba(15,23,42,.65)); border-color: var(--card-border-dark); box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 10px 24px rgba(2,6,23,.45); }
+    .icon-circle { width: 28px; height: 28px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; color:#041b2b; font-size:12px; background: linear-gradient(90deg, var(--brand-2), var(--brand-1)); }
+
+    /* =============================================================
+       SECTIONS & CARDS
+       ============================================================= */
+    .section { margin: 2.4rem 0; }
+    .section-header { display:flex; align-items:center; justify-content: space-between; margin-bottom: 1rem; }
+    .section h2 { margin:0; font-size:1.25rem; letter-spacing:.01em; color: var(--brand-1); }
+    body.dark .section h2 { color: var(--accent); }
+
+    .card {
+      background: var(--card-light);
+      border-radius: var(--radius);
+      border: 1px solid var(--card-border-light);
+      padding: 1.2rem 1.2rem;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), background var(--transition), border-color var(--transition), box-shadow var(--transition);
     }
-    .achievements li {
-      display: flex; align-items: flex-start; gap: 0.6em; margin-bottom: 0.7em; font-size: 0.99em; color: #223b5d;
+    .card:hover { transform: translateY(-2px); }
+    body.dark .card {
+      background: var(--card-dark);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-color: var(--card-border-dark);
+      box-shadow: var(--shadow-dark);
     }
-    .achievements li .fa { color: var(--primary); font-size: 1.05em; margin-top: 3px;}
-    body.dark .achievements li { color: #c4daff;}
-    body.dark .achievements li .fa { color: var(--accent-dark);}
-    /* Modal Styles */
-    .modal, .tech-modal {
-      display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.85); animation: fadeIn 0.3s ease; overflow: auto;
-    }
-    .modal-content, .tech-modal-content {
-      display: block; margin: auto; max-width: 90%; max-height: 80vh;
-      border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.5); animation: zoomIn 0.3s ease; background: #fff;
-    }
-    body.dark .modal-content, body.dark .tech-modal-content { background: var(--box-dark);}
-    .close, .close-modal {
-      position: absolute; top: 20px; right: 30px; font-size: 35px; font-weight: bold; color: #aaa; cursor: pointer;
-    }
-    .close:hover, .close-modal:hover { color: var(--primary-dark);}
-    .prev, .next {
-      position: absolute; top: 50%; color: white; font-size: 40px; font-weight: bold; cursor: pointer;
-      user-select: none; background: rgba(0,0,0,0.4); padding: 0.4em 0.6em; border-radius: 50%; transform: translateY(-50%);
-    }
-    .prev { left: 20px;}
-    .next { right: 20px;}
+
+    /* About */
+    .about-grid { display:grid; grid-template-columns: 1.2fr .8fr; gap:1rem; align-items:start; }
+    @media (max-width: 980px) { .about-grid { grid-template-columns: 1fr; } }
+
+    .pillset { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.6rem; }
+    .pill { background: #eef6ff; color: #0b4a7a; border: 1px solid #d9ebff; padding: .35rem .65rem; border-radius:999px; font-size:.85rem; font-weight:600; }
+    body.dark .pill { background: rgba(2,6,23,.6); color:#d7f3ff; border-color:#1f2a3b; }
+
+    .list { list-style:none; padding:0; margin:.25rem 0 0 0; }
+    .list li { display:grid; grid-template-columns: 22px 1fr; gap:.6rem; margin:.55rem 0; }
+    .list i { color: var(--brand-1); margin-top:2px; }
+    body.dark .list i { color: var(--accent); }
+
+    /* =============================================================
+       PROJECTS
+       ============================================================= */
+    .project { display: grid; grid-template-columns: 1fr 3fr; gap: 1.4rem; margin-bottom: 2.4rem; }
+    @media (max-width: 900px) { .project { grid-template-columns: 1fr; } }
+
+    .project-content { position: sticky; top: 1.2rem; align-self: start; }
+    @media (max-width: 900px) { .project-content { position: static; } }
+
+    .project h2 { margin: 0 0 .35rem 0; font-size: 1.2rem; font-weight: 700; }
+    .project p { margin: 0; color: var(--text-muted); }
+    body.dark .project p { color: var(--text-muted-dark); }
+
+    .info-badge { display:inline-flex; align-items:center; gap:.4rem; padding:.2rem .55rem; border-radius:999px; font-size:.8rem; background: rgba(125,211,252,.12); border: 1px solid rgba(125,211,252,.28); color:#8bd8ff; }
+
+    .dots-icon { cursor: pointer; color: var(--brand-1); font-size: 20px; margin-left: .4rem; transition: color var(--transition), transform var(--transition); vertical-align: -2px; }
+    .dots-icon:hover { color: var(--brand-3); transform: translateY(-1px); }
+    body.dark .dots-icon { color: var(--accent); }
+
+    .gallery { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .9rem; padding: 1rem; border-radius: var(--radius); border: 1px solid var(--card-border-light); background: var(--card-light); box-shadow: var(--shadow); }
+    body.dark .gallery { background: var(--card-dark); border-color: var(--card-border-dark); box-shadow: var(--shadow-dark); }
+    .gallery img { width:100%; height:auto; max-height:520px; object-fit:contain; border-radius: 12px; padding: 6px; box-shadow: 0 2px 6px rgba(0,0,0,.25); transition: transform var(--transition), opacity var(--transition); cursor: zoom-in; }
+    .gallery img:hover { opacity: .97; transform: scale(1.02); }
+    .gallery img[loading="lazy"] { content-visibility:auto; }
+
+    .achievements-box { border-radius: var(--radius); padding: 1.05rem 1.15rem; margin-top: .8rem; border: 1px solid var(--card-border-light); background: var(--card-light); box-shadow: var(--shadow); position: relative; }
+    body.dark .achievements-box { background: var(--card-dark); border-color: var(--card-border-dark); box-shadow: var(--shadow-dark); }
+    .achievements-box::before { content:""; position:absolute; inset:0; border-radius: inherit; padding:1px; background: linear-gradient(90deg, rgba(125,211,252,.35), rgba(34,211,238,.35)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events:none; }
+    .achievements-title { font-weight:700; font-size:1.02rem; margin:0 0 .4rem 0; color: var(--brand-1); }
+    body.dark .achievements-title { color: var(--accent); }
+    .achievements { margin:.25rem 0 0 0; padding:0; list-style:none; }
+    .achievements li { display:grid; grid-template-columns: 22px 1fr; gap:.6rem; margin:.55rem 0; font-size:.98rem; color: var(--text-light);} 
+    .achievements li i { color: var(--brand-1); margin-top:2px; }
+    body.dark .achievements li { color:#d7e3f8; }
+    body.dark .achievements li i { color: var(--accent); }
+
+    /* =============================================================
+       MODALS
+       ============================================================= */
+    .modal, .tech-modal { display: none; position: fixed; z-index: 999; inset: 0; background-color: rgba(0,0,0,0.85); animation: fadeIn .25s ease; overflow: auto; }
+    .modal-content, .tech-modal-content { display: block; margin: 8vh auto; max-width: min(92%, 1080px); max-height: 84vh; border-radius: 14px; box-shadow: 0 0 20px rgba(0,0,0,0.45); animation: zoomIn .2s ease; background: #fff; }
+    body.dark .modal-content, body.dark .tech-modal-content { background: var(--bg-dark-2); }
+    .close, .close-modal { position: sticky; top: 10px; float: right; margin: 12px 20px 0 0; font-size: 34px; font-weight: bold; color: #cbd5e1; cursor: pointer; }
+    .close:hover, .close-modal:hover { color: #ffffff; }
+    .prev, .next { position: fixed; top: 50%; color: white; font-size: 34px; font-weight: bold; cursor: pointer; user-select: none; background: rgba(0,0,0,0.35); padding: .35em .55em; border-radius: 50%; transform: translateY(-50%); }
+    .prev { left: 20px;} .next { right: 20px;}
     .hidden { display: none; }
-    .zoom-circle {
-      position: fixed; width: 250px; height: 250px; border-radius: 50%; overflow: hidden;
-      border: 3px solid #fff; box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index: 1001; right: 30px; bottom: 30px;
-      background-color: #000; background-repeat: no-repeat; background-size: 400%; pointer-events: none; transition: opacity 0.2s ease;
-    }
-    .tech-modal-content {
-      position: relative; margin: auto; padding: 20px; background: white; border-radius: 10px; max-width: 600px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); transition: background 0.3s;
-    }
-    body.dark .tech-modal-content { background: var(--box-dark);}
-    #techTags { display: flex; flex-wrap: wrap; gap: 0.8rem; padding: 10px 0;}
-    .tech-tag {
-      background-color: var(--primary); color: white; font-size: 1rem; padding: 0.5rem 1rem;
-      border-radius: 25px; border: 1px solid var(--primary); cursor: pointer; transition: background-color 0.3s;
-    }
-    .tech-tag:hover { background-color: var(--primary-dark);}
-    body.dark .tech-tag { background-color: var(--accent-dark); border-color: var(--accent-dark);}
-    .tech-tag:hover { background-color: var(--primary-dark); }
-    /* Floating dark mode button */
-    .dark-toggle-btn {
-      position: fixed; bottom: 2.6rem; left: 2.3rem; z-index: 1200; background: var(--box-light); color: var(--primary);
-      border: none; border-radius: 50%; box-shadow: 0 2px 12px rgba(0,0,0,0.18); width: 50px; height: 50px;
-      font-size: 1.45rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.3s, color 0.3s;
-    }
-    .dark-toggle-btn:hover { background: var(--primary); color: #fff;}
-    body.dark .dark-toggle-btn { background: var(--box-dark); color: var(--accent-dark);}
-    /* Scroll to Top Button */
-    .scroll-top-btn {
-      display: none; position: fixed; bottom: 1rem; right: 2.2rem; z-index: 1201;
-      width: 48px; height: 48px; border-radius: 50%; background: var(--primary); color: #fff;
-      font-size: 1.7rem; box-shadow: 0 2px 8px rgba(0,0,0,0.18); border: none; cursor: pointer;
-      align-items: center; justify-content: center; transition: background 0.3s; opacity: 0.92;
-    }
-    .scroll-top-btn:hover { background: var(--primary-dark); opacity: 1;}
-    body.dark .scroll-top-btn { background: var(--accent-dark); color: #232b37;}
-    /* Responsive */
+    .zoom-circle { position: fixed; width: 220px; height: 220px; border-radius: 50%; overflow: hidden; border: 3px solid #fff; box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index: 1001; right: 30px; bottom: 30px; background-color: #000; background-repeat: no-repeat; background-size: 350%; pointer-events: none; transition: opacity .2s ease; }
+
+    .tech-modal-content { position: relative; margin: 10vh auto; padding: 18px 20px; border-radius: 14px; max-width: 640px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.25); }
+    #techTags { display:flex; flex-wrap:wrap; gap:.6rem; padding: 10px 0; }
+    .tech-tag { background: linear-gradient(90deg, var(--brand-2), var(--brand-1)); color:#041b2b; font-size:.94rem; padding:.45rem .9rem; border-radius:999px; border:1px solid rgba(255,255,255,.06); cursor: pointer; transition: transform var(--transition), filter var(--transition); }
+    .tech-tag:hover { transform: translateY(-1px); filter: brightness(1.05); }
+
+    /* =============================================================
+       FLOATING BUTTONS
+       ============================================================= */
+    .dark-toggle-btn { position: fixed; bottom: 2rem; left: 2rem; z-index: 1200; border-radius: 50%; width: 50px; height: 50px; font-size: 1.25rem; cursor: pointer; display:flex; align-items:center; justify-content:center; transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition); border: 1px solid var(--card-border-light); background: var(--card-light); color: var(--brand-3); box-shadow: var(--shadow); }
+    .dark-toggle-btn:hover { transform: translateY(-2px); }
+    body.dark .dark-toggle-btn { background: var(--card-dark); color: var(--accent); border-color: var(--card-border-dark); box-shadow: var(--shadow-dark); }
+
+    .scroll-top-btn { display:none; position: fixed; bottom: 2rem; right: 2rem; z-index: 1201; width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(90deg, var(--brand-1), var(--accent)); color: #0b1220; font-size: 1.3rem; box-shadow: 0 2px 8px rgba(0,0,0,0.18); border: none; cursor: pointer; align-items: center; justify-content: center; transition: transform var(--transition), filter var(--transition); }
+    .scroll-top-btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+
+    /* =============================================================
+       RESPONSIVE
+       ============================================================= */
     @media (max-width: 768px) {
-      .project { grid-template-columns: 1fr;}
-      .project-content { position: relative; padding: 1.5rem 1rem;}
-      .dots-icon { top: 0px; right: 0px; font-size: 30px;}
-      .intro { text-align: left !important; padding: 1rem !important;}
-      .intro img { animation: slideFadeIn 1.2s ease forwards; margin-bottom: 1rem;}
-      @keyframes slideFadeIn { from { opacity: 0; transform: translateY(40px);} to { opacity: 1; transform: translateY(0);}}
-      .contact-info { flex-direction: column !important; align-items: flex-start; gap: 1rem; margin-top: 1rem;}
-      .zoom-circle, #zoomMagnifier { display: none !important;}
-      .dark-toggle-btn, .scroll-top-btn { right: 1.2rem; bottom: 1.2rem; width: 44px; height: 44px; font-size: 1.25rem;}
+      .intro { grid-template-columns: 1fr; }
+      .intro .avatar { margin-bottom: .5rem; width: 96px; height: 96px; }
+      .contact-info { gap:.5rem; }
+      .dark-toggle-btn, .scroll-top-btn { right: 1rem; bottom: 1rem; left: auto; width: 46px; height: 46px; font-size: 1.1rem; }
+      .gallery { padding: .8rem; gap: .7rem; }
     }
-    /* Mobile Welcome Message */
-    .mobile-welcome { display: none;}
-    @media (max-width: 768px) {
-      .mobile-welcome {
-        position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999;
-        background: rgba(255,255,255,0.95); backdrop-filter: blur(6px);
-        display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem;
-      }
-      .welcome-box {
-        background: white; padding: 2rem 1.5rem; border-radius: 14px; box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-        max-width: 90%; width: 100%; font-family: sans-serif;
-      }
-      .welcome-box p { font-size: 1rem; color: #333; margin-bottom: 1.4rem; line-height: 1.5;}
-      .welcome-box button {
-        background: #0057a3; color: white; border: none; padding: 0.6rem 1.2rem;
-        border-radius: 8px; cursor: pointer; font-weight: bold; transition: background 0.2s;
-      }
-      .welcome-box button:hover { background: #004072;}
+
+    /* Reduced motion accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
     }
+
     @keyframes fadeIn { from { opacity: 0;} to { opacity: 1;} }
-    @keyframes zoomIn { from { transform: scale(0.7); opacity: 0;} to { transform: scale(1); opacity: 1;} }
-
-    .magnifier-hint-text {
-  position: absolute;
-  left: 50%; top: 50%;
-  transform: translate(-50%,-50%);
-  background: rgba(0,87,163,0.92);
-  color: #fff;
-  padding: 0.7em 1.4em;
-  border-radius: 24px;
-  font-size: 1.15em;
-  box-shadow: 0 3px 24px rgba(0,0,0,0.18);
-  pointer-events: none;
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  gap: 0.7em;
-  font-family: inherit;
-  animation: popHint 0.7s cubic-bezier(.22,1.02,.39,1.07);
-}
-@keyframes popHint {
-  from { opacity: 0; transform: translate(-50%,-60%) scale(0.8);}
-  to   { opacity: 1; transform: translate(-50%,-50%) scale(1);}
-}
-
+    @keyframes zoomIn { from { transform: scale(.9); opacity: 0;} to { transform: scale(1); opacity: 1;} }
   </style>
-
 </head>
-<body>
-
+<body class="dark">
   <!-- DARK MODE BUTTON -->
-  <button class="dark-toggle-btn" id="darkToggle" aria-label="Toggle dark mode">
-    <i class="fas fa-moon"></i>
+  <button class="dark-toggle-btn" id="darkToggle" aria-label="Toggle dark mode" title="Toggle theme">
+    <i class="fas fa-sun"></i>
   </button>
   <!-- SCROLL TO TOP BUTTON -->
-  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top" title="Back to top">
     <i class="fas fa-arrow-up"></i>
   </button>
 
   <div class="container">
+    <!-- INTRO -->
     <div class="intro">
-      <div class="profile">
-        <img src="image001.jpg" alt="Hossein Gerami">
-        <div class="text">
-          <h1>Hossein Gerami</h1>
-          <p class="tagline">
-            Here are some of my best projects — each one a fond memory from building mobile apps with React Native. Through these samples, you'll see that I've implemented nearly every kind of feature, design, and functionality mobile apps can offer. For more, please check my resume.
-          </p>
+      <img class="avatar" src="image001.jpg" alt="Hossein Gerami" loading="lazy" decoding="async">
+      <div>
+        <h1><span class="gradient-text">Hossein Gerami</span></h1>
+        <p class="tagline">
+          Software Engineer specialising in mobile (React Native) and complex integrations. I design reliable data flows between CRMs, finance systems, and government APIs, while shipping polished mobile experiences. Fast, pragmatic, and AI‑assisted.
+        </p>
+        <div class="contact-info">
+          <a href="tel:+61435827842" class="info-item"><span class="icon-circle"><i class="fas fa-phone"></i></span> +61 0435 827 842</a>
+          <a href="mailto:h.gerami100@gmail.com" class="info-item"><span class="icon-circle"><i class="fas fa-envelope"></i></span> h.gerami100@gmail.com</a>
+          <a href="https://www.linkedin.com/in/hossein-gerami/" class="info-item" target="_blank" rel="noopener"><span class="icon-circle"><i class="fab fa-linkedin"></i></span> linkedin.com/in/hossein-gerami</a>
+          <a href="HoseinGerami_Resume.pdf" class="info-item" download><span class="icon-circle"><i class="fas fa-file-arrow-down"></i></span> Download Resume</a>
         </div>
       </div>
-      <div class="contact-info">
-        <a href="tel:+61435827842" class="info-item">
-          <span class="icon-circle"><i class="fas fa-phone"></i></span> +61 0435 827 842
-        </a>
-        <a href="mailto:h.gerami100@gmail.com" class="info-item">
-          <span class="icon-circle"><i class="fas fa-envelope"></i></span> h.gerami100@gmail.com
-        </a>
-        <a href="https://www.linkedin.com/in/hossein-gerami/" class="info-item" target="_blank">
-          <span class="icon-circle"><i class="fab fa-linkedin"></i></span> linkedin.com/in/hossein-gerami
-        </a>
-        <a href="HoseinGerami_Resume.pdf" class="info-item" download>
-          <span class="icon-circle"><i class="fas fa-file-download"></i></span> Download Resume
-        </a>
-      </div>
     </div>
+
+    <!-- ABOUT & INTEGRATIONS -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="section-header">
+        <h2 id="about-title">About & Core Expertise</h2>
+      </div>
+      <div class="about-grid">
+        <div class="card" role="article">
+          <p>
+            I love turning messy systems into clean, observable pipelines. My recent work connects mobile apps to CRMs, accounting platforms, and the NDIS ecosystem with secure APIs and event‑driven services. I balance product speed with engineering discipline: clear contracts, sensible error handling, and great UX.
+          </p>
+          <ul class="list">
+            <li><i class="fa-solid fa-plug"></i><span><strong>Integrations & Data Flows:</strong> Microsoft Dynamics, HubSpot, Xero, MYOB, Sage; REST/GraphQL; webhooks; pagination & rate‑limit strategies.</span></li>
+            <li><i class="fa-solid fa-sitemap"></i><span><strong>Architecture:</strong> AWS Lambda, API Gateway, SQS/SNS, CloudWatch; idempotency, retries, dead‑letter queues, and backoff policies.</span></li>
+            <li><i class="fa-solid fa-shield-halved"></i><span><strong>Security:</strong> OAuth2/OIDC, JWT, signed requests, secrets management; PII handling and least‑privilege IAM.</span></li>
+            <li><i class="fa-solid fa-mobile-screen"></i><span><strong>Mobile Engineering:</strong> React Native (iOS/Android), TypeScript, Redux/Zustand, native modules, BLE/Wi‑Fi/UDP for IoT.</span></li>
+            <li><i class="fa-solid fa-magnifying-glass-chart"></i><span><strong>Observability:</strong> structured logging, trace IDs across services, Sentry / Crashlytics, actionable alerts.</span></li>
+            <li><i class="fa-solid fa-life-ring"></i><span><strong>Support & Reliability:</strong> triaging customer tickets, reproducing issues, writing runbooks, and closing the loop with product/QA.</span></li>
+            <li><i class="fa-solid fa-robot"></i><span><strong>AI‑native Workflow:</strong> rapid prototyping and documentation with ChatGPT/Copilot; code reviews, test stubs, and data mapping helpers.</span></li>
+          </ul>
+          <div class="pillset" aria-label="Key skills">
+            <span class="pill">React Native</span><span class="pill">TypeScript</span><span class="pill">Node.js</span><span class="pill">GraphQL</span><span class="pill">AWS</span><span class="pill">SQS/SNS</span><span class="pill">IoT (BLE/Wi‑Fi/UDP)</span><span class="pill">NDIS APIs</span><span class="pill">Xero/MYOB</span><span class="pill">Dynamics/HubSpot</span><span class="pill">Sentry</span><span class="pill">CI/CD</span>
+          </div>
+        </div>
+        <div class="card" role="article">
+          <h3 style="margin-top:0;font-size:1.05rem;">How I approach customer issues</h3>
+          <ul class="list">
+            <li><i class="fa-solid fa-inbox"></i><span><strong>Intake:</strong> clarify expected vs. actual behavior, capture logs, and identify regression vs. configuration.</span></li>
+            <li><i class="fa-solid fa-bug"></i><span><strong>Reproduce:</strong> create a minimal failing case; add unit/integration tests to lock in the fix.</span></li>
+            <li><i class="fa-solid fa-code-branch"></i><span><strong>Fix & harden:</strong> improve error messages, add retry/idempotency where relevant, and update observability.</span></li>
+            <li><i class="fa-solid fa-book"></i><span><strong>Document:</strong> update runbooks and customer‑facing guides; share learnings with the team.</span></li>
+          </ul>
+          <p style="margin-top:.75rem; color:var(--text-muted)">Outcome: faster resolutions, fewer repeat tickets, and clearer insight into system health.</p>
+        </div>
+      </div>
+    </section>
 
     <!-- PROJECTS -->
-    <div class="project">
-      <div class="project-content">
-        <div class="project-content-inner">
-          <div>
-            <h2>
-              Gardenia
-              <span class="dots-icon" onclick="openTechModal('gardenia')">
-                <i class="fa-solid fa-circle-info"></i>
-              </span>
-            </h2>
-            <p>Gardenia is an IoT-enabled app that controls devices over Bluetooth and WiFi. It includes a built-in shop and notification system, developed for a UK company making smart hoods and fresheners.</p>
-          </div>
-          
-        </div>
-      </div>
-      <div>
-        <div class="gallery">
-                <img src="image002.png" alt="Gardenia 1">
-                <img src="image003.png" alt="Gardenia 2">
-                <img src="image004.png" alt="Gardenia 3">
-                
-              </div>
-      
-      <div class="achievements-box">
-            <div class="achievements-title">Key Achievements</div>
-            <ul class="achievements">
-              <li><i class="fa fa-check-circle"></i> Developed the Gardenia IoT mobile application for both Android and iOS using React Native</li>
-              <li><i class="fa fa-check-circle"></i> Integrated and utilized GraphQL APIs for efficient data querying and communication</li>
-              <li><i class="fa fa-check-circle"></i> Engineered mobile connectivity with three types of IoT devices over WiFi, Bluetooth, and UDP protocols</li>
-              <li><i class="fa fa-check-circle"></i> Implemented custom Bluetooth communication protocols using the Ble-Ple library</li>
-              <li><i class="fa fa-check-circle"></i> Contributed to microprocessor-level functionality for IoT device interactions</li>
-              <li><i class="fa fa-check-circle"></i> Managed complex state for all device settings and user preferences using Redux, ensuring a smooth and scalable experience across multiple IoT devices.</li>
-              <li><i class="fa fa-check-circle"></i> Led Agile collaboration with cross-functional teams using Jira</li>
-            </ul>
-          </div>
-          </div>
-      
-      
-    </div>
-    
-    <div class="project">
-      <div class="project-content">
-        <div class="project-content-inner">
-          <div>
-            <h2>
-              quickclaim
-              <span class="dots-icon" onclick="openTechModal('quickclaim')">
-                <i class="fa-solid fa-circle-info"></i>
-              </span>
-            </h2>
-            <p>quickclaim is a complete NDIS SaaS platform built in Australia. I developed mobile apps (QC Card & QC Pay) and provider dashboards with live integration to the NDIS API and finance systems.</p>
-          </div>
-        </div>
-      </div>
-      <div>
-
-      
-      <div class="gallery">
-        <img src="image005.png" alt="quickclaim 1">
-        <img src="image006.png" alt="quickclaim 2">
-      </div>
-      <div class="achievements-box">
-            <div class="achievements-title">Key Achievements</div>
-            <ul class="achievements">
-              <li><i class="fa fa-check-circle"></i> Developed QC-card and QC-pay, financial mobile apps for iOS and Android using React Native</li>
-              <li><i class="fa fa-check-circle"></i> Enabled financial services for 4.4+ million Australians with disabilities</li>
-              <li><i class="fa fa-check-circle"></i> Built and maintained secure RESTful APIs using Node.js, TypeScript & AWS</li>
-              <li><i class="fa fa-check-circle"></i> Implemented automated testing for API and critical mobile components</li>
-              <li><i class="fa fa-check-circle"></i> Led real-time integration with NDIS, CRMs, and major finance platforms (MYOB, Xero, etc.)</li>
-              <li><i class="fa fa-check-circle"></i> Collaborated in Agile teams using GitLab and CI/CD pipelines</li>
-            </ul>
-          </div>
-
-    </div>
-    </div>
-    <div class="project">
-      <div class="project-content">
-        <div class="project-content-inner">
-          <div>
-            <h2>
-              Lerne24
-              <span class="dots-icon" onclick="openTechModal('lerne24')">
-                <i class="fa-solid fa-circle-info"></i>
-              </span>
-            </h2>
-            <p>Lerne24 is a language learning app focused on German and French. Built using Ionic React, it features gamified learning, multi-language support, and a clean UI.</p>
-          </div>
-          
-        </div>
-      </div>
-      <div>
-      <div class="gallery">
-        <img src="image007.png" alt="Lerne24">
-      </div>
-      <div class="achievements-box">
-            <div class="achievements-title">Key Achievements</div>
-            <ul class="achievements">
-              <li><i class="fa fa-check-circle"></i> Developed the hybrid mobile application with Ionic and React, supporting 4 languages</li>
-              <li><i class="fa fa-check-circle"></i> Built custom interactive plugins (e.g. Instagram-style story component)</li>
-              <li><i class="fa fa-check-circle"></i> Designed and implemented a real-time internal chat using FeathersJS and MongoDB, connecting learners at the same level for collaboration and support</li>
-              <li><i class="fa fa-check-circle"></i> Implemented push notifications for Android and iOS with Firebase</li>
-              <li><i class="fa fa-check-circle"></i> Authored detailed technical documentation for smooth onboarding and handover</li>
-              <li><i class="fa fa-check-circle"></i> Collaborated using Jira, Bitbucket, Confluence for project management</li>
-            </ul>
-          </div>
-          </div>
-    </div>
-    <div class="project">
-      <div class="project-content">
-        <div class="project-content-inner">
-          <div>
-            <h2>
-              Hihab
-              <span class="dots-icon" onclick="openTechModal('hihab')">
-                <i class="fa-solid fa-circle-info"></i>
-              </span>
-            </h2>
-            <p>Hihab is a cross-platform habit tracker app, designed with support for English and Persian. It helps users build routines and stay motivated with simple, clean design.</p>
-          </div>
-        </div>
-      </div>
-      <div>
-      <div class="gallery">
-        <img src="image008.png" alt="Hihab 1">
-        <img src="image009.png" alt="Hihab 2">
-        <img src="image010.png" alt="Hihab 3">
-        <img src="image011.png" alt="Hihab 4">
-        <img src="image012.png" alt="Hihab 5">
-        <img src="image013.png" alt="Hihab 6">
-      </div>
-      <div class="achievements-box">
-            <div class="achievements-title">Key Achievements</div>
-            <ul class="achievements">
-              <li><i class="fa fa-check-circle"></i> Developed Hihab Habit Tracker mobile app for Android using React Native</li>
-              <li><i class="fa fa-check-circle"></i> Built high-performance custom pie chart using react-native-svg (1,000+ lines of code)</li>
-              <li><i class="fa fa-check-circle"></i> Used React Hooks for efficient state and lifecycle management</li>
-              <li><i class="fa fa-check-circle"></i> Implemented GraphQL APIs for mobile consumption</li>
-              <li><i class="fa fa-check-circle"></i> Employed Git and Agile for version control and team collaboration</li>
-            </ul>
-          </div>
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="section-header">
+        <h2 id="projects-title">Selected Projects</h2>
       </div>
 
-    </div>
-    <div class="project">
-      <div class="project-content">
-        <div class="project-content-inner">
-          <div>
+      <!-- Gardenia -->
+      <div class="project">
+        <div class="project-content">
+          <div class="card">
             <h2>
-              HoomQC
-              <span class="dots-icon" onclick="openTechModal('hoomqc')">
-                <i class="fa-solid fa-circle-info"></i>
-              </span>
+              Gardenia <span class="chip chip--brand">IoT</span>
+              <span class="dots-icon" onclick="openTechModal('gardenia')" title="Technologies"><i class="fa-solid fa-circle-info"></i></span>
             </h2>
-            <p>HoomQC is an internal tool to test SmartHoom Bluetooth IoT devices. It supports signal strength checks, command testing, and firmware-level communication via custom native modules.</p>
+            <p>IoT app controlling devices over Bluetooth and Wi‑Fi with in‑app shop and notifications. Built for a UK company manufacturing smart hoods and fresheners.</p>
           </div>
-          
         </div>
-      </div>
-    <div>
-      <div class="gallery">
-        <img src="image018.png" alt="HoomQC 1">
-        <img src="image019.png" alt="HoomQC 2">
-        <img src="image020.png" alt="HoomQC 3">
-        <img src="image021.png" alt="HoomQC 4">
-        <img src="image022.png" alt="HoomQC 5">
-        <!-- <img src="image023.png" alt="HoomQC 6"> -->
-      </div>
-      <div class="achievements-box">
+        <div>
+          <div class="gallery card">
+            <img src="image002.png" alt="Gardenia screenshot 1" loading="lazy" decoding="async">
+            <img src="image003.png" alt="Gardenia screenshot 2" loading="lazy" decoding="async">
+            <img src="image004.png" alt="Gardenia screenshot 3" loading="lazy" decoding="async">
+          </div>
+          <div class="achievements-box">
             <div class="achievements-title">Key Achievements</div>
             <ul class="achievements">
-              <li><i class="fa fa-check-circle"></i> Developed an internal cross-platform app for seamless Bluetooth IoT device testing</li>
-              <li><i class="fa fa-check-circle"></i> Implemented real-time signal strength and diagnostic reporting for hardware validation</li>
-              <li><i class="fa fa-check-circle"></i> Built custom native modules for firmware-level communication and advanced device controls</li>
-              <li><i class="fa fa-check-circle"></i> Automated regression test flows, reducing manual QA time for hardware teams</li>
-              <li><i class="fa fa-check-circle"></i> Provided actionable bug/firmware feedback to embedded engineers, improving product stability</li>
+              <li><i class="fa fa-check-circle"></i><span>Shipped cross‑platform IoT app in React Native (iOS & Android).</span></li>
+              <li><i class="fa fa-check-circle"></i><span>GraphQL back‑end integration with secure device pairing and commands.</span></li>
+              <li><i class="fa fa-check-circle"></i><span>Connectivity with multiple device types via Wi‑Fi, Bluetooth, and UDP protocols.</span></li>
+              <li><i class="fa fa-check-circle"></i><span>Custom BLE protocol using <em>ble‑ple</em>; robust state management with Redux.</span></li>
+              <li><i class="fa fa-check-circle"></i><span>Collaborated with embedded engineers on firmware‑level features and diagnostics.</span></li>
             </ul>
           </div>
-          </div>
+        </div>
+      </div>
 
-    </div>
+      <!-- QuickClaim -->
+      <div class="project">
+        <div class="project-content">
+          <div class="card">
+            <h2>
+              QuickClaim <span class="chip chip--brand">NDIS</span>
+              <span class="dots-icon" onclick="openTechModal('quickclaim')" title="Technologies"><i class="fa-solid fa-circle-info"></i></span>
+            </h2>
+            <p>NDIS SaaS platform in Australia. Built mobile apps (QC Card & QC Pay) and provider dashboards with integrations to the NDIS, CRMs, and finance systems.</p>
+          </div>
+        </div>
+        <div>
+          <div class="gallery card">
+            <img src="image005.png" alt="QuickClaim screenshot 1" loading="lazy" decoding="async">
+            <img src="image006.png" alt="QuickClaim screenshot 2" loading="lazy" decoding="async">
+          </div>
+          <div class="achievements-box">
+            <div class="achievements-title">Key Achievements</div>
+            <ul class="achievements">
+              <li><i class="fa fa-check-circle"></i><span>Developed QC Card and QC Pay in React Native (iOS & Android).</span></li>
+              <li><i class="fa fa-check-circle"></i><span>Built secure REST APIs with Node.js & TypeScript on AWS.</span></li>
+              <li><i class="fa fa-check-circle"></i><span>Integrated with NDIS, CRMs (Dynamics/HubSpot), and accounting (Xero/MYOB).</span></li>
+              <li><i class="fa fa-check-circle"></i><span>Automated testing for critical API and mobile flows; CI/CD pipelines.</span></li>
+              <li><i class="fa fa-check-circle"></i><span>Collaborated across product, support, and finance to streamline claims workflows.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lerne24 -->
+      <div class="project">
+        <div class="project-content">
+          <div class="card">
+            <h2>
+              Lerne24 <span class="chip chip--brand">Education</span>
+              <span class="dots-icon" onclick="openTechModal('lerne24')" title="Technologies"><i class="fa-solid fa-circle-info"></i></span>
+            </h2>
+            <p>Language learning app in Ionic React with gamified learning and multi‑language support.</p>
+          </div>
+        </div>
+        <div>
+          <div class="gallery card">
+            <img src="image007.png" alt="Lerne24 screenshot" loading="lazy" decoding="async">
+          </div>
+          <div class="achievements-box">
+            <div class="achievements-title">Key Achievements</div>
+            <ul class="achievements">
+              <li><i class="fa fa-check-circle"></i><span>Hybrid app with custom interactive components (e.g., story UI).</span></li>
+              <li><i class="fa fa-check-circle"></i><span>Real‑time chat via FeathersJS + MongoDB; Firebase notifications.</span></li>
+              <li><i class="fa fa-check-circle"></i><span>Detailed documentation for smooth onboarding & handover.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hihab -->
+      <div class="project">
+        <div class="project-content">
+          <div class="card">
+            <h2>
+              Hihab <span class="chip chip--brand">Wellness</span>
+              <span class="dots-icon" onclick="openTechModal('hihab')" title="Technologies"><i class="fa-solid fa-circle-info"></i></span>
+            </h2>
+            <p>Cross‑platform habit tracker in English and Persian with custom charts and clean UX.</p>
+          </div>
+        </div>
+        <div>
+          <div class="gallery card">
+            <img src="image008.png" alt="Hihab screenshot 1" loading="lazy" decoding="async">
+            <img src="image009.png" alt="Hihab screenshot 2" loading="lazy" decoding="async">
+            <img src="image010.png" alt="Hihab screenshot 3" loading="lazy" decoding="async">
+            <img src="image011.png" alt="Hihab screenshot 4" loading="lazy" decoding="async">
+            <img src="image012.png" alt="Hihab screenshot 5" loading="lazy" decoding="async">
+            <img src="image013.png" alt="Hihab screenshot 6" loading="lazy" decoding="async">
+          </div>
+          <div class="achievements-box">
+            <div class="achievements-title">Key Achievements</div>
+            <ul class="achievements">
+              <li><i class="fa fa-check-circle"></i><span>React Native app with high‑performance custom pie chart (react‑native‑svg).</span></li>
+              <li><i class="fa fa-check-circle"></i><span>Hooks‑based state and lifecycle management; GraphQL data APIs.</span></li>
+              <li><i class="fa fa-check-circle"></i><span>Version control and agile collaboration with clean release cycles.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- HoomQC -->
+      <div class="project">
+        <div class="project-content">
+          <div class="card">
+            <h2>
+              HoomQC <span class="chip chip--brand">Internal</span>
+              <span class="dots-icon" onclick="openTechModal('hoomqc')" title="Technologies"><i class="fa-solid fa-circle-info"></i></span>
+            </h2>
+            <p>Internal tool for testing SmartHoom Bluetooth IoT devices: RSSI checks, command tests, and firmware communication via custom native modules.</p>
+          </div>
+        </div>
+        <div>
+          <div class="gallery card">
+            <img src="image018.png" alt="HoomQC screenshot 1" loading="lazy" decoding="async">
+            <img src="image019.png" alt="HoomQC screenshot 2" loading="lazy" decoding="async">
+            <img src="image020.png" alt="HoomQC screenshot 3" loading="lazy" decoding="async">
+            <img src="image021.png" alt="HoomQC screenshot 4" loading="lazy" decoding="async">
+            <img src="image022.png" alt="HoomQC screenshot 5" loading="lazy" decoding="async">
+          </div>
+          <div class="achievements-box">
+            <div class="achievements-title">Key Achievements</div>
+            <ul class="achievements">
+              <li><i class="fa fa-check-circle"></i><span>Cross‑platform app for streamlined Bluetooth device testing.</span></li>
+              <li><i class="fa fa-check-circle"></i><span>Real‑time signal strength & diagnostics; automated regression flows.</span></li>
+              <li><i class="fa fa-check-circle"></i><span>Provided actionable firmware feedback to embedded teams.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
   <!-- Image Modal -->
-  <div id="imgModal" class="modal">
-    <span class="close">&times;</span>
-    <span class="prev hidden">&#10094;</span>
-    <img class="modal-content" id="modalImage">
-    <span class="next hidden">&#10095;</span>
+  <div id="imgModal" class="modal" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <span class="close" aria-label="Close image viewer" title="Close">&times;</span>
+    <span class="prev hidden" aria-label="Previous image" title="Previous">&#10094;</span>
+    <img class="modal-content" id="modalImage" alt="Expanded project screenshot">
+    <span class="next hidden" aria-label="Next image" title="Next">&#10095;</span>
   </div>
-  <div id="magnifierHint" style="display:none;">
-    <span class="magnifier-hint-text">
-      <i class="fa fa-search-plus"></i> Hover to magnify
-    </span>
-  </div>
-  <div id="zoomMagnifier" class="zoom-circle hidden"></div>
+  <div id="zoomMagnifier" class="zoom-circle hidden" aria-hidden="true"></div>
 
-  <!-- Modal for Tech Tags -->
-  <div id="techModal" class="tech-modal">
+  <!-- Tech Modal -->
+  <div id="techModal" class="tech-modal" role="dialog" aria-modal="true" aria-label="Technologies Used">
     <div class="tech-modal-content">
-      <span class="close-modal">&times;</span>
-      <h2>Technologies Used</h2>
+      <span class="close-modal" aria-label="Close" title="Close">&times;</span>
+      <h2 style="margin:0 0 .6rem 0">Technologies Used</h2>
       <div id="techTags" class="tech-tags"></div>
     </div>
   </div>
 
-  <!-- Mobile welcome -->
-  <div class="mobile-welcome" id="mobileWelcome">
-    <div class="welcome-box">
-      <p>
-        You're very welcome! 🌟<br>
-        You might find it even more exciting and entertaining on a bigger screen...<br>
-        Because of some hidden cool stuff!!! 😎✨
-      </p>
-      <button onclick="closeWelcome()">Continue</button>
-    </div>
-  </div>
-
   <script>
-    // DARK MODE LOGIC
+    // ===========================
+    // THEME: default to dark
+    // ===========================
     const body = document.body;
     const darkToggleBtn = document.getElementById('darkToggle');
     const darkIcon = darkToggleBtn.querySelector('i');
-    // Save mode in localStorage (optional, for remembering on reload)
-    if (localStorage.getItem('darkmode') === 'true') {
+    const saved = localStorage.getItem('darkmode');
+    // If user has explicitly set light, respect it; otherwise default dark
+    if (saved === 'false') {
+      body.classList.remove('dark');
+      darkIcon.classList.replace('fa-sun','fa-moon');
+    } else {
       body.classList.add('dark');
-      darkIcon.classList.remove('fa-moon');
-      darkIcon.classList.add('fa-sun');
+      darkIcon.classList.replace('fa-moon','fa-sun');
     }
     darkToggleBtn.onclick = function() {
-      body.classList.toggle('dark');
-      const dark = body.classList.contains('dark');
-      if (dark) {
-        darkIcon.classList.remove('fa-moon');
-        darkIcon.classList.add('fa-sun');
-      } else {
-        darkIcon.classList.remove('fa-sun');
-        darkIcon.classList.add('fa-moon');
-      }
-      localStorage.setItem('darkmode', dark);
+      const isDark = body.classList.toggle('dark');
+      darkIcon.classList.toggle('fa-moon', !isDark);
+      darkIcon.classList.toggle('fa-sun', isDark);
+      localStorage.setItem('darkmode', isDark);
     };
 
-    // SCROLL TO TOP BUTTON LOGIC
+    // ===========================
+    // SCROLL TO TOP
+    // ===========================
     const scrollBtn = document.getElementById('scrollTopBtn');
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 250) {
-        scrollBtn.style.display = "flex";
-      } else {
-        scrollBtn.style.display = "none";
-      }
-    });
-    scrollBtn.onclick = () => window.scrollTo({top:0, behavior:'smooth'});
+    const onScroll = () => {
+      const show = window.scrollY > 280;
+      scrollBtn.style.display = show ? 'flex' : 'none';
+    };
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // IMAGE MODAL LOGIC
-    const modal = document.getElementById("imgModal");
-    const modalImg = document.getElementById("modalImage");
-    const closeBtn = document.querySelector(".close");
-    const prevBtn = document.querySelector(".prev");
-    const nextBtn = document.querySelector(".next");
-    const zoomCircle = document.getElementById("zoomMagnifier");
-    let currentImg = null;
-    let currentGallery = [];
+    // ===========================
+    // IMAGE MODAL + GALLERY
+    // ===========================
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = modal.querySelector('.close');
+    const prevBtn = modal.querySelector('.prev');
+    const nextBtn = modal.querySelector('.next');
+    const zoomCircle = document.getElementById('zoomMagnifier');
+    let currentImg = null; let currentGallery = [];
 
     document.querySelectorAll('.gallery img').forEach(img => {
       img.addEventListener('click', () => {
@@ -567,98 +549,66 @@
     });
 
     function openModal(index) {
-      modal.style.display = "block";
+      modal.style.display = 'block';
       modalImg.src = currentGallery[index].src;
-      modalImg.alt = currentGallery[index].alt;
+      modalImg.alt = currentGallery[index].alt || 'Project screenshot';
       updateArrows();
     }
     function updateArrows() {
-      prevBtn.classList.toggle("hidden", currentImg <= 0);
-      nextBtn.classList.toggle("hidden", currentImg >= currentGallery.length - 1);
+      prevBtn.classList.toggle('hidden', currentImg <= 0);
+      nextBtn.classList.toggle('hidden', currentImg >= currentGallery.length - 1);
     }
     prevBtn.onclick = () => { if (currentImg > 0) { currentImg--; openModal(currentImg); } };
     nextBtn.onclick = () => { if (currentImg < currentGallery.length - 1) { currentImg++; openModal(currentImg); } };
-    closeBtn.onclick = () => modal.style.display = "none";
-    window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+    closeBtn.onclick = () => (modal.style.display = 'none');
+    window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
     document.addEventListener('keydown', (e) => {
-      if (modal.style.display === "block") {
-        if (e.key === "Escape") modal.style.display = "none";
-        if (e.key === "ArrowLeft" && currentImg > 0) { currentImg--; openModal(currentImg);}
-        if (e.key === "ArrowRight" && currentImg < currentGallery.length - 1) { currentImg++; openModal(currentImg);}
+      if (modal.style.display === 'block') {
+        if (e.key === 'Escape') modal.style.display = 'none';
+        if (e.key === 'ArrowLeft' && currentImg > 0) { currentImg--; openModal(currentImg);} 
+        if (e.key === 'ArrowRight' && currentImg < currentGallery.length - 1) { currentImg++; openModal(currentImg);} 
       }
     });
-    modalImg.addEventListener('mousemove', function(e) {
-      const rect = modalImg.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const xPercent = (x / modalImg.width) * 100;
-      const yPercent = (y / modalImg.height) * 100;
-      zoomCircle.style.backgroundImage = `url('${modalImg.src}')`;
-      zoomCircle.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
-      zoomCircle.classList.remove('hidden');
-    });
-    modalImg.addEventListener('mouseleave', () => { zoomCircle.classList.add('hidden'); });
 
-    // TECH MODAL LOGIC
+    // Magnifier only when hover is available (avoid on touch devices)
+    const supportsHover = window.matchMedia('(hover: hover)').matches;
+    if (supportsHover) {
+      modalImg.addEventListener('mousemove', function(e) {
+        const rect = modalImg.getBoundingClientRect();
+        const x = e.clientX - rect.left; const y = e.clientY - rect.top;
+        const xPercent = (x / rect.width) * 100; const yPercent = (y / rect.height) * 100;
+        zoomCircle.style.backgroundImage = `url('${modalImg.src}')`;
+        zoomCircle.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
+        zoomCircle.classList.remove('hidden');
+      });
+      modalImg.addEventListener('mouseleave', () => { zoomCircle.classList.add('hidden'); });
+    }
+
+    // ===========================
+    // TECH MODAL
+    // ===========================
     function openTechModal(projectName) {
-      const techModal = document.getElementById("techModal");
-      const techTags = document.getElementById("techTags");
+      const techModal = document.getElementById('techModal');
+      const techTags = document.getElementById('techTags');
       const techs = {
-        gardenia: ["React Native","Redux","IoT","Bluetooth","WiFi","Shop Integration","API","Security","Typescript"],
-        quickclaim: ["React Native","Redux","NDIS","API Integration","SaaS","Finance Systems","AWS Lambda","QR Code","Typescript"],
-        lerne24: ["Ionic React","React hooks","Feathers JS","MongoDB","Firebase","Gamified Learning","Multi-language","Clean UI","Typescript"],
-        hihab: ["Cross-Platform","Redux","Habit Tracker","English and Persian","Motivational Design","Typescript","React Native SVG"],
-        hoomqc: ["Bluetooth IoT","Signal Strength Testing","Native Modules","Firmware Communication"]
+        gardenia: ["React Native","Redux","IoT","Bluetooth","Wi‑Fi","UDP","GraphQL","Shop","Notifications","TypeScript"],
+        quickclaim: ["React Native","Redux","NDIS","API Integration","SaaS","AWS Lambda","Node.js","TypeScript","Xero/MYOB","Dynamics/HubSpot"],
+        lerne24: ["Ionic React","React hooks","FeathersJS","MongoDB","Firebase","Gamification","Multi‑language","TypeScript"],
+        hihab: ["React Native","Redux","Habit Tracker","English/Persian","Custom Charts","TypeScript","react‑native‑svg"],
+        hoomqc: ["Bluetooth IoT","RSSI Testing","Native Modules","Firmware Communication","Diagnostics"]
       };
       techTags.innerHTML = '';
-      techs[projectName].forEach(tech => {
-        const tag = document.createElement("span");
-        tag.className = "tech-tag";
+      (techs[projectName] || []).forEach(tech => {
+        const tag = document.createElement('span');
+        tag.className = 'tech-tag';
         tag.textContent = tech;
         techTags.appendChild(tag);
       });
-      techModal.style.display = "block";
-      document.querySelector(".close-modal").onclick = () => techModal.style.display = "none";
-      window.onclick = (event) => {
-        if (event.target === techModal) techModal.style.display = "none";
-      };
+      techModal.style.display = 'block';
+      document.querySelector('.close-modal').onclick = () => (techModal.style.display = 'none');
+      window.addEventListener('click', (event) => { if (event.target === techModal) techModal.style.display = 'none'; });
     }
-
-    // MOBILE WELCOME MESSAGE LOGIC
-    function closeWelcome() { document.getElementById('mobileWelcome').style.display = 'none'; }
-    if (window.innerWidth <= 768) {
-      window.onload = () => {
-        document.getElementById('mobileWelcome').style.display = 'flex';
-      };
-    }
-    // === MAGNIFIER HINT LOGIC ===
-let magnifierHintShown = false;
-const magnifierHint = document.getElementById('magnifierHint');
-const modalContentImg = document.getElementById('modalImage');
-
-function showMagnifierHint() {
-  if (window.innerWidth < 900) return; // Don't show on mobile/tablet
-  if (magnifierHintShown) return;
-  magnifierHint.style.display = "block";
-  const imgRect = modalContentImg.getBoundingClientRect();
-  magnifierHint.style.position = "fixed";
-  magnifierHint.style.left = imgRect.left + imgRect.width/2 + "px";
-  magnifierHint.style.top = imgRect.top + imgRect.height/2 + "px";
-}
-
-function hideMagnifierHint() {
-  magnifierHint.style.display = "none";
-  magnifierHintShown = true;
-}
-
-modalContentImg.addEventListener('mouseenter', hideMagnifierHint);
-
-const origOpenModal = openModal;
-openModal = function(index) {
-  origOpenModal(index);
-  setTimeout(showMagnifierHint, 150);
-};
-
+    window.openTechModal = openTechModal;
   </script>
 </body>
 </html>
