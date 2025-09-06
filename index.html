@@ -287,6 +287,9 @@
         gap: 1rem;
         align-items: start;
       }
+      .about-grid .full {
+        grid-column: 1 / -1;
+      }
       @media (max-width: 980px) {
         .about-grid {
           grid-template-columns: 1fr;
@@ -757,56 +760,145 @@
             <i class="fa-solid fa-mobile-screen"></i> Mobile Engineering
           </h3>
           <p>
-            I enjoy building mobile apps with React Native and TypeScript, with
-            a focus on smooth UX, solid performance, and maintainability.
+            I enjoy building React Native apps with TypeScript and aim for
+            smooth, predictable experiences. I keep screens simple, move logic
+            into reusable hooks/services. The goal is steady performance, clear
+            code, and fewer surprises in production.
           </p>
           <ul class="list">
             <li>
-              <i class="fa-solid fa-wand-magic-sparkles"></i
-              ><span
-                ><strong>UI/UX:</strong> design systems, theming (dark/light),
-                accessibility, gesture-driven navigation.</span
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span
+                ><strong>UI/UX:</strong> design systems, dark/light themes,
+                accessible components, gesture-friendly navigation, thoughtful
+                empty/error states.</span
               >
             </li>
             <li>
-              <i class="fa-solid fa-gauge-high"></i
-              ><span
-                ><strong>Performance:</strong> memoized lists, image caching,
-                profiling with Flipper/Profiler.</span
+              <i class="fa-solid fa-diagram-project"></i>
+              <span
+                ><strong>Patterns:</strong> feature-based folders,
+                container/presentational split, custom hooks for side-effects,
+                “services” for API/storage, and a simple repository adapter when
+                talking to multiple backends.</span
               >
             </li>
             <li>
-              <i class="fa-solid fa-shuffle"></i
-              ><span
-                ><strong>State & Data:</strong> React Query, Redux/Zustand,
-                normalized data, optimistic updates, offline cache.</span
+              <i class="fa-solid fa-gauge-high"></i>
+              <span
+                ><strong>Performance:</strong> memoized lists
+                (FlatList/FlashList), stable keys, image caching, avoiding
+                re-renders with <code>memo</code>/<code>useCallback</code>, and
+                profiling with Flipper/React Profiler.</span
               >
             </li>
             <li>
-              <i class="fa-solid fa-plug-circle-bolt"></i
-              ><span
-                ><strong>Native & Sensors:</strong> Expo + custom modules,
-                Keychain/Secure Store, camera, BLE/Wi-Fi/UDP for IoT.</span
+              <i class="fa-solid fa-shuffle"></i>
+              <span
+                ><strong>State & Data:</strong> React Query for server data,
+                Redux/Zustand when global state is needed, normalized entities,
+                optimistic updates, and offline cache for spotty networks.</span
               >
             </li>
             <li>
-              <i class="fa-solid fa-vial"></i
-              ><span
-                ><strong>Quality:</strong> unit tests (Jest), crash reporting
-                (Sentry).</span
+              <i class="fa-solid fa-plug-circle-bolt"></i>
+              <span
+                ><strong>Native & Sensors:</strong> Expo + custom modules when
+                needed, Keychain/Secure Store, camera, BLE/Wi-Fi/UDP for IoT,
+                background tasks where appropriate.</span
+              >
+            </li>
+            <li>
+              <i class="fa-solid fa-vial"></i>
+              <span
+                ><strong>Quality:</strong> unit tests (Jest), simple component
+                tests, crash reporting (Sentry), basic analytics to spot
+                friction.</span
               >
             </li>
           </ul>
           <div class="pillset" aria-label="Mobile skills">
-            <span class="pill">React Native</span
-            ><span class="pill">TypeScript</span><span class="pill">Expo</span>
-            <span class="pill">EAS</span><span class="pill">Redux/Zustand</span
-            ><span class="pill">Flipper</span><span class="pill">Sentry</span>
+            <span class="pill">React Native</span>
+            <span class="pill">TypeScript</span>
+            <span class="pill">Expo</span>
+            <span class="pill">EAS</span>
+            <span class="pill">React Query</span>
+            <span class="pill">Redux/Zustand</span>
+            <span class="pill">Flipper</span>
+            <span class="pill">Sentry</span>
           </div>
         </article>
 
         <!-- GRID: two columns -->
         <div class="about-grid" style="margin-top: 1rem">
+          <!-- FRONTEND ENGINEERING (React) -->
+          <article class="card" aria-labelledby="fe-title">
+            <h3 id="fe-title">
+              <i class="fa-solid fa-code"></i> Frontend Engineering (React)
+            </h3>
+            <p>I build React frontends that are clear, fast, and accessible.</p>
+            <ul class="list">
+              <li>
+                <i class="fa-solid fa-layer-group"></i>
+                <span
+                  ><strong>UI/UX:</strong> responsive layouts, dark mode,
+                  accessible forms (WCAG), shared design tokens.</span
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-database"></i>
+                <span
+                  ><strong>State & Data:</strong> React Query for server data,
+                  lightweight global state (Redux Toolkit/Zustand) only when
+                  needed.</span
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-gauge-high"></i>
+                <span
+                  ><strong>Performance:</strong> code-splitting, lazy routes,
+                  memoization, list virtualization when lists get large.</span
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <span
+                  ><strong>Tooling:</strong> TypeScript, Next.js ( React
+                  Router), ESLint & Prettier, simple Storybook docs when a
+                  design system appears.</span
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-server"></i>
+                <span
+                  ><strong>Next.js rendering:</strong> choose the right mode:
+                  <em>SSR</em> (server-side render) for data that must be fresh,
+                  <em>SSG</em> (static) for mostly-static pages, and
+                  <em>CSR</em> (client) when it’s highly interactive or
+                  user-specific.</span
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-vial"></i>
+                <span
+                  ><strong>Testing:</strong> Jest + React Testing Library for
+                  units/components</span
+                >
+              </li>
+            </ul>
+            <div class="pillset" aria-label="Frontend skills">
+              <span class="pill">React</span>
+              <span class="pill">TypeScript</span>
+              <span class="pill">Next.js</span>
+              <span class="pill">Vite</span>
+              <span class="pill">CSS/Tailwind</span>
+              <span class="pill">React Query</span>
+              <span class="pill">Redux Toolkit</span>
+              <span class="pill">Jest/RTL</span>
+              <span class="pill">Cypress</span>
+            </div>
+          </article>
+
           <!-- INTEGRATIONS -->
           <article class="card" aria-labelledby="integrations-title">
             <h3 id="integrations-title">
@@ -864,7 +956,7 @@
           </article>
 
           <!-- OBSERVABILITY -->
-          <article class="card" aria-labelledby="ops-title">
+          <article class="card full" aria-labelledby="ops-title">
             <h3 id="ops-title">
               <i class="fa-solid fa-magnifying-glass-chart"></i> Observability &
               Support
