@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hossein Gerami – Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .intro img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .intro h1 {
+      margin: 1rem 0 0.3rem;
+      font-size: 2rem;
+      color: #222;
+    }
+
+    .intro p {
+      color: #666;
+    }
+
+    .project {
+      background: #fff;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: scale(1.01);
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .project h2 {
+      margin-top: 0;
+      color: #0057a3;
+    }
+
+    .project p {
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+      background: #fafafa;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: contain;
+      border-radius: 8px;
+      background-color: #eaeaea;
+      padding: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      opacity: 0.9;
+      transform: scale(1.03);
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.85);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content {
+      display: block;
+      margin: auto;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      animation: zoomIn 0.3s ease;
+    }
+
+    .close, .prev, .next {
+      position: absolute;
+      top: 50%;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
+      padding: 0.4em 0.6em;
+      border-radius: 50%;
+    }
+
+    .close {
+      top: 20px;
+      right: 30px;
+      transform: none;
+      font-size: 35px;
+    }
+
+    .prev {
+      left: 20px;
+    }
+
+    .next {
+      right: 20px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="intro">
+      <img src="image001.jpg" alt="Hossein Gerami">
+      <h1>Hossein Gerami</h1>
+      <p>React & React Native Developer | Mobile & Web App Enthusiast</p>
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <h2>Gardenia</h2>
+        <p>Gardenia is an IoT-enabled app that controls devices over Bluetooth and WiFi. It includes a built-in shop and notification system, developed for a UK company making smart hoods and fresheners.</p>
+      </div>
+      <div class="gallery">
+        <img src="image002.jpg" alt="Gardenia 1">
+        <img src="image003.jpg" alt="Gardenia 2">
+        <img src="image004.jpg" alt="Gardenia 3">
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <h2>QuickClaim</h2>
+        <p>QuickClaim is a complete NDIS SaaS platform built in Australia. I developed mobile apps (QC Card & QC Pay) and provider dashboards with live integration to the NDIS API and finance systems.</p>
+      </div>
+      <div class="gallery">
+        <img src="image005.jpg" alt="QuickClaim 1">
+        <img src="image006.jpg" alt="QuickClaim 2">
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <h2>Lerne24</h2>
+        <p>Lerne24 is a language learning app focused on German and French. Built using Ionic React, it features gamified learning, multi-language support, and a clean UI.</p>
+      </div>
+      <div class="gallery">
+        <img src="image007.jpg" alt="Lerne24">
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <h2>Hihab</h2>
+        <p>Hihab is a cross-platform habit tracker app, designed with support for English and Persian. It helps users build routines and stay motivated with simple, clean design.</p>
+      </div>
+      <div class="gallery">
+        <img src="image008.jpg" alt="Hihab 1">
+        <img src="image009.jpg" alt="Hihab 2">
+        <img src="image010.jpg" alt="Hihab 3">
+        <img src="image011.jpg" alt="Hihab 4">
+        <img src="image012.jpg" alt="Hihab 5">
+        <img src="image013.jpg" alt="Hihab 6">
+        <img src="image014.jpg" alt="Hihab 7">
+        <img src="image015.jpg" alt="Hihab 8">
+        <img src="image016.jpg" alt="Hihab 9">
+        <img src="image017.jpg" alt="Hihab 10">
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <h2>HoomQC</h2>
+        <p>HoomQC is an internal tool to test SmartHoom Bluetooth IoT devices. It supports signal strength checks, command testing, and firmware-level communication via custom native modules.</p>
+      </div>
+      <div class="gallery">
+        <img src="image018.jpg" alt="HoomQC 1">
+        <img src="image019.jpg" alt="HoomQC 2">
+        <img src="image020.jpg" alt="HoomQC 3">
+        <img src="image021.jpg" alt="HoomQC 4">
+        <img src="image022.jpg" alt="HoomQC 5">
+        <img src="image023.jpg" alt="HoomQC 6">
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="imgModal" class="modal">
+    <span class="close">&times;</span>
+    <span class="prev hidden">&#10094;</span>
+    <img class="modal-content" id="modalImage">
+    <span class="next hidden">&#10095;</span>
+  </div>
+
+  <script>
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImage");
+    const closeBtn = document.querySelector(".close");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    let currentImg = null;
+    let currentGallery = [];
+
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        currentGallery = Array.from(img.closest('.gallery').querySelectorAll('img'));
+        currentImg = currentGallery.indexOf(img);
+        openModal(currentImg);
+      });
+    });
+
+    function openModal(index) {
+      modal.style.display = "block";
+      modalImg.src = currentGallery[index].src;
+      modalImg.alt = currentGallery[index].alt;
+      updateArrows();
+    }
+
+    function updateArrows() {
+      prevBtn.classList.toggle("hidden", currentImg <= 0);
+      nextBtn.classList.toggle("hidden", currentImg >= currentGallery.length - 1);
+    }
+
+    prevBtn.onclick = () => {
+      if (currentImg > 0) {
+        currentImg--;
+        openModal(currentImg);
+      }
+    };
+
+    nextBtn.onclick = () => {
+      if (currentImg < currentGallery.length - 1) {
+        currentImg++;
+        openModal(currentImg);
+      }
+    };
+
+    closeBtn.onclick = () => modal.style.display = "none";
+
+    window.onclick = (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    };
+
+    document.addEventListener('keydown', (e) => {
+      if (modal.style.display === "block") {
+        if (e.key === "Escape") modal.style.display = "none";
+        if (e.key === "ArrowLeft" && currentImg > 0) {
+          currentImg--;
+          openModal(currentImg);
+        }
+        if (e.key === "ArrowRight" && currentImg < currentGallery.length - 1) {
+          currentImg++;
+          openModal(currentImg);
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
