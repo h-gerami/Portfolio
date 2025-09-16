@@ -38,13 +38,36 @@ export default function SettingsPanel() {
   useEffect(() => {
     // Load saved settings
     const savedSettings = localStorage.getItem('portfolio-settings');
+    const savedLanguage = localStorage.getItem('portfolio-language');
+    
     if (savedSettings) {
       const parsed = JSON.parse(savedSettings);
       setSettings(parsed);
       setTempSettings(parsed);
       applySettings(parsed);
     }
-  }, []);
+    
+    if (savedLanguage) {
+      setLanguage(savedLanguage as Language);
+    }
+  }, [setLanguage]);
+
+  // Update tempSettings when modal opens
+  useEffect(() => {
+    if (isOpen) {
+      // Get current theme from body class
+      const bodyClasses = document.body.className.split(' ');
+      const currentTheme = themeOptions.find(theme => 
+        bodyClasses.includes(theme.id)
+      )?.id as Settings['theme'] || 'light';
+      
+      const currentSettings = {
+        theme: currentTheme,
+        language: language
+      };
+      setTempSettings(currentSettings);
+    }
+  }, [isOpen, language]);
 
   const applySettings = (newSettings: Settings) => {
     // Apply theme
