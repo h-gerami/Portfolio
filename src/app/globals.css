@@ -728,6 +728,37 @@ body.dark .dark-toggle-btn {
   filter: brightness(1.05);
 }
 
+/* GitHub Toggle Button */
+.github-toggle-btn {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: var(--brand-1);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 200;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.github-toggle-btn:hover {
+  background: var(--brand-2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.github-toggle-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Floating Sidebar */
 .floating-sidebar {
   position: fixed;
@@ -757,6 +788,16 @@ body.dark .floating-sidebar {
   opacity: 1;
 }
 
+.floating-sidebar.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.floating-sidebar:not(.open) {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
 .sidebar-content {
   padding: 1.2rem;
 }
@@ -768,6 +809,28 @@ body.dark .floating-sidebar {
 .sidebar-content .section-header h2 {
   font-size: 1rem;
   margin-bottom: 0.4rem;
+}
+
+.sidebar-content .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-close {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.sidebar-close:hover {
+  background: var(--card-border-light);
+  color: var(--text-primary);
 }
 
 .sidebar-content .section-subtitle {
@@ -1728,8 +1791,12 @@ body.dark .btn-secondary {
     grid-template-columns: 1fr;
   }
   
-  /* Hide GitHub sidebar on mobile */
+  /* Hide GitHub sidebar and toggle button on mobile */
   .floating-sidebar {
+    display: none !important;
+  }
+  
+  .github-toggle-btn {
     display: none !important;
   }
   
@@ -1809,6 +1876,11 @@ body.dark .btn-secondary {
 [dir="rtl"] .achievements li i {
   margin-left: 0.5rem;
   margin-right: 0;
+}
+
+[dir="rtl"] .github-toggle-btn {
+  right: auto;
+  left: 20px;
 }
 
 [dir="rtl"] .floating-sidebar {
