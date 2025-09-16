@@ -1782,6 +1782,94 @@ body.dark .btn-secondary {
   flex-direction: row-reverse;
 }
 
+/* Additional RTL fixes for buttons and titles */
+[dir="rtl"] .btn-primary,
+[dir="rtl"] .btn-secondary {
+  text-align: right;
+}
+
+[dir="rtl"] .settings-toggle-btn {
+  right: auto;
+  left: 1rem;
+}
+
+[dir="rtl"] .theme-toggle-btn {
+  right: auto;
+  left: 1rem;
+}
+
+[dir="rtl"] .scroll-to-top {
+  right: auto;
+  left: 1rem;
+}
+
+[dir="rtl"] .tech-modal-content {
+  text-align: right;
+}
+
+[dir="rtl"] .tech-modal-content h2 {
+  text-align: right;
+}
+
+[dir="rtl"] .tech-tags {
+  text-align: right;
+}
+
+[dir="rtl"] .tech-tag {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .tech-tag:first-child {
+  margin-right: 0;
+}
+
+[dir="rtl"] .close-modal {
+  right: auto;
+  left: 1rem;
+}
+
+[dir="rtl"] .modal-content {
+  text-align: right;
+}
+
+[dir="rtl"] .modal-nav {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .modal-nav .prev {
+  right: auto;
+  left: 1rem;
+}
+
+[dir="rtl"] .modal-nav .next {
+  left: auto;
+  right: 1rem;
+}
+
+[dir="rtl"] .modal-counter {
+  text-align: right;
+}
+
+[dir="rtl"] .modal-close {
+  right: auto;
+  left: 1rem;
+}
+
+[dir="rtl"] .language-option,
+[dir="rtl"] .theme-option {
+  text-align: center;
+}
+
+[dir="rtl"] .language-grid,
+[dir="rtl"] .theme-grid {
+  justify-content: center;
+}
+
+[dir="rtl"] .theme-preview {
+  margin: 0 auto;
+}
+
 /* Mobile GitHub Section */
 .mobile-github-section {
   display: none;

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation, Language } from '@/contexts/TranslationContext';
 
 interface Settings {
-  theme: 'light' | 'dark' | 'blue' | 'green' | 'purple' | 'orange' | 'red';
+  theme: 'light' | 'dark' | 'green' | 'purple' | 'orange' | 'red';
   language: Language;
 }
 
@@ -13,7 +13,6 @@ interface Settings {
 const themeOptions = [
   { id: 'light', name: 'Light', colors: { primary: '#3b82f6', secondary: '#64748b', accent: '#f1f5f9' } },
   { id: 'dark', name: 'Dark', colors: { primary: '#60a5fa', secondary: '#94a3b8', accent: '#1e293b' } },
-  { id: 'blue', name: 'Ocean Blue', colors: { primary: '#0ea5e9', secondary: '#38bdf8', accent: '#0c4a6e' } },
   { id: 'green', name: 'Forest Green', colors: { primary: '#10b981', secondary: '#34d399', accent: '#064e3b' } },
   { id: 'purple', name: 'Royal Purple', colors: { primary: '#8b5cf6', secondary: '#a78bfa', accent: '#581c87' } },
   { id: 'orange', name: 'Sunset Orange', colors: { primary: '#f97316', secondary: '#fb923c', accent: '#9a3412' } },
@@ -21,11 +20,10 @@ const themeOptions = [
 ];
 
 const languageOptions = [
-  { id: 'en', name: 'English', flag: '🇺🇸' },
-  { id: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { id: 'zh', name: '中文', flag: '🇨🇳' },
-  { id: 'ru', name: 'Русский', flag: '🇷🇺' },
-  { id: 'fa', name: 'فارسی', flag: '🇮🇷' }
+  { id: 'en', flag: '🇺🇸' },
+  { id: 'de', flag: '🇩🇪' },
+  { id: 'ru', flag: '🇷🇺' },
+  { id: 'fa', flag: '🇮🇷' }
 ];
 
 export default function SettingsPanel() {
@@ -116,8 +114,7 @@ export default function SettingsPanel() {
                         localStorage.setItem('portfolio-language', newSettings.language);
                       }}
                     >
-                      <span className="flag">{lang.flag}</span>
-                      <span className="name">{lang.name}</span>
+                      <span className="flag" style={{ fontSize: '1.5rem' }}>{lang.flag}</span>
                     </button>
                   ))}
                 </div>
@@ -151,7 +148,6 @@ export default function SettingsPanel() {
                         <div className="theme-color secondary"></div>
                         <div className="theme-color accent"></div>
                       </div>
-                      <span className="theme-name">{theme.name}</span>
                     </button>
                   ))}
                 </div>
