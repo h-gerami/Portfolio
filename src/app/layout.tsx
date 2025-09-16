@@ -90,7 +90,7 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
       </head>
-        <body className={`${inter.className} light`}>
+      <body className={`${inter.className} light`}>
           <TranslationProvider>
             <IconProvider>
               {children}

@@ -7,7 +7,7 @@ import { useIcon } from '@/contexts/IconContext';
 
 export default function Header() {
   const { t } = useTranslation();
-  const { getIcon } = useIcon();
+  const { getIcon, iconTheme } = useIcon();
   const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function Header() {
         </p>
         <div className="contact-info">
           <a href="tel:+61435827842" className="info-item">
-            <span className="icon-circle">
+            <span className={`icon-circle ${iconTheme === 'doodle' ? 'no-background' : ''}`}>
               {getIcon('phone').startsWith('fas') || getIcon('phone').startsWith('fab') ? (
                 <i className={getIcon('phone')}></i>
               ) : (
@@ -53,7 +53,7 @@ export default function Header() {
             +61 0435 827 842
           </a>
           <a href="mailto:h.gerami100@gmail.com" className="info-item">
-            <span className="icon-circle">
+            <span className={`icon-circle ${iconTheme === 'doodle' ? 'no-background' : ''}`}>
               {getIcon('envelope').startsWith('fas') || getIcon('envelope').startsWith('fab') ? (
                 <i className={getIcon('envelope')}></i>
               ) : (
@@ -68,7 +68,7 @@ export default function Header() {
             target="_blank"
             rel="noopener"
           >
-            <span className="icon-circle">
+            <span className={`icon-circle ${iconTheme === 'doodle' ? 'no-background' : ''}`}>
               {getIcon('linkedin').startsWith('fas') || getIcon('linkedin').startsWith('fab') ? (
                 <i className={getIcon('linkedin')}></i>
               ) : (
@@ -78,7 +78,7 @@ export default function Header() {
             linkedin.com/in/hossein-gerami
           </a>
           <a href="/HoseinGerami_Resume.pdf" className="info-item" download>
-            <span className="icon-circle">
+            <span className={`icon-circle ${iconTheme === 'doodle' ? 'no-background' : ''}`}>
               {getIcon('download').startsWith('fas') || getIcon('download').startsWith('fab') ? (
                 <i className={getIcon('download')}></i>
               ) : (
