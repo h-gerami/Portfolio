@@ -3,9 +3,11 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { useTranslation } from '@/contexts/TranslationContext';
+import { useIcon } from '@/contexts/IconContext';
 
 export default function Header() {
   const { t } = useTranslation();
+  const { getIcon } = useIcon();
   const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
@@ -42,13 +44,21 @@ export default function Header() {
         <div className="contact-info">
           <a href="tel:+61435827842" className="info-item">
             <span className="icon-circle">
-              <i className="fas fa-phone"></i>
+              {getIcon('phone').startsWith('fas') || getIcon('phone').startsWith('fab') ? (
+                <i className={getIcon('phone')}></i>
+              ) : (
+                <span style={{ fontSize: '1rem' }}>{getIcon('phone')}</span>
+              )}
             </span>
             +61 0435 827 842
           </a>
           <a href="mailto:h.gerami100@gmail.com" className="info-item">
             <span className="icon-circle">
-              <i className="fas fa-envelope"></i>
+              {getIcon('envelope').startsWith('fas') || getIcon('envelope').startsWith('fab') ? (
+                <i className={getIcon('envelope')}></i>
+              ) : (
+                <span style={{ fontSize: '1rem' }}>{getIcon('envelope')}</span>
+              )}
             </span>
             h.gerami100@gmail.com
           </a>
@@ -59,13 +69,21 @@ export default function Header() {
             rel="noopener"
           >
             <span className="icon-circle">
-              <i className="fab fa-linkedin"></i>
+              {getIcon('linkedin').startsWith('fas') || getIcon('linkedin').startsWith('fab') ? (
+                <i className={getIcon('linkedin')}></i>
+              ) : (
+                <span style={{ fontSize: '1rem' }}>{getIcon('linkedin')}</span>
+              )}
             </span>
             linkedin.com/in/hossein-gerami
           </a>
           <a href="/HoseinGerami_Resume.pdf" className="info-item" download>
             <span className="icon-circle">
-              <i className="fas fa-file-arrow-down"></i>
+              {getIcon('download').startsWith('fas') || getIcon('download').startsWith('fab') ? (
+                <i className={getIcon('download')}></i>
+              ) : (
+                <span style={{ fontSize: '1rem' }}>{getIcon('download')}</span>
+              )}
             </span>
             Download Resume
           </a>

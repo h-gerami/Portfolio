@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslation, Language } from '@/contexts/TranslationContext';
+import { useIcon, IconTheme } from '@/contexts/IconContext';
 
 interface Settings {
   theme: 'light' | 'dark' | 'green' | 'purple' | 'orange' | 'red';
@@ -26,8 +27,16 @@ const languageOptions = [
   { id: 'fa', flag: '🇮🇷' }
 ];
 
+const iconThemeOptions = [
+  { id: 'fontawesome', name: 'Font Awesome', preview: 'fas fa-cog' },
+  { id: 'doodle', name: 'Doodle', preview: '⚙️' },
+  { id: 'heroicons', name: 'Heroicons', preview: '⚙️' },
+  { id: 'lucide', name: 'Lucide', preview: '⚙️' }
+];
+
 export default function SettingsPanel() {
   const { language, setLanguage, t } = useTranslation();
+  const { iconTheme, setIconTheme, getIcon } = useIcon();
   const [isOpen, setIsOpen] = useState(false);
   const [settings, setSettings] = useState<Settings>({
     theme: 'light',
@@ -105,7 +114,11 @@ export default function SettingsPanel() {
         aria-label="Open settings"
         title="Settings"
       >
-        <i className="fas fa-cog"></i>
+        {getIcon('settings').startsWith('fas') || getIcon('settings').startsWith('fab') ? (
+          <i className={getIcon('settings')}></i>
+        ) : (
+          <span style={{ fontSize: '1.1rem' }}>{getIcon('settings')}</span>
+        )}
       </button>
 
       {isOpen && (
@@ -114,7 +127,11 @@ export default function SettingsPanel() {
             <div className="settings-header">
               <h2>{t.language === 'en' ? 'Settings' : t.settings}</h2>
               <button className="settings-close" onClick={handleCancel}>
-                <i className="fas fa-times"></i>
+                {getIcon('close').startsWith('fas') || getIcon('close').startsWith('fab') ? (
+                  <i className={getIcon('close')}></i>
+                ) : (
+                  <span style={{ fontSize: '1rem' }}>{getIcon('close')}</span>
+                )}
               </button>
             </div>
 
@@ -122,7 +139,11 @@ export default function SettingsPanel() {
               {/* Language Selection */}
               <div className="setting-group">
                 <label className="setting-label">
-                  <i className="fas fa-globe"></i>
+                  {getIcon('globe').startsWith('fas') || getIcon('globe').startsWith('fab') ? (
+                    <i className={getIcon('globe')}></i>
+                  ) : (
+                    <span style={{ fontSize: '1rem' }}>{getIcon('globe')}</span>
+                  )}
                   {t.language === 'en' ? 'Language' : t.language}
                 </label>
                 <div className="language-grid">
@@ -146,7 +167,11 @@ export default function SettingsPanel() {
               {/* Theme Selection */}
               <div className="setting-group">
                 <label className="setting-label">
-                  <i className="fas fa-palette"></i>
+                  {getIcon('palette').startsWith('fas') || getIcon('palette').startsWith('fab') ? (
+                    <i className={getIcon('palette')}></i>
+                  ) : (
+                    <span style={{ fontSize: '1rem' }}>{getIcon('palette')}</span>
+                  )}
                   {t.language === 'en' ? 'Theme' : t.theme}
                 </label>
                 <div className="theme-grid">
@@ -171,6 +196,32 @@ export default function SettingsPanel() {
                         <div className="theme-color secondary"></div>
                         <div className="theme-color accent"></div>
                       </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Icon Theme Selection */}
+              <div className="setting-group">
+                <label className="setting-label">
+                  <i className={getIcon('palette')}></i>
+                  {t.language === 'en' ? 'Icon Style' : 'Icon Style'}
+                </label>
+                <div className="icon-theme-grid">
+                  {iconThemeOptions.map((theme) => (
+                    <button
+                      key={theme.id}
+                      className={`icon-theme-option ${iconTheme === theme.id ? 'active' : ''}`}
+                      onClick={() => setIconTheme(theme.id as IconTheme)}
+                    >
+                      <div className="icon-preview">
+                        {theme.id === 'fontawesome' ? (
+                          <i className={theme.preview}></i>
+                        ) : (
+                          <span style={{ fontSize: '1.2rem' }}>{theme.preview}</span>
+                        )}
+                      </div>
+                      <span className="icon-theme-name">{theme.name}</span>
                     </button>
                   ))}
                 </div>

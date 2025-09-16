@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { TranslationProvider } from '@/contexts/TranslationContext'
+import { IconProvider } from '@/contexts/IconContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -89,11 +90,13 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
       </head>
-      <body className={`${inter.className} light`}>
-        <TranslationProvider>
-          {children}
-        </TranslationProvider>
-      </body>
+        <body className={`${inter.className} light`}>
+          <TranslationProvider>
+            <IconProvider>
+              {children}
+            </IconProvider>
+          </TranslationProvider>
+        </body>
     </html>
   )
 }
