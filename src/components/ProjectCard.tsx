@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { Project } from '@/data/projects';
 import { TECH_MAP } from '@/data/tech';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 interface ProjectCardProps {
   project: Project;
@@ -11,6 +12,7 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, onImageClick }: ProjectCardProps) {
+  const { t } = useTranslation();
   const [showTechModal, setShowTechModal] = useState(false);
 
   const openTechModal = () => {
@@ -23,15 +25,65 @@ export default function ProjectCard({ project, onImageClick }: ProjectCardProps)
 
   const techStack = TECH_MAP[project.id] || [];
 
+  // Get translated content based on project ID
+  const getProjectContent = () => {
+    switch (project.id) {
+      case 'gardenia':
+        return {
+          title: t.language === 'en' ? project.title : t.gardeniaTitle,
+          category: t.language === 'en' ? project.category : t.gardeniaCategory,
+          description: t.language === 'en' ? project.description : t.gardeniaDescription,
+          achievements: t.language === 'en' ? project.achievements : t.gardeniaAchievements
+        };
+      case 'quickclaim':
+        return {
+          title: t.language === 'en' ? project.title : t.quickclaimTitle,
+          category: t.language === 'en' ? project.category : t.quickclaimCategory,
+          description: t.language === 'en' ? project.description : t.quickclaimDescription,
+          achievements: t.language === 'en' ? project.achievements : t.quickclaimAchievements
+        };
+      case 'lerne24':
+        return {
+          title: t.language === 'en' ? project.title : t.lerne24Title,
+          category: t.language === 'en' ? project.category : t.lerne24Category,
+          description: t.language === 'en' ? project.description : t.lerne24Description,
+          achievements: t.language === 'en' ? project.achievements : t.lerne24Achievements
+        };
+      case 'hihab':
+        return {
+          title: t.language === 'en' ? project.title : t.hihabTitle,
+          category: t.language === 'en' ? project.category : t.hihabCategory,
+          description: t.language === 'en' ? project.description : t.hihabDescription,
+          achievements: t.language === 'en' ? project.achievements : t.hihabAchievements
+        };
+      case 'hoomqc':
+        return {
+          title: t.language === 'en' ? project.title : t.hoomqcTitle,
+          category: t.language === 'en' ? project.category : t.hoomqcCategory,
+          description: t.language === 'en' ? project.description : t.hoomqcDescription,
+          achievements: t.language === 'en' ? project.achievements : t.hoomqcAchievements
+        };
+      default:
+        return {
+          title: project.title,
+          category: project.category,
+          description: project.description,
+          achievements: project.achievements
+        };
+    }
+  };
+
+  const projectContent = getProjectContent();
+
   return (
     <>
       <div className="project" data-project={project.id}>
         <div className="project-content">
           <div className="card">
             <h2>
-              {project.title}
+              {projectContent.title}
               <span className="chip" onClick={openTechModal}>
-                {project.category}
+                {projectContent.category}
               </span>
               <span 
                 className="dots-icon" 
@@ -41,7 +93,7 @@ export default function ProjectCard({ project, onImageClick }: ProjectCardProps)
                 <i className="fa-solid fa-circle-info"></i>
               </span>
             </h2>
-            <p>{project.description}</p>
+            <p>{projectContent.description}</p>
           </div>
         </div>
         <div>
@@ -50,7 +102,7 @@ export default function ProjectCard({ project, onImageClick }: ProjectCardProps)
               <img
                 key={index}
                 src={`/images/${image}`}
-                alt={`${project.title} screenshot ${index + 1}`}
+                alt={`${projectContent.title} screenshot ${index + 1}`}
                 className="gallery-image"
                 loading="lazy"
                 onClick={() => onImageClick(project.images, index)}
@@ -58,9 +110,15 @@ export default function ProjectCard({ project, onImageClick }: ProjectCardProps)
             ))}
           </div>
           <div className="achievements-box">
-            <div className="achievements-title">Key Achievements</div>
+            <div className="achievements-title">
+              {t.language === 'en' ? 'Key Achievements' : 
+               t.language === 'de' ? 'Wichtige Erfolge' :
+               t.language === 'zh' ? '主要成就' :
+               t.language === 'ru' ? 'Ключевые достижения' :
+               t.language === 'fa' ? 'دستاوردهای کلیدی' : 'Key Achievements'}
+            </div>
             <ul className="achievements">
-              {project.achievements.map((achievement, index) => (
+              {projectContent.achievements.map((achievement, index) => (
                 <li key={index}>
                   <i className="fa fa-check-circle"></i>
                   <span>{achievement}</span>
@@ -89,7 +147,13 @@ export default function ProjectCard({ project, onImageClick }: ProjectCardProps)
             >
               &times;
             </span>
-            <h2 style={{ margin: '0 0 0.6rem 0' }}>Technologies Used</h2>
+            <h2 style={{ margin: '0 0 0.6rem 0' }}>
+              {t.language === 'en' ? 'Technologies Used' : 
+               t.language === 'de' ? 'Verwendete Technologien' :
+               t.language === 'zh' ? '使用的技术' :
+               t.language === 'ru' ? 'Используемые технологии' :
+               t.language === 'fa' ? 'فناوری‌های استفاده شده' : 'Technologies Used'}
+            </h2>
             <div className="tech-tags">
               {techStack.map((tech, index) => (
                 <span key={index} className="tech-tag">

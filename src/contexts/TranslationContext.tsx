@@ -20,6 +20,56 @@ export const translations = {
     viewProject: 'View Project',
     viewCode: 'View Code',
     
+    // Project Descriptions
+    gardeniaTitle: 'Gardenia',
+    gardeniaCategory: 'IoT',
+    gardeniaDescription: 'IoT app controlling devices over Bluetooth and Wi-Fi with in-app shop and notifications. Built for a UK company manufacturing smart hoods and fresheners.',
+    gardeniaAchievements: [
+      'Shipped cross-platform IoT app in React Native (iOS & Android).',
+      'GraphQL back-end integration with secure device pairing and commands.',
+      'Connectivity via Wi-Fi, Bluetooth, and UDP protocols.',
+      'Custom BLE protocol using ble-ple; robust state with Redux.',
+      'Worked closely with embedded engineers on diagnostics.'
+    ],
+    
+    quickclaimTitle: 'QuickClaim',
+    quickclaimCategory: 'NDIS',
+    quickclaimDescription: 'NDIS SaaS platform in Australia. Built mobile apps (QC Card & QC Pay) and provider dashboards with integrations to the NDIS, CRMs, and finance systems.',
+    quickclaimAchievements: [
+      'Developed QC Card and QC Pay in React Native (iOS & Android).',
+      'Built secure REST APIs with Node.js & TypeScript on AWS.',
+      'Integrated with NDIS, CRMs (Dynamics/HubSpot), and accounting (Xero/MYOB).',
+      'Automated testing for critical API and mobile flows; CI/CD pipelines.',
+      'Partnered with product/support/finance to streamline claims.'
+    ],
+    
+    lerne24Title: 'Lerne24',
+    lerne24Category: 'Education',
+    lerne24Description: 'Language learning app in Ionic React with gamified learning and multi-language support.',
+    lerne24Achievements: [
+      'Hybrid app with custom interactive components (e.g., story UI).',
+      'Real-time chat via FeathersJS + MongoDB; Firebase notifications.',
+      'Detailed documentation for smooth onboarding & handover.'
+    ],
+    
+    hihabTitle: 'Hihab',
+    hihabCategory: 'Wellness',
+    hihabDescription: 'Cross-platform habit tracker in English and Persian with custom charts and clean UX.',
+    hihabAchievements: [
+      'High-performance custom pie chart (react-native-svg).',
+      'Hooks-based state and lifecycle; GraphQL APIs.',
+      'Version control and clean release cycles.'
+    ],
+    
+    hoomqcTitle: 'HoomQC',
+    hoomqcCategory: 'Internal',
+    hoomqcDescription: 'Internal tool for testing SmartHoom Bluetooth IoT devices: RSSI checks, command tests, and firmware communication via custom native modules.',
+    hoomqcAchievements: [
+      'Cross-platform app for streamlined Bluetooth device testing.',
+      'Real-time signal & diagnostics; automated regression flows.',
+      'Provided actionable firmware feedback to embedded teams.'
+    ],
+    
     // Repositories Section
     repositoriesTitle: 'Source Code',
     repositoriesSubtitle: 'Explore the source code for this website and its mobile companion app',
@@ -28,9 +78,7 @@ export const translations = {
     // Settings
     settings: 'Settings',
     theme: 'Theme',
-    font: 'Font',
     language: 'Language',
-    preview: 'Preview',
     apply: 'Apply',
     cancel: 'Cancel',
     light: 'Light',
@@ -56,6 +104,56 @@ export const translations = {
     viewProject: 'Projekt ansehen',
     viewCode: 'Code ansehen',
     
+    // Project Descriptions
+    gardeniaTitle: 'Gardenia',
+    gardeniaCategory: 'IoT',
+    gardeniaDescription: 'IoT-App zur Steuerung von Geräten über Bluetooth und Wi-Fi mit In-App-Shop und Benachrichtigungen. Entwickelt für ein britisches Unternehmen, das intelligente Hauben und Lufterfrischer herstellt.',
+    gardeniaAchievements: [
+      'Plattformübergreifende IoT-App in React Native (iOS & Android) ausgeliefert.',
+      'GraphQL-Backend-Integration mit sicherer Gerätepaarung und Befehlen.',
+      'Konnektivität über Wi-Fi, Bluetooth und UDP-Protokolle.',
+      'Benutzerdefiniertes BLE-Protokoll mit ble-ple; robuste Zustandsverwaltung mit Redux.',
+      'Enge Zusammenarbeit mit Embedded-Ingenieuren bei der Diagnostik.'
+    ],
+    
+    quickclaimTitle: 'QuickClaim',
+    quickclaimCategory: 'NDIS',
+    quickclaimDescription: 'NDIS SaaS-Plattform in Australien. Entwickelte Mobile Apps (QC Card & QC Pay) und Provider-Dashboards mit Integrationen zu NDIS, CRMs und Finanzsystemen.',
+    quickclaimAchievements: [
+      'QC Card und QC Pay in React Native (iOS & Android) entwickelt.',
+      'Sichere REST-APIs mit Node.js & TypeScript auf AWS erstellt.',
+      'Integration mit NDIS, CRMs (Dynamics/HubSpot) und Buchhaltung (Xero/MYOB).',
+      'Automatisierte Tests für kritische API- und Mobile-Flows; CI/CD-Pipelines.',
+      'Partnerschaft mit Produkt/Support/Finanzen zur Optimierung von Ansprüchen.'
+    ],
+    
+    lerne24Title: 'Lerne24',
+    lerne24Category: 'Bildung',
+    lerne24Description: 'Sprachlern-App in Ionic React mit gamifiziertem Lernen und mehrsprachiger Unterstützung.',
+    lerne24Achievements: [
+      'Hybrid-App mit benutzerdefinierten interaktiven Komponenten (z.B. Story-UI).',
+      'Echtzeit-Chat über FeathersJS + MongoDB; Firebase-Benachrichtigungen.',
+      'Detaillierte Dokumentation für reibungsloses Onboarding & Übergabe.'
+    ],
+    
+    hihabTitle: 'Hihab',
+    hihabCategory: 'Wellness',
+    hihabDescription: 'Plattformübergreifende Gewohnheitstracker-App auf Englisch und Persisch mit benutzerdefinierten Diagrammen und sauberer UX.',
+    hihabAchievements: [
+      'Hochleistungsfähiges benutzerdefiniertes Kreisdiagramm (react-native-svg).',
+      'Hooks-basierte Zustands- und Lebenszyklusverwaltung; GraphQL-APIs.',
+      'Versionskontrolle und saubere Release-Zyklen.'
+    ],
+    
+    hoomqcTitle: 'HoomQC',
+    hoomqcCategory: 'Intern',
+    hoomqcDescription: 'Internes Tool zum Testen von SmartHoom Bluetooth IoT-Geräten: RSSI-Checks, Befehltests und Firmware-Kommunikation über benutzerdefinierte native Module.',
+    hoomqcAchievements: [
+      'Plattformübergreifende App für optimiertes Bluetooth-Gerätetesting.',
+      'Echtzeit-Signal & Diagnostik; automatisierte Regressions-Flows.',
+      'Aktionsfähiges Firmware-Feedback für Embedded-Teams bereitgestellt.'
+    ],
+    
     // Repositories Section
     repositoriesTitle: 'Quellcode',
     repositoriesSubtitle: 'Entdecken Sie den Quellcode für diese Website und die mobile Begleit-App',
@@ -64,9 +162,7 @@ export const translations = {
     // Settings
     settings: 'Einstellungen',
     theme: 'Design',
-    font: 'Schriftart',
     language: 'Sprache',
-    preview: 'Vorschau',
     apply: 'Anwenden',
     cancel: 'Abbrechen',
     light: 'Hell',
@@ -92,6 +188,56 @@ export const translations = {
     viewProject: '查看项目',
     viewCode: '查看代码',
     
+    // Project Descriptions
+    gardeniaTitle: 'Gardenia',
+    gardeniaCategory: '物联网',
+    gardeniaDescription: '通过蓝牙和Wi-Fi控制设备的物联网应用，具有应用内商店和通知功能。为英国一家制造智能抽油烟机和空气清新剂的公司开发。',
+    gardeniaAchievements: [
+      '使用React Native（iOS和Android）交付跨平台物联网应用。',
+      'GraphQL后端集成，具有安全的设备配对和命令功能。',
+      '通过Wi-Fi、蓝牙和UDP协议连接。',
+      '使用ble-ple的自定义BLE协议；使用Redux的健壮状态管理。',
+      '与嵌入式工程师密切合作进行诊断。'
+    ],
+    
+    quickclaimTitle: 'QuickClaim',
+    quickclaimCategory: 'NDIS',
+    quickclaimDescription: '澳大利亚的NDIS SaaS平台。开发了移动应用（QC Card和QC Pay）和提供商仪表板，集成了NDIS、CRM和财务系统。',
+    quickclaimAchievements: [
+      '使用React Native（iOS和Android）开发QC Card和QC Pay。',
+      '在AWS上使用Node.js和TypeScript构建安全的REST API。',
+      '与NDIS、CRM（Dynamics/HubSpot）和会计系统（Xero/MYOB）集成。',
+      '关键API和移动流程的自动化测试；CI/CD管道。',
+      '与产品/支持/财务团队合作简化索赔流程。'
+    ],
+    
+    lerne24Title: 'Lerne24',
+    lerne24Category: '教育',
+    lerne24Description: '使用Ionic React开发的语言学习应用，具有游戏化学习和多语言支持。',
+    lerne24Achievements: [
+      '具有自定义交互组件的混合应用（例如故事UI）。',
+      '通过FeathersJS + MongoDB的实时聊天；Firebase通知。',
+      '详细的文档，确保顺利的入职和交接。'
+    ],
+    
+    hihabTitle: 'Hihab',
+    hihabCategory: '健康',
+    hihabDescription: '跨平台习惯追踪器，支持英语和波斯语，具有自定义图表和简洁的用户体验。',
+    hihabAchievements: [
+      '高性能自定义饼图（react-native-svg）。',
+      '基于Hooks的状态和生命周期管理；GraphQL API。',
+      '版本控制和清洁的发布周期。'
+    ],
+    
+    hoomqcTitle: 'HoomQC',
+    hoomqcCategory: '内部',
+    hoomqcDescription: '用于测试SmartHoom蓝牙物联网设备的内部工具：RSSI检查、命令测试和通过自定义原生模块的固件通信。',
+    hoomqcAchievements: [
+      '用于简化蓝牙设备测试的跨平台应用。',
+      '实时信号和诊断；自动化回归流程。',
+      '为嵌入式团队提供可操作的固件反馈。'
+    ],
+    
     // Repositories Section
     repositoriesTitle: '源代码',
     repositoriesSubtitle: '探索此网站及其移动配套应用的源代码',
@@ -100,9 +246,7 @@ export const translations = {
     // Settings
     settings: '设置',
     theme: '主题',
-    font: '字体',
     language: '语言',
-    preview: '预览',
     apply: '应用',
     cancel: '取消',
     light: '浅色',
@@ -128,6 +272,56 @@ export const translations = {
     viewProject: 'Посмотреть проект',
     viewCode: 'Посмотреть код',
     
+    // Project Descriptions
+    gardeniaTitle: 'Gardenia',
+    gardeniaCategory: 'IoT',
+    gardeniaDescription: 'IoT приложение для управления устройствами через Bluetooth и Wi-Fi с внутриприложенным магазином и уведомлениями. Разработано для британской компании, производящей умные вытяжки и освежители воздуха.',
+    gardeniaAchievements: [
+      'Выпустил кроссплатформенное IoT приложение на React Native (iOS & Android).',
+      'Интеграция с GraphQL бэкендом с безопасным сопряжением устройств и командами.',
+      'Подключение через Wi-Fi, Bluetooth и UDP протоколы.',
+      'Пользовательский BLE протокол с использованием ble-ple; надежное состояние с Redux.',
+      'Тесно сотрудничал с инженерами встроенных систем по диагностике.'
+    ],
+    
+    quickclaimTitle: 'QuickClaim',
+    quickclaimCategory: 'NDIS',
+    quickclaimDescription: 'NDIS SaaS платформа в Австралии. Разработал мобильные приложения (QC Card & QC Pay) и дашборды провайдеров с интеграциями к NDIS, CRM и финансовым системам.',
+    quickclaimAchievements: [
+      'Разработал QC Card и QC Pay на React Native (iOS & Android).',
+      'Создал безопасные REST API с Node.js & TypeScript на AWS.',
+      'Интегрировал с NDIS, CRM (Dynamics/HubSpot) и бухгалтерией (Xero/MYOB).',
+      'Автоматизированное тестирование критических API и мобильных потоков; CI/CD пайплайны.',
+      'Партнерство с продуктом/поддержкой/финансами для оптимизации претензий.'
+    ],
+    
+    lerne24Title: 'Lerne24',
+    lerne24Category: 'Образование',
+    lerne24Description: 'Приложение для изучения языков на Ionic React с геймифицированным обучением и многоязычной поддержкой.',
+    lerne24Achievements: [
+      'Гибридное приложение с пользовательскими интерактивными компонентами (например, UI историй).',
+      'Чат в реальном времени через FeathersJS + MongoDB; уведомления Firebase.',
+      'Подробная документация для плавного онбординга и передачи.'
+    ],
+    
+    hihabTitle: 'Hihab',
+    hihabCategory: 'Здоровье',
+    hihabDescription: 'Кроссплатформенный трекер привычек на английском и персидском языках с пользовательскими графиками и чистым UX.',
+    hihabAchievements: [
+      'Высокопроизводительная пользовательская круговая диаграмма (react-native-svg).',
+      'Управление состоянием и жизненным циклом на основе хуков; GraphQL API.',
+      'Контроль версий и чистые циклы релизов.'
+    ],
+    
+    hoomqcTitle: 'HoomQC',
+    hoomqcCategory: 'Внутренний',
+    hoomqcDescription: 'Внутренний инструмент для тестирования SmartHoom Bluetooth IoT устройств: проверки RSSI, тесты команд и связь с прошивкой через пользовательские нативные модули.',
+    hoomqcAchievements: [
+      'Кроссплатформенное приложение для оптимизированного тестирования Bluetooth устройств.',
+      'Сигнал и диагностика в реальном времени; автоматизированные регрессионные потоки.',
+      'Предоставил действенную обратную связь по прошивке командам встроенных систем.'
+    ],
+    
     // Repositories Section
     repositoriesTitle: 'Исходный код',
     repositoriesSubtitle: 'Изучите исходный код этого веб-сайта и его мобильного приложения-компаньона',
@@ -136,9 +330,7 @@ export const translations = {
     // Settings
     settings: 'Настройки',
     theme: 'Тема',
-    font: 'Шрифт',
     language: 'Язык',
-    preview: 'Предпросмотр',
     apply: 'Применить',
     cancel: 'Отмена',
     light: 'Светлая',
@@ -164,6 +356,56 @@ export const translations = {
     viewProject: 'مشاهده پروژه',
     viewCode: 'مشاهده کد',
     
+    // Project Descriptions
+    gardeniaTitle: 'Gardenia',
+    gardeniaCategory: 'اینترنت اشیا',
+    gardeniaDescription: 'اپلیکیشن اینترنت اشیا برای کنترل دستگاه‌ها از طریق بلوتوث و وای‌فای با فروشگاه درون‌اپی و اعلان‌ها. برای شرکت بریتانیایی تولیدکننده هودهای هوشمند و خوشبوکننده‌های هوا ساخته شده است.',
+    gardeniaAchievements: [
+      'اپلیکیشن اینترنت اشیا چندپلتفرمه در React Native (iOS و Android) منتشر شد.',
+      'یکپارچه‌سازی بک‌اند GraphQL با جفت‌سازی امن دستگاه و دستورات.',
+      'اتصال از طریق وای‌فای، بلوتوث و پروتکل‌های UDP.',
+      'پروتکل BLE سفارشی با استفاده از ble-ple؛ مدیریت حالت قوی با Redux.',
+      'همکاری نزدیک با مهندسان جاسازی شده در تشخیص.'
+    ],
+    
+    quickclaimTitle: 'QuickClaim',
+    quickclaimCategory: 'NDIS',
+    quickclaimDescription: 'پلتفرم SaaS NDIS در استرالیا. اپلیکیشن‌های موبایل (QC Card و QC Pay) و داشبوردهای ارائه‌دهنده با یکپارچه‌سازی به NDIS، CRM و سیستم‌های مالی ساخته شد.',
+    quickclaimAchievements: [
+      'QC Card و QC Pay در React Native (iOS و Android) توسعه یافت.',
+      'APIهای REST امن با Node.js و TypeScript روی AWS ساخته شد.',
+      'یکپارچه‌سازی با NDIS، CRM (Dynamics/HubSpot) و حسابداری (Xero/MYOB).',
+      'تست خودکار برای جریان‌های حیاتی API و موبایل؛ خطوط CI/CD.',
+      'همکاری با محصول/پشتیبانی/مالی برای ساده‌سازی ادعاها.'
+    ],
+    
+    lerne24Title: 'Lerne24',
+    lerne24Category: 'آموزش',
+    lerne24Description: 'اپلیکیشن یادگیری زبان در Ionic React با یادگیری بازی‌وار و پشتیبانی چندزبانه.',
+    lerne24Achievements: [
+      'اپلیکیشن ترکیبی با کامپوننت‌های تعاملی سفارشی (مثل UI داستان).',
+      'چت زمان واقعی از طریق FeathersJS + MongoDB؛ اعلان‌های Firebase.',
+      'مستندات دقیق برای ورود و انتقال روان.'
+    ],
+    
+    hihabTitle: 'Hihab',
+    hihabCategory: 'سلامت',
+    hihabDescription: 'ردیاب عادت چندپلتفرمه به انگلیسی و فارسی با نمودارهای سفارشی و UX تمیز.',
+    hihabAchievements: [
+      'نمودار دایره‌ای سفارشی با عملکرد بالا (react-native-svg).',
+      'مدیریت حالت و چرخه زندگی مبتنی بر Hook؛ APIهای GraphQL.',
+      'کنترل نسخه و چرخه‌های انتشار تمیز.'
+    ],
+    
+    hoomqcTitle: 'HoomQC',
+    hoomqcCategory: 'داخلی',
+    hoomqcDescription: 'ابزار داخلی برای تست دستگاه‌های اینترنت اشیا بلوتوث SmartHoom: بررسی‌های RSSI، تست‌های دستور و ارتباط فریم‌ور از طریق ماژول‌های بومی سفارشی.',
+    hoomqcAchievements: [
+      'اپلیکیشن چندپلتفرمه برای تست ساده‌سازی شده دستگاه‌های بلوتوث.',
+      'سیگنال و تشخیص زمان واقعی؛ جریان‌های رگرسیون خودکار.',
+      'بازخورد عملی فریم‌ور برای تیم‌های جاسازی شده ارائه شد.'
+    ],
+    
     // Repositories Section
     repositoriesTitle: 'کد منبع',
     repositoriesSubtitle: 'کد منبع این وب‌سایت و اپلیکیشن موبایل همراه آن را کاوش کنید',
@@ -172,9 +414,7 @@ export const translations = {
     // Settings
     settings: 'تنظیمات',
     theme: 'تم',
-    font: 'فونت',
     language: 'زبان',
-    preview: 'پیش‌نمایش',
     apply: 'اعمال',
     cancel: 'لغو',
     light: 'روشن',

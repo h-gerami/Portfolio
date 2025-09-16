@@ -1660,6 +1660,123 @@ body.dark .btn-secondary {
   }
 }
 
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .intro {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .intro > div {
+  text-align: right;
+}
+
+[dir="rtl"] .contact-info {
+  text-align: right;
+}
+
+[dir="rtl"] .contact-info .info-item {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .section-header {
+  text-align: right;
+}
+
+[dir="rtl"] .card {
+  text-align: right;
+}
+
+[dir="rtl"] .project h2 {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .project h2 .chip {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+[dir="rtl"] .project h2 .dots-icon {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+[dir="rtl"] .achievements-box {
+  text-align: right;
+}
+
+[dir="rtl"] .achievements li {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .achievements li i {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .floating-sidebar {
+  right: auto;
+  left: 1rem;
+}
+
+[dir="rtl"] .floating-sidebar .sidebar-content {
+  text-align: right;
+}
+
+[dir="rtl"] .repos-grid {
+  text-align: right;
+}
+
+[dir="rtl"] .repo-card {
+  text-align: right;
+}
+
+[dir="rtl"] .repo-header {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .repo-actions {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .settings-panel {
+  text-align: right;
+}
+
+[dir="rtl"] .settings-header {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .settings-content {
+  text-align: right;
+}
+
+[dir="rtl"] .setting-group {
+  text-align: right;
+}
+
+[dir="rtl"] .settings-footer {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .mobile-github-section {
+  text-align: right;
+}
+
+[dir="rtl"] .mobile-github-section .section-header {
+  text-align: right;
+}
+
+[dir="rtl"] .mobile-github-section .section-header h2 {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .mobile-github-profile-btn {
+  flex-direction: row-reverse;
+}
+
 /* Mobile GitHub Section */
 .mobile-github-section {
   display: none;

@@ -5,20 +5,10 @@ import { useTranslation, Language } from '@/contexts/TranslationContext';
 
 interface Settings {
   theme: 'light' | 'dark' | 'blue' | 'green' | 'purple' | 'orange' | 'red';
-  font: 'inter' | 'roboto' | 'poppins' | 'open-sans' | 'lora' | 'playfair' | 'vazirmatn';
   language: Language;
 }
 
 
-const fontOptions = [
-  { id: 'inter', name: 'Inter', preview: 'The quick brown fox jumps over the lazy dog' },
-  { id: 'roboto', name: 'Roboto', preview: 'The quick brown fox jumps over the lazy dog' },
-  { id: 'poppins', name: 'Poppins', preview: 'The quick brown fox jumps over the lazy dog' },
-  { id: 'open-sans', name: 'Open Sans', preview: 'The quick brown fox jumps over the lazy dog' },
-  { id: 'lora', name: 'Lora', preview: 'The quick brown fox jumps over the lazy dog' },
-  { id: 'playfair', name: 'Playfair Display', preview: 'The quick brown fox jumps over the lazy dog' },
-  { id: 'vazirmatn', name: 'Vazirmatn', preview: 'متن نمونه فارسی برای نمایش فونت' }
-];
 
 const themeOptions = [
   { id: 'light', name: 'Light', colors: { primary: '#3b82f6', secondary: '#64748b', accent: '#f1f5f9' } },
@@ -43,7 +33,6 @@ export default function SettingsPanel() {
   const [isOpen, setIsOpen] = useState(false);
   const [settings, setSettings] = useState<Settings>({
     theme: 'light',
-    font: 'inter',
     language: language
   });
   const [tempSettings, setTempSettings] = useState<Settings>(settings);
@@ -62,19 +51,6 @@ export default function SettingsPanel() {
   const applySettings = (newSettings: Settings) => {
     // Apply theme
     document.body.className = `inter_5972bc34-module__OU16Qa__className ${newSettings.theme}`;
-    
-    // Apply font
-    const fontMap = {
-      'inter': 'Inter',
-      'roboto': 'Roboto',
-      'poppins': 'Poppins',
-      'open-sans': 'Open Sans',
-      'lora': 'Lora',
-      'playfair': 'Playfair Display',
-      'vazirmatn': 'Vazirmatn'
-    };
-    
-    document.documentElement.style.setProperty('--font-family', fontMap[newSettings.font]);
     
     // Apply theme colors
     const theme = themeOptions.find(t => t.id === newSettings.theme);
@@ -181,33 +157,6 @@ export default function SettingsPanel() {
                 </div>
               </div>
 
-              {/* Font Selection */}
-              <div className="setting-group">
-                <label className="setting-label">
-                  <i className="fas fa-font"></i>
-                  {t.language === 'en' ? 'Font' : t.font}
-                </label>
-                <div className="font-grid">
-                  {fontOptions.map((font) => (
-                    <button
-                      key={font.id}
-                      className={`font-option ${tempSettings.font === font.id ? 'active' : ''}`}
-                      onClick={() => {
-                        const newSettings = {...tempSettings, font: font.id as Settings['font']};
-                        setTempSettings(newSettings);
-                        applySettings(newSettings);
-                        localStorage.setItem('portfolio-settings', JSON.stringify(newSettings));
-                      }}
-                      style={{ fontFamily: font.name }}
-                    >
-                      <div className="font-preview">
-                        {font.preview}
-                      </div>
-                      <span className="font-name">{font.name}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
             </div>
 
             <div className="settings-footer">
