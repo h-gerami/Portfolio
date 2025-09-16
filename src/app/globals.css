@@ -1944,4 +1944,134 @@ body.dark .btn-secondary {
     background: var(--brand-3);
     transform: translateY(-1px);
   }
+  
+  /* Comprehensive mobile horizontal scroll fixes */
+  * {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+  
+  .container {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    padding: 0 1rem;
+  }
+  
+  .project {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .gallery {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .gallery img {
+    max-width: 100% !important;
+    height: auto;
+  }
+  
+  .card {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0;
+    padding: 1rem;
+  }
+  
+  .section {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    padding: 0 1rem;
+  }
+  
+  .intro {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    padding: 0;
+  }
+  
+  .contact-info {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .contact-info .info-item {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    word-wrap: break-word;
+  }
+  
+  .achievements-box {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .achievements {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .achievements li {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    word-wrap: break-word;
+  }
+  
+  .mobile-repos-grid {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .repo-card {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .repo-header {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .repo-title {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    word-wrap: break-word;
+  }
+  
+  .repo-description {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    word-wrap: break-word;
+  }
+  
+  .repo-tech {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .tech-badge {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    word-wrap: break-word;
+  }
+  
+  .pillset {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  .pill {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    word-wrap: break-word;
+  }
 }

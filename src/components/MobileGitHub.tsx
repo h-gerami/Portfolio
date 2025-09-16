@@ -14,7 +14,6 @@ export default function MobileGitHub() {
           <i className="fab fa-github"></i>
           {t.language === 'en' ? 'Source Code' : t.repositoriesTitle}
         </h2>
-        <p className="section-subtitle">{t.language === 'en' ? 'Explore the source code for this website and its mobile companion app' : t.repositoriesSubtitle}</p>
       </div>
 
       <div className="mobile-repos-grid">
