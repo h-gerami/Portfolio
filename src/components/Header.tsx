@@ -2,8 +2,10 @@
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 export default function Header() {
+  const { t } = useTranslation();
   const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
@@ -32,13 +34,10 @@ export default function Header() {
       />
       <div>
         <h1>
-          <span className="gradient-text">Hossein Gerami</span>
+          <span className="gradient-text">{t.name}</span>
         </h1>
         <p className="tagline">
-          Software Engineer specialising in mobile (React Native) and complex
-          integrations. I design reliable data flows between CRMs, finance
-          systems, and government APIs, while shipping polished mobile
-          experiences. Fast, pragmatic, and AI-assisted.
+          {t.subtitle}
         </p>
         <div className="contact-info">
           <a href="tel:+61435827842" className="info-item">

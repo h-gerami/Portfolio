@@ -1,95 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useTranslation, Language } from '@/contexts/TranslationContext';
 
 interface Settings {
   theme: 'light' | 'dark' | 'blue' | 'green' | 'purple' | 'orange' | 'red';
-  font: 'inter' | 'roboto' | 'poppins' | 'open-sans' | 'lora' | 'playfair';
-  language: 'en' | 'de' | 'zh' | 'ru' | 'fa';
+  font: 'inter' | 'roboto' | 'poppins' | 'open-sans' | 'lora' | 'playfair' | 'vazirmatn';
+  language: Language;
 }
 
-const translations = {
-  en: {
-    settings: 'Settings',
-    theme: 'Theme',
-    font: 'Font',
-    language: 'Language',
-    preview: 'Preview',
-    apply: 'Apply',
-    cancel: 'Cancel',
-    light: 'Light',
-    dark: 'Dark',
-    blue: 'Ocean Blue',
-    green: 'Forest Green',
-    purple: 'Royal Purple',
-    orange: 'Sunset Orange',
-    red: 'Crimson Red'
-  },
-  de: {
-    settings: 'Einstellungen',
-    theme: 'Design',
-    font: 'Schriftart',
-    language: 'Sprache',
-    preview: 'Vorschau',
-    apply: 'Anwenden',
-    cancel: 'Abbrechen',
-    light: 'Hell',
-    dark: 'Dunkel',
-    blue: 'Ozean Blau',
-    green: 'Wald Grün',
-    purple: 'Königlich Lila',
-    orange: 'Sonnenuntergang Orange',
-    red: 'Karmesin Rot'
-  },
-  zh: {
-    settings: '设置',
-    theme: '主题',
-    font: '字体',
-    language: '语言',
-    preview: '预览',
-    apply: '应用',
-    cancel: '取消',
-    light: '浅色',
-    dark: '深色',
-    blue: '海洋蓝',
-    green: '森林绿',
-    purple: '皇家紫',
-    orange: '日落橙',
-    red: '深红'
-  },
-  ru: {
-    settings: 'Настройки',
-    theme: 'Тема',
-    font: 'Шрифт',
-    language: 'Язык',
-    preview: 'Предпросмотр',
-    apply: 'Применить',
-    cancel: 'Отмена',
-    light: 'Светлая',
-    dark: 'Тёмная',
-    blue: 'Океан Синий',
-    green: 'Лес Зелёный',
-    purple: 'Королевский Фиолетовый',
-    orange: 'Закат Оранжевый',
-    red: 'Малиновый Красный'
-  },
-  fa: {
-    settings: 'تنظیمات',
-    theme: 'تم',
-    font: 'فونت',
-    language: 'زبان',
-    preview: 'پیش‌نمایش',
-    apply: 'اعمال',
-    cancel: 'لغو',
-    light: 'روشن',
-    dark: 'تیره',
-    blue: 'آبی اقیانوس',
-    green: 'سبز جنگل',
-    purple: 'بنفش سلطنتی',
-    orange: 'نارنجی غروب',
-    red: 'قرمز تیره'
-  }
-};
 
 const fontOptions = [
   { id: 'inter', name: 'Inter', preview: 'The quick brown fox jumps over the lazy dog' },
@@ -97,7 +16,8 @@ const fontOptions = [
   { id: 'poppins', name: 'Poppins', preview: 'The quick brown fox jumps over the lazy dog' },
   { id: 'open-sans', name: 'Open Sans', preview: 'The quick brown fox jumps over the lazy dog' },
   { id: 'lora', name: 'Lora', preview: 'The quick brown fox jumps over the lazy dog' },
-  { id: 'playfair', name: 'Playfair Display', preview: 'The quick brown fox jumps over the lazy dog' }
+  { id: 'playfair', name: 'Playfair Display', preview: 'The quick brown fox jumps over the lazy dog' },
+  { id: 'vazirmatn', name: 'Vazirmatn', preview: 'متن نمونه فارسی برای نمایش فونت' }
 ];
 
 const themeOptions = [
@@ -119,11 +39,12 @@ const languageOptions = [
 ];
 
 export default function SettingsPanel() {
+  const { language, setLanguage, t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [settings, setSettings] = useState<Settings>({
-    theme: 'dark',
+    theme: 'light',
     font: 'inter',
-    language: 'en'
+    language: language
   });
   const [tempSettings, setTempSettings] = useState<Settings>(settings);
 
@@ -149,7 +70,8 @@ export default function SettingsPanel() {
       'poppins': 'Poppins',
       'open-sans': 'Open Sans',
       'lora': 'Lora',
-      'playfair': 'Playfair Display'
+      'playfair': 'Playfair Display',
+      'vazirmatn': 'Vazirmatn'
     };
     
     document.documentElement.style.setProperty('--font-family', fontMap[newSettings.font]);
@@ -165,8 +87,10 @@ export default function SettingsPanel() {
 
   const handleApply = () => {
     setSettings(tempSettings);
+    setLanguage(tempSettings.language);
     applySettings(tempSettings);
     localStorage.setItem('portfolio-settings', JSON.stringify(tempSettings));
+    localStorage.setItem('portfolio-language', tempSettings.language);
     setIsOpen(false);
   };
 
@@ -175,7 +99,6 @@ export default function SettingsPanel() {
     setIsOpen(false);
   };
 
-  const t = translations[settings.language];
 
   return (
     <>
@@ -242,7 +165,7 @@ export default function SettingsPanel() {
                         <div className="theme-color secondary"></div>
                         <div className="theme-color accent"></div>
                       </div>
-                      <span className="theme-name">{t[theme.id as keyof typeof t]}</span>
+                      <span className="theme-name">{theme.name}</span>
                     </button>
                   ))}
                 </div>

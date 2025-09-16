@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { TranslationProvider } from '@/contexts/TranslationContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -74,14 +75,20 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <link
+          href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
       </head>
-      <body className={`${inter.className} dark`}>
-        {children}
+      <body className={`${inter.className} light`}>
+        <TranslationProvider>
+          {children}
+        </TranslationProvider>
       </body>
     </html>
   )

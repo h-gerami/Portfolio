@@ -1,10 +1,14 @@
+'use client';
+
 import { skillCategories } from '@/data/skills';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 export default function About() {
+  const { t } = useTranslation();
   return (
     <section id="about" className="section" aria-labelledby="about-title">
       <div className="section-header">
-        <h2 id="about-title">About & Core Expertise</h2>
+        <h2 id="about-title">{t.aboutTitle}</h2>
       </div>
 
       {/* Mobile Engineering - Full Width */}

@@ -3,8 +3,10 @@
 import { useState, useEffect } from 'react';
 import { repositories } from '@/data/repositories';
 import RepositoryCard from './RepositoryCard';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 export default function Repositories() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -28,7 +30,7 @@ export default function Repositories() {
         <div className="section-header">
           <h2 id="repositories-title">
             <i className="fab fa-github"></i>
-            Source Code
+{t.repositoriesTitle}
           </h2>
         </div>
 
@@ -39,7 +41,7 @@ export default function Repositories() {
         </div>
 
         <div className="github-cta">
-          <p>Want to see more? Check out my GitHub profile for additional projects and contributions.</p>
+          <p>{t.repositoriesSubtitle}</p>
           <a 
             href="https://github.com/h-gerami" 
             target="_blank" 
@@ -47,7 +49,7 @@ export default function Repositories() {
             className="github-profile-btn"
           >
             <i className="fab fa-github"></i>
-            View GitHub Profile
+            {t.githubProfile}
           </a>
         </div>
       </div>

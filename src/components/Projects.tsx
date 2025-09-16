@@ -4,8 +4,10 @@ import { useState } from 'react';
 import { projects } from '@/data/projects';
 import ProjectCard from './ProjectCard';
 import ImageModal from './ImageModal';
+import { useTranslation } from '@/contexts/TranslationContext';
 
 export default function Projects() {
+  const { t } = useTranslation();
   const [modalState, setModalState] = useState({
     isOpen: false,
     images: [] as string[],
@@ -32,7 +34,7 @@ export default function Projects() {
     <>
       <section id="projects" className="section" aria-labelledby="projects-title">
         <div className="section-header">
-          <h2 id="projects-title">Selected Mobile Apps Projects</h2>
+          <h2 id="projects-title">{t.projectsTitle}</h2>
         </div>
 
         {projects.map((project) => (
