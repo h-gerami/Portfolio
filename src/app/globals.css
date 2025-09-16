@@ -235,6 +235,11 @@ body.dark .info-item {
   width: auto;
   height: auto;
   border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
 }
 
 /* Sections & Cards */
@@ -1453,7 +1458,7 @@ body.dark .name {
 
 .icon-theme-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
 }
 

@@ -43,23 +43,23 @@ export default function Header() {
         </p>
         <div className="contact-info">
           <a href="tel:+61435827842" className="info-item">
-            <span className={`icon-circle ${iconTheme === 'doodle' ? 'no-background' : ''}`}>
-              {getIcon('phone').startsWith('fas') || getIcon('phone').startsWith('fab') ? (
+            {iconTheme === 'doodle' ? (
+              <span className="icon-circle no-background">{getIcon('phone')}</span>
+            ) : (
+              <span className="icon-circle">
                 <i className={getIcon('phone')}></i>
-              ) : (
-                <span style={{ fontSize: '1rem' }}>{getIcon('phone')}</span>
-              )}
-            </span>
+              </span>
+            )}
             +61 0435 827 842
           </a>
           <a href="mailto:h.gerami100@gmail.com" className="info-item">
-            <span className={`icon-circle ${iconTheme === 'doodle' ? 'no-background' : ''}`}>
-              {getIcon('envelope').startsWith('fas') || getIcon('envelope').startsWith('fab') ? (
+            {iconTheme === 'doodle' ? (
+              <span className="icon-circle no-background">{getIcon('envelope')}</span>
+            ) : (
+              <span className="icon-circle">
                 <i className={getIcon('envelope')}></i>
-              ) : (
-                <span style={{ fontSize: '1rem' }}>{getIcon('envelope')}</span>
-              )}
-            </span>
+              </span>
+            )}
             h.gerami100@gmail.com
           </a>
           <a
@@ -68,23 +68,23 @@ export default function Header() {
             target="_blank"
             rel="noopener"
           >
-            <span className={`icon-circle ${iconTheme === 'doodle' ? 'no-background' : ''}`}>
-              {getIcon('linkedin').startsWith('fas') || getIcon('linkedin').startsWith('fab') ? (
+            {iconTheme === 'doodle' ? (
+              <span className="icon-circle no-background">{getIcon('linkedin')}</span>
+            ) : (
+              <span className="icon-circle">
                 <i className={getIcon('linkedin')}></i>
-              ) : (
-                <span style={{ fontSize: '1rem' }}>{getIcon('linkedin')}</span>
-              )}
-            </span>
+              </span>
+            )}
             linkedin.com/in/hossein-gerami
           </a>
           <a href="/HoseinGerami_Resume.pdf" className="info-item" download>
-            <span className={`icon-circle ${iconTheme === 'doodle' ? 'no-background' : ''}`}>
-              {getIcon('download').startsWith('fas') || getIcon('download').startsWith('fab') ? (
+            {iconTheme === 'doodle' ? (
+              <span className="icon-circle no-background">{getIcon('download')}</span>
+            ) : (
+              <span className="icon-circle">
                 <i className={getIcon('download')}></i>
-              ) : (
-                <span style={{ fontSize: '1rem' }}>{getIcon('download')}</span>
-              )}
-            </span>
+              </span>
+            )}
             Download Resume
           </a>
         </div>
