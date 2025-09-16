@@ -1085,10 +1085,13 @@ body.dark .github-cta p {
 @media (max-width: 768px) {
   .intro {
     grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 4rem; /* Add space for fixed settings button */
   }
   .avatar {
     width: 96px;
     height: 96px;
+    margin: 0 auto; /* Center the avatar */
   }
   .dark-toggle-btn,
   .scroll-top-btn {
@@ -1098,6 +1101,16 @@ body.dark .github-cta p {
     width: 46px;
     height: 46px;
     font-size: 1.1rem;
+  }
+  
+  /* Fix settings button positioning on mobile */
+  .settings-toggle-btn {
+    top: 1rem;
+    right: 1rem;
+    left: auto;
+    width: 2.5rem;
+    height: 2.5rem;
+    z-index: 1000;
   }
   .gallery {
     padding: 0.8rem;
@@ -1793,6 +1806,13 @@ body.dark .btn-secondary {
   left: 1rem;
 }
 
+@media (max-width: 768px) {
+  [dir="rtl"] .settings-toggle-btn {
+    left: 1rem;
+    right: auto;
+  }
+}
+
 [dir="rtl"] .theme-toggle-btn {
   right: auto;
   left: 1rem;
@@ -1886,6 +1906,8 @@ body.dark .btn-secondary {
     border: 1px solid var(--card-border-light);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
   
   body.dark .mobile-github-section {
@@ -1996,13 +2018,36 @@ body.dark .btn-secondary {
   .intro {
     max-width: 100% !important;
     overflow-x: hidden !important;
-    padding: 0;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .intro h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .intro .tagline {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
   }
   
   .contact-info {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
   }
+  
+  .contact-info .info-item {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  
   
   .contact-info .info-item {
     max-width: 100% !important;
