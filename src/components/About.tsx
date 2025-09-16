@@ -8,7 +8,7 @@ export default function About() {
   return (
     <section id="about" className="section" aria-labelledby="about-title">
       <div className="section-header">
-        <h2 id="about-title">{t.aboutTitle}</h2>
+        <h2 id="about-title">{t.language === 'en' ? 'About & Core Expertise' : t.aboutTitle}</h2>
       </div>
 
       {/* Mobile Engineering - Full Width */}

@@ -115,7 +115,7 @@ export default function SettingsPanel() {
         <div className="settings-overlay" onClick={handleCancel}>
           <div className="settings-panel" onClick={(e) => e.stopPropagation()}>
             <div className="settings-header">
-              <h2>{t.settings}</h2>
+              <h2>{t.language === 'en' ? 'Settings' : t.settings}</h2>
               <button className="settings-close" onClick={handleCancel}>
                 <i className="fas fa-times"></i>
               </button>
@@ -126,14 +126,19 @@ export default function SettingsPanel() {
               <div className="setting-group">
                 <label className="setting-label">
                   <i className="fas fa-globe"></i>
-                  {t.language}
+                  {t.language === 'en' ? 'Language' : t.language}
                 </label>
                 <div className="language-grid">
                   {languageOptions.map((lang) => (
                     <button
                       key={lang.id}
                       className={`language-option ${tempSettings.language === lang.id ? 'active' : ''}`}
-                      onClick={() => setTempSettings({...tempSettings, language: lang.id as Settings['language']})}
+                      onClick={() => {
+                        const newSettings = {...tempSettings, language: lang.id as Settings['language']};
+                        setTempSettings(newSettings);
+                        setLanguage(newSettings.language);
+                        localStorage.setItem('portfolio-language', newSettings.language);
+                      }}
                     >
                       <span className="flag">{lang.flag}</span>
                       <span className="name">{lang.name}</span>
@@ -146,14 +151,19 @@ export default function SettingsPanel() {
               <div className="setting-group">
                 <label className="setting-label">
                   <i className="fas fa-palette"></i>
-                  {t.theme}
+                  {t.language === 'en' ? 'Theme' : t.theme}
                 </label>
                 <div className="theme-grid">
                   {themeOptions.map((theme) => (
                     <button
                       key={theme.id}
                       className={`theme-option ${tempSettings.theme === theme.id ? 'active' : ''}`}
-                      onClick={() => setTempSettings({...tempSettings, theme: theme.id as Settings['theme']})}
+                      onClick={() => {
+                        const newSettings = {...tempSettings, theme: theme.id as Settings['theme']};
+                        setTempSettings(newSettings);
+                        applySettings(newSettings);
+                        localStorage.setItem('portfolio-settings', JSON.stringify(newSettings));
+                      }}
                       style={{
                         '--theme-primary': theme.colors.primary,
                         '--theme-secondary': theme.colors.secondary,
@@ -175,14 +185,19 @@ export default function SettingsPanel() {
               <div className="setting-group">
                 <label className="setting-label">
                   <i className="fas fa-font"></i>
-                  {t.font}
+                  {t.language === 'en' ? 'Font' : t.font}
                 </label>
                 <div className="font-grid">
                   {fontOptions.map((font) => (
                     <button
                       key={font.id}
                       className={`font-option ${tempSettings.font === font.id ? 'active' : ''}`}
-                      onClick={() => setTempSettings({...tempSettings, font: font.id as Settings['font']})}
+                      onClick={() => {
+                        const newSettings = {...tempSettings, font: font.id as Settings['font']};
+                        setTempSettings(newSettings);
+                        applySettings(newSettings);
+                        localStorage.setItem('portfolio-settings', JSON.stringify(newSettings));
+                      }}
                       style={{ fontFamily: font.name }}
                     >
                       <div className="font-preview">
@@ -197,10 +212,10 @@ export default function SettingsPanel() {
 
             <div className="settings-footer">
               <button className="btn-secondary" onClick={handleCancel}>
-                {t.cancel}
+                {t.language === 'en' ? 'Cancel' : t.cancel}
               </button>
               <button className="btn-primary" onClick={handleApply}>
-                {t.apply}
+                {t.language === 'en' ? 'Apply' : t.apply}
               </button>
             </div>
           </div>

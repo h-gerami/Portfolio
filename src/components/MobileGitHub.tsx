@@ -12,9 +12,9 @@ export default function MobileGitHub() {
       <div className="section-header">
         <h2 id="mobile-github-title">
           <i className="fab fa-github"></i>
-          {t.repositoriesTitle}
+          {t.language === 'en' ? 'Source Code' : t.repositoriesTitle}
         </h2>
-        <p className="section-subtitle">{t.repositoriesSubtitle}</p>
+        <p className="section-subtitle">{t.language === 'en' ? 'Explore the source code for this website and its mobile companion app' : t.repositoriesSubtitle}</p>
       </div>
 
       <div className="mobile-repos-grid">
@@ -31,7 +31,7 @@ export default function MobileGitHub() {
           className="mobile-github-profile-btn"
         >
           <i className="fab fa-github"></i>
-          {t.githubProfile}
+{t.language === 'en' ? 'Visit GitHub Profile' : t.githubProfile}
         </a>
       </div>
     </section>

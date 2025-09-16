@@ -30,7 +30,7 @@ export default function Repositories() {
         <div className="section-header">
           <h2 id="repositories-title">
             <i className="fab fa-github"></i>
-{t.repositoriesTitle}
+{t.language === 'en' ? 'Source Code' : t.repositoriesTitle}
           </h2>
         </div>
 
@@ -41,7 +41,7 @@ export default function Repositories() {
         </div>
 
         <div className="github-cta">
-          <p>{t.repositoriesSubtitle}</p>
+          <p>{t.language === 'en' ? 'Want to see more? Check out my GitHub profile for additional projects and contributions.' : t.repositoriesSubtitle}</p>
           <a 
             href="https://github.com/h-gerami" 
             target="_blank" 
@@ -49,7 +49,7 @@ export default function Repositories() {
             className="github-profile-btn"
           >
             <i className="fab fa-github"></i>
-            {t.githubProfile}
+            {t.language === 'en' ? 'View GitHub Profile' : t.githubProfile}
           </a>
         </div>
       </div>

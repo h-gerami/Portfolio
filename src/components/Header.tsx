@@ -34,10 +34,10 @@ export default function Header() {
       />
       <div>
         <h1>
-          <span className="gradient-text">{t.name}</span>
+          <span className="gradient-text">{t.language === 'en' ? 'Hossein Gerami' : t.name}</span>
         </h1>
         <p className="tagline">
-          {t.subtitle}
+          {t.language === 'en' ? 'Software Engineer specialising in mobile (React Native) and complex integrations. I design reliable data flows between CRMs, finance systems, and government APIs, while shipping polished mobile experiences. Fast, pragmatic, and AI-assisted.' : t.subtitle}
         </p>
         <div className="contact-info">
           <a href="tel:+61435827842" className="info-item">
