@@ -40,7 +40,7 @@ export const translations = {
     patternsDescription: 'feature-based folders, container/presentational split, custom hooks for side-effects, "services" for API/storage, and a simple repository adapter when talking to multiple backends.',
     
     performanceTitle: 'Performance',
-    performanceDescription: 'memoized lists (FlatList/FlashList), stable keys, image caching, avoiding re-renders with memo/useCallback, and profiling with Flipper/React Profiler.',
+    performanceDescription: 'virtualized lists (react-window/react-virtualized), stable keys, image optimization, avoiding re-renders with memo/useCallback, code splitting, and profiling with React DevTools.',
     
     stateDataTitle: 'State & Data',
     stateDataDescription: 'React Query for server data, Redux/Zustand when global state is needed, normalized entities, optimistic updates, and offline cache for spotty networks.',
@@ -201,7 +201,7 @@ export const translations = {
     patternsDescription: 'feature-basierte Ordner, Container/Presentational-Split, benutzerdefinierte Hooks für Seiteneffekte, "Services" für API/Storage und ein einfacher Repository-Adapter beim Kommunizieren mit mehreren Backends.',
     
     performanceTitle: 'Leistung',
-    performanceDescription: 'memoized Listen (FlatList/FlashList), stabile Schlüssel, Bild-Caching, Vermeidung von Re-Renders mit memo/useCallback und Profiling mit Flipper/React Profiler.',
+    performanceDescription: 'virtualisierte Listen (react-window/react-virtualized), stabile Schlüssel, Bildoptimierung, Vermeidung von Re-Renders mit memo/useCallback, Code-Splitting und Profiling mit React DevTools.',
     
     stateDataTitle: 'Zustand & Daten',
     stateDataDescription: 'React Query für Server-Daten, Redux/Zustand wenn globaler Zustand benötigt wird, normalisierte Entitäten, optimistische Updates und Offline-Cache für unzuverlässige Netzwerke.',
@@ -362,7 +362,7 @@ export const translations = {
     patternsDescription: 'папки на основе функций, разделение контейнер/презентация, пользовательские хуки для побочных эффектов, "сервисы" для API/хранилища и простой адаптер репозитория при общении с несколькими бэкендами.',
     
     performanceTitle: 'Производительность',
-    performanceDescription: 'мемоизированные списки (FlatList/FlashList), стабильные ключи, кэширование изображений, избежание ре-рендеров с memo/useCallback и профилирование с Flipper/React Profiler.',
+    performanceDescription: 'виртуализированные списки (react-window/react-virtualized), стабильные ключи, оптимизация изображений, избежание ре-рендеров с memo/useCallback, разделение кода и профилирование с React DevTools.',
     
     stateDataTitle: 'Состояние и данные',
     stateDataDescription: 'React Query для серверных данных, Redux/Zustand когда нужен глобальный стейт, нормализованные сущности, оптимистичные обновления и офлайн кэш для нестабильных сетей.',
@@ -523,7 +523,7 @@ export const translations = {
     patternsDescription: 'پوشه‌های مبتنی بر ویژگی، تقسیم کانتینر/ارائه، hooks سفارشی برای اثرات جانبی، "سرویس‌ها" برای API/ذخیره‌سازی و آداپتور مخزن ساده هنگام صحبت با چندین بک‌اند.',
     
     performanceTitle: 'عملکرد',
-    performanceDescription: 'لیست‌های مموایز شده (FlatList/FlashList)، کلیدهای پایدار، کش تصاویر، اجتناب از re-render با memo/useCallback و پروفایلینگ با Flipper/React Profiler.',
+    performanceDescription: 'لیست‌های مجازی (react-window/react-virtualized)، کلیدهای پایدار، بهینه‌سازی تصاویر، اجتناب از re-render با memo/useCallback، تقسیم کد و پروفایلینگ با React DevTools.',
     
     stateDataTitle: 'وضعیت و داده',
     stateDataDescription: 'React Query برای داده‌های سرور، Redux/Zustand وقتی وضعیت سراسری نیاز است، موجودیت‌های نرمال شده، به‌روزرسانی‌های خوشبینانه و کش آفلاین برای شبکه‌های ناپایدار.',
