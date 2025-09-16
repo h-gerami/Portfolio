@@ -15,6 +15,83 @@ export const translations = {
     aboutTitle: 'About & Core Expertise',
     aboutContent: 'Passionate mobile and software engineer with expertise in React Native, integrations, data flows, and AI-assisted problem solving. Specialized in NDIS SaaS solutions, AWS cloud architecture, and seamless data synchronization across platforms.',
     
+    // Skills Categories
+    mobileEngineeringTitle: 'Mobile Engineering',
+    mobileEngineeringDescription: 'I enjoy building React Native apps with TypeScript and aim for smooth, predictable experiences. I keep screens simple, move logic into reusable hooks/services. The goal is steady performance, clear code, and fewer surprises in production.',
+    mobileEngineeringSkills: ['React Native', 'TypeScript', 'Expo', 'EAS', 'React Query', 'Redux/Zustand', 'Flipper', 'Sentry'],
+    
+    frontendEngineeringTitle: 'Frontend Engineering (React)',
+    frontendEngineeringDescription: 'I build React frontends that are clear, fast, and accessible.',
+    frontendEngineeringSkills: ['React', 'TypeScript', 'Next.js', 'Vite', 'CSS/Tailwind', 'React Query', 'Redux Toolkit', 'Jest/RTL', 'Cypress'],
+    
+    integrationsTitle: 'Integrations & Data Flows',
+    integrationsDescription: 'I\'ve spent a lot of time connecting apps to other systems and making sure data moves smoothly and securely between them.',
+    integrationsSkills: ['Node.js', 'TypeScript', 'AWS', 'GraphQL', 'Xero', 'MYOB', 'Dynamics', 'HubSpot', 'Netsuite'],
+    
+    observabilityTitle: 'Observability & Support',
+    observabilityDescription: 'I care about making sure the systems I build are easy to watch, understand, and fix when something goes wrong.',
+    observabilitySkills: ['Logging', 'Monitoring', 'Sentry', 'Customer Support'],
+    
+    // Skill Details
+    uiuxTitle: 'UI/UX',
+    uiuxDescription: 'design systems, dark/light themes, accessible components, gesture-friendly navigation, thoughtful empty/error states.',
+    
+    patternsTitle: 'Patterns',
+    patternsDescription: 'feature-based folders, container/presentational split, custom hooks for side-effects, "services" for API/storage, and a simple repository adapter when talking to multiple backends.',
+    
+    performanceTitle: 'Performance',
+    performanceDescription: 'memoized lists (FlatList/FlashList), stable keys, image caching, avoiding re-renders with memo/useCallback, and profiling with Flipper/React Profiler.',
+    
+    stateDataTitle: 'State & Data',
+    stateDataDescription: 'React Query for server data, Redux/Zustand when global state is needed, normalized entities, optimistic updates, and offline cache for spotty networks.',
+    
+    nativeSensorsTitle: 'Native & Sensors',
+    nativeSensorsDescription: 'Expo + custom modules when needed, Keychain/Secure Store, camera, BLE/Wi-Fi/UDP for IoT, background tasks where appropriate.',
+    
+    qualityTitle: 'Quality',
+    qualityDescription: 'unit tests (Jest), simple component tests, crash reporting (Sentry), basic analytics to spot friction.',
+    
+    stylingTitle: 'Styling',
+    stylingDescription: 'solid base in HTML5, CSS3, SCSS, and Bootstrap for quick, consistent layouts.',
+    
+    largeFormsTitle: 'Large forms',
+    largeFormsDescription: 'break into steps, validate with schemas, autosave drafts, and use React Hook Form to keep it fast.',
+    
+    toolingTitle: 'Tooling',
+    toolingDescription: 'TypeScript, Next.js (React Router), ESLint & Prettier',
+    
+    nextjsRenderingTitle: 'Next.js rendering',
+    nextjsRenderingDescription: 'choose the right mode: SSR (server-side render) for data that must be fresh, SSG (static) for mostly-static pages, and CSR (client) when it\'s highly interactive or user-specific.',
+    
+    testingTitle: 'Testing',
+    testingDescription: 'Jest + React Testing Library for units/components',
+    
+    servicesTitle: 'Services',
+    servicesDescription: 'built event-driven flows on AWS (Lambda, SQS/SNS, API Gateway).',
+    
+    securityTitle: 'Security',
+    securityDescription: 'handled logins, tokens, and sensitive data with care.',
+    
+    syncTitle: 'Sync',
+    syncDescription: 'kept customer, invoice, and claim data in step across systems.',
+    
+    vendorsTitle: 'Vendors',
+    vendorsDescription: 'worked with Xero, MYOB, Sage, Dynamics, HubSpot, and NDIS services.',
+    
+    intakeTitle: 'Intake',
+    intakeDescription: 'talk through what was expected vs what happened, and capture the right details.',
+    
+    reproduceTitle: 'Reproduce',
+    reproduceDescription: 'set up a simple example to confirm the issue and add tests so it stays fixed.',
+    
+    fixTitle: 'Fix',
+    fixDescription: 'improve error messages, add safety nets, and make problems easier to track down.',
+    
+    documentTitle: 'Document',
+    documentDescription: 'share guides and notes so the next person can solve things faster.',
+    
+    outcomeText: 'Outcome: quicker fixes, fewer repeat problems, and a clearer picture of how the system is doing.',
+    
     // Projects Section
     projectsTitle: 'Selected Mobile Apps Projects',
     viewProject: 'View Project',
@@ -98,6 +175,83 @@ export const translations = {
     // About Section
     aboutTitle: 'Über mich & Kernkompetenzen',
     aboutContent: 'Leidenschaftlicher Mobile- und Software-Ingenieur mit Expertise in React Native, Integrationen, Datenflüssen und KI-unterstützter Problemlösung. Spezialisiert auf NDIS SaaS-Lösungen, AWS-Cloud-Architektur und nahtlose Datensynchronisation über Plattformen hinweg.',
+    
+    // Skills Categories
+    mobileEngineeringTitle: 'Mobile Entwicklung',
+    mobileEngineeringDescription: 'Ich entwickle gerne React Native Apps mit TypeScript und strebe nach reibungslosen, vorhersagbaren Erfahrungen. Ich halte Bildschirme einfach und verschiebe Logik in wiederverwendbare Hooks/Services. Das Ziel ist stabile Leistung, klarer Code und weniger Überraschungen in der Produktion.',
+    mobileEngineeringSkills: ['React Native', 'TypeScript', 'Expo', 'EAS', 'React Query', 'Redux/Zustand', 'Flipper', 'Sentry'],
+    
+    frontendEngineeringTitle: 'Frontend Entwicklung (React)',
+    frontendEngineeringDescription: 'Ich entwickle React Frontends, die klar, schnell und zugänglich sind.',
+    frontendEngineeringSkills: ['React', 'TypeScript', 'Next.js', 'Vite', 'CSS/Tailwind', 'React Query', 'Redux Toolkit', 'Jest/RTL', 'Cypress'],
+    
+    integrationsTitle: 'Integrationen & Datenflüsse',
+    integrationsDescription: 'Ich habe viel Zeit damit verbracht, Apps mit anderen Systemen zu verbinden und sicherzustellen, dass Daten reibungslos und sicher zwischen ihnen fließen.',
+    integrationsSkills: ['Node.js', 'TypeScript', 'AWS', 'GraphQL', 'Xero', 'MYOB', 'Dynamics', 'HubSpot', 'Netsuite'],
+    
+    observabilityTitle: 'Beobachtbarkeit & Support',
+    observabilityDescription: 'Mir ist wichtig, dass die Systeme, die ich entwickle, einfach zu überwachen, zu verstehen und zu reparieren sind, wenn etwas schiefgeht.',
+    observabilitySkills: ['Logging', 'Monitoring', 'Sentry', 'Kundensupport'],
+    
+    // Skill Details
+    uiuxTitle: 'UI/UX',
+    uiuxDescription: 'Design-Systeme, dunkle/helle Themes, zugängliche Komponenten, gestenfreundliche Navigation, durchdachte leere/Fehler-Zustände.',
+    
+    patternsTitle: 'Muster',
+    patternsDescription: 'feature-basierte Ordner, Container/Presentational-Split, benutzerdefinierte Hooks für Seiteneffekte, "Services" für API/Storage und ein einfacher Repository-Adapter beim Kommunizieren mit mehreren Backends.',
+    
+    performanceTitle: 'Leistung',
+    performanceDescription: 'memoized Listen (FlatList/FlashList), stabile Schlüssel, Bild-Caching, Vermeidung von Re-Renders mit memo/useCallback und Profiling mit Flipper/React Profiler.',
+    
+    stateDataTitle: 'Zustand & Daten',
+    stateDataDescription: 'React Query für Server-Daten, Redux/Zustand wenn globaler Zustand benötigt wird, normalisierte Entitäten, optimistische Updates und Offline-Cache für unzuverlässige Netzwerke.',
+    
+    nativeSensorsTitle: 'Native & Sensoren',
+    nativeSensorsDescription: 'Expo + benutzerdefinierte Module bei Bedarf, Keychain/Secure Store, Kamera, BLE/Wi-Fi/UDP für IoT, Hintergrundaufgaben wo angemessen.',
+    
+    qualityTitle: 'Qualität',
+    qualityDescription: 'Unit-Tests (Jest), einfache Komponenten-Tests, Crash-Reporting (Sentry), grundlegende Analytics zur Erkennung von Reibung.',
+    
+    stylingTitle: 'Styling',
+    stylingDescription: 'solide Basis in HTML5, CSS3, SCSS und Bootstrap für schnelle, konsistente Layouts.',
+    
+    largeFormsTitle: 'Große Formulare',
+    largeFormsDescription: 'in Schritte aufteilen, mit Schemas validieren, Entwürfe automatisch speichern und React Hook Form verwenden, um es schnell zu halten.',
+    
+    toolingTitle: 'Werkzeuge',
+    toolingDescription: 'TypeScript, Next.js (React Router), ESLint & Prettier',
+    
+    nextjsRenderingTitle: 'Next.js Rendering',
+    nextjsRenderingDescription: 'den richtigen Modus wählen: SSR (Server-Side Render) für Daten, die frisch sein müssen, SSG (statisch) für meist statische Seiten und CSR (Client) wenn es hochinteraktiv oder benutzerspezifisch ist.',
+    
+    testingTitle: 'Testing',
+    testingDescription: 'Jest + React Testing Library für Units/Komponenten',
+    
+    servicesTitle: 'Services',
+    servicesDescription: 'ereignisgesteuerte Flows auf AWS (Lambda, SQS/SNS, API Gateway) erstellt.',
+    
+    securityTitle: 'Sicherheit',
+    securityDescription: 'Anmeldungen, Tokens und sensible Daten sorgfältig behandelt.',
+    
+    syncTitle: 'Synchronisation',
+    syncDescription: 'Kunden-, Rechnungs- und Anspruchsdaten zwischen Systemen synchron gehalten.',
+    
+    vendorsTitle: 'Anbieter',
+    vendorsDescription: 'mit Xero, MYOB, Sage, Dynamics, HubSpot und NDIS-Services gearbeitet.',
+    
+    intakeTitle: 'Aufnahme',
+    intakeDescription: 'durchsprechen, was erwartet wurde vs. was passiert ist, und die richtigen Details erfassen.',
+    
+    reproduceTitle: 'Reproduzieren',
+    reproduceDescription: 'ein einfaches Beispiel einrichten, um das Problem zu bestätigen und Tests hinzufügen, damit es behoben bleibt.',
+    
+    fixTitle: 'Reparieren',
+    fixDescription: 'Fehlermeldungen verbessern, Sicherheitsnetze hinzufügen und Probleme einfacher aufspürbar machen.',
+    
+    documentTitle: 'Dokumentieren',
+    documentDescription: 'Anleitungen und Notizen teilen, damit die nächste Person Dinge schneller lösen kann.',
+    
+    outcomeText: 'Ergebnis: schnellere Reparaturen, weniger wiederholte Probleme und ein klareres Bild davon, wie das System funktioniert.',
     
     // Projects Section
     projectsTitle: 'Ausgewählte Mobile App Projekte',
@@ -183,6 +337,83 @@ export const translations = {
     aboutTitle: '关于我和核心专长',
     aboutContent: '充满激情的移动和软件工程师，专精于React Native、集成、数据流和AI辅助问题解决。专注于NDIS SaaS解决方案、AWS云架构和跨平台无缝数据同步。',
     
+    // Skills Categories
+    mobileEngineeringTitle: '移动工程',
+    mobileEngineeringDescription: '我喜欢使用TypeScript构建React Native应用，追求流畅、可预测的体验。我保持界面简单，将逻辑移到可重用的hooks/services中。目标是稳定的性能、清晰的代码和生产环境中更少的意外。',
+    mobileEngineeringSkills: ['React Native', 'TypeScript', 'Expo', 'EAS', 'React Query', 'Redux/Zustand', 'Flipper', 'Sentry'],
+    
+    frontendEngineeringTitle: '前端工程（React）',
+    frontendEngineeringDescription: '我构建清晰、快速且可访问的React前端。',
+    frontendEngineeringSkills: ['React', 'TypeScript', 'Next.js', 'Vite', 'CSS/Tailwind', 'React Query', 'Redux Toolkit', 'Jest/RTL', 'Cypress'],
+    
+    integrationsTitle: '集成与数据流',
+    integrationsDescription: '我花了很多时间连接应用与其他系统，确保数据在它们之间流畅、安全地流动。',
+    integrationsSkills: ['Node.js', 'TypeScript', 'AWS', 'GraphQL', 'Xero', 'MYOB', 'Dynamics', 'HubSpot', 'Netsuite'],
+    
+    observabilityTitle: '可观测性与支持',
+    observabilityDescription: '我关心确保我构建的系统易于观察、理解和修复，当出现问题时。',
+    observabilitySkills: ['日志记录', '监控', 'Sentry', '客户支持'],
+    
+    // Skill Details
+    uiuxTitle: 'UI/UX',
+    uiuxDescription: '设计系统、深色/浅色主题、可访问组件、手势友好导航、深思熟虑的空/错误状态。',
+    
+    patternsTitle: '模式',
+    patternsDescription: '基于功能的文件夹、容器/展示分离、用于副作用的自定义hooks、"服务"用于API/存储，以及在与多个后端通信时的简单仓库适配器。',
+    
+    performanceTitle: '性能',
+    performanceDescription: '记忆化列表（FlatList/FlashList）、稳定键、图像缓存、使用memo/useCallback避免重新渲染，以及使用Flipper/React Profiler进行分析。',
+    
+    stateDataTitle: '状态与数据',
+    stateDataDescription: 'React Query用于服务器数据，Redux/Zustand在需要全局状态时使用，规范化实体、乐观更新和离线缓存用于不稳定网络。',
+    
+    nativeSensorsTitle: '原生与传感器',
+    nativeSensorsDescription: 'Expo + 需要时的自定义模块、Keychain/Secure Store、相机、BLE/Wi-Fi/UDP用于IoT、适当的后台任务。',
+    
+    qualityTitle: '质量',
+    qualityDescription: '单元测试（Jest）、简单组件测试、崩溃报告（Sentry）、基本分析以发现摩擦。',
+    
+    stylingTitle: '样式',
+    stylingDescription: 'HTML5、CSS3、SCSS和Bootstrap的坚实基础，用于快速、一致的布局。',
+    
+    largeFormsTitle: '大型表单',
+    largeFormsDescription: '分解为步骤、使用模式验证、自动保存草稿，使用React Hook Form保持快速。',
+    
+    toolingTitle: '工具',
+    toolingDescription: 'TypeScript、Next.js（React Router）、ESLint & Prettier',
+    
+    nextjsRenderingTitle: 'Next.js渲染',
+    nextjsRenderingDescription: '选择正确的模式：SSR（服务器端渲染）用于必须新鲜的数据，SSG（静态）用于大多静态页面，CSR（客户端）当高度交互或用户特定时。',
+    
+    testingTitle: '测试',
+    testingDescription: 'Jest + React Testing Library用于单元/组件',
+    
+    servicesTitle: '服务',
+    servicesDescription: '在AWS上构建事件驱动流程（Lambda、SQS/SNS、API Gateway）。',
+    
+    securityTitle: '安全',
+    securityDescription: '小心处理登录、令牌和敏感数据。',
+    
+    syncTitle: '同步',
+    syncDescription: '保持客户、发票和索赔数据在系统间同步。',
+    
+    vendorsTitle: '供应商',
+    vendorsDescription: '与Xero、MYOB、Sage、Dynamics、HubSpot和NDIS服务合作。',
+    
+    intakeTitle: '接收',
+    intakeDescription: '讨论期望与实际情况，并捕获正确的细节。',
+    
+    reproduceTitle: '重现',
+    reproduceDescription: '设置简单示例确认问题并添加测试以保持修复。',
+    
+    fixTitle: '修复',
+    fixDescription: '改进错误消息、添加安全网，使问题更容易追踪。',
+    
+    documentTitle: '文档',
+    documentDescription: '分享指南和笔记，让下一个人能更快解决问题。',
+    
+    outcomeText: '结果：更快的修复、更少的重复问题，以及系统运行情况的更清晰画面。',
+    
     // Projects Section
     projectsTitle: '精选移动应用项目',
     viewProject: '查看项目',
@@ -267,6 +498,83 @@ export const translations = {
     aboutTitle: 'Обо мне и основные компетенции',
     aboutContent: 'Увлеченный мобильный и программный инженер с экспертизой в React Native, интеграциях, потоках данных и ИИ-помощи в решении проблем. Специализируется на NDIS SaaS решениях, AWS облачной архитектуре и бесшовной синхронизации данных между платформами.',
     
+    // Skills Categories
+    mobileEngineeringTitle: 'Мобильная разработка',
+    mobileEngineeringDescription: 'Мне нравится создавать React Native приложения с TypeScript и стремиться к плавному, предсказуемому опыту. Я держу экраны простыми, перемещаю логику в переиспользуемые хуки/сервисы. Цель - стабильная производительность, чистый код и меньше сюрпризов в продакшене.',
+    mobileEngineeringSkills: ['React Native', 'TypeScript', 'Expo', 'EAS', 'React Query', 'Redux/Zustand', 'Flipper', 'Sentry'],
+    
+    frontendEngineeringTitle: 'Frontend разработка (React)',
+    frontendEngineeringDescription: 'Я создаю React фронтенды, которые ясны, быстры и доступны.',
+    frontendEngineeringSkills: ['React', 'TypeScript', 'Next.js', 'Vite', 'CSS/Tailwind', 'React Query', 'Redux Toolkit', 'Jest/RTL', 'Cypress'],
+    
+    integrationsTitle: 'Интеграции и потоки данных',
+    integrationsDescription: 'Я потратил много времени на подключение приложений к другим системам и обеспечение плавного и безопасного перемещения данных между ними.',
+    integrationsSkills: ['Node.js', 'TypeScript', 'AWS', 'GraphQL', 'Xero', 'MYOB', 'Dynamics', 'HubSpot', 'Netsuite'],
+    
+    observabilityTitle: 'Наблюдаемость и поддержка',
+    observabilityDescription: 'Мне важно, чтобы системы, которые я создаю, было легко наблюдать, понимать и исправлять, когда что-то идет не так.',
+    observabilitySkills: ['Логирование', 'Мониторинг', 'Sentry', 'Поддержка клиентов'],
+    
+    // Skill Details
+    uiuxTitle: 'UI/UX',
+    uiuxDescription: 'системы дизайна, темные/светлые темы, доступные компоненты, навигация, дружелюбная к жестам, продуманные пустые/ошибочные состояния.',
+    
+    patternsTitle: 'Паттерны',
+    patternsDescription: 'папки на основе функций, разделение контейнер/презентация, пользовательские хуки для побочных эффектов, "сервисы" для API/хранилища и простой адаптер репозитория при общении с несколькими бэкендами.',
+    
+    performanceTitle: 'Производительность',
+    performanceDescription: 'мемоизированные списки (FlatList/FlashList), стабильные ключи, кэширование изображений, избежание ре-рендеров с memo/useCallback и профилирование с Flipper/React Profiler.',
+    
+    stateDataTitle: 'Состояние и данные',
+    stateDataDescription: 'React Query для серверных данных, Redux/Zustand когда нужен глобальный стейт, нормализованные сущности, оптимистичные обновления и офлайн кэш для нестабильных сетей.',
+    
+    nativeSensorsTitle: 'Нативные и сенсоры',
+    nativeSensorsDescription: 'Expo + пользовательские модули при необходимости, Keychain/Secure Store, камера, BLE/Wi-Fi/UDP для IoT, фоновые задачи где уместно.',
+    
+    qualityTitle: 'Качество',
+    qualityDescription: 'юнит тесты (Jest), простые компонентные тесты, отчеты о сбоях (Sentry), базовая аналитика для выявления трения.',
+    
+    stylingTitle: 'Стилизация',
+    stylingDescription: 'прочная основа в HTML5, CSS3, SCSS и Bootstrap для быстрых, последовательных макетов.',
+    
+    largeFormsTitle: 'Большие формы',
+    largeFormsDescription: 'разбить на шаги, валидировать схемами, автосохранение черновиков и использовать React Hook Form для поддержания скорости.',
+    
+    toolingTitle: 'Инструменты',
+    toolingDescription: 'TypeScript, Next.js (React Router), ESLint & Prettier',
+    
+    nextjsRenderingTitle: 'Next.js рендеринг',
+    nextjsRenderingDescription: 'выбор правильного режима: SSR (серверный рендеринг) для данных, которые должны быть свежими, SSG (статический) для в основном статических страниц и CSR (клиентский) когда это высоко интерактивно или пользователь-специфично.',
+    
+    testingTitle: 'Тестирование',
+    testingDescription: 'Jest + React Testing Library для юнитов/компонентов',
+    
+    servicesTitle: 'Сервисы',
+    servicesDescription: 'создал событийно-управляемые потоки на AWS (Lambda, SQS/SNS, API Gateway).',
+    
+    securityTitle: 'Безопасность',
+    securityDescription: 'осторожно обрабатывал логины, токены и чувствительные данные.',
+    
+    syncTitle: 'Синхронизация',
+    syncDescription: 'держал данные клиентов, счетов и претензий в синхронизации между системами.',
+    
+    vendorsTitle: 'Поставщики',
+    vendorsDescription: 'работал с Xero, MYOB, Sage, Dynamics, HubSpot и NDIS сервисами.',
+    
+    intakeTitle: 'Прием',
+    intakeDescription: 'обсуждать что ожидалось против того что произошло, и захватывать правильные детали.',
+    
+    reproduceTitle: 'Воспроизведение',
+    reproduceDescription: 'настроить простой пример для подтверждения проблемы и добавить тесты чтобы она оставалась исправленной.',
+    
+    fixTitle: 'Исправление',
+    fixDescription: 'улучшить сообщения об ошибках, добавить защитные сети и сделать проблемы легче отслеживаемыми.',
+    
+    documentTitle: 'Документирование',
+    documentDescription: 'делиться руководствами и заметками чтобы следующий человек мог решать вещи быстрее.',
+    
+    outcomeText: 'Результат: более быстрые исправления, меньше повторяющихся проблем и более ясная картина того, как работает система.',
+    
     // Projects Section
     projectsTitle: 'Избранные проекты мобильных приложений',
     viewProject: 'Посмотреть проект',
@@ -350,6 +658,83 @@ export const translations = {
     // About Section
     aboutTitle: 'درباره من و تخصص‌های اصلی',
     aboutContent: 'مهندس پرشور موبایل و نرم‌افزار با تخصص در React Native، یکپارچه‌سازی، جریان داده و حل مسئله با کمک هوش مصنوعی. متخصص در راه‌حل‌های SaaS NDIS، معماری ابری AWS و همگام‌سازی بی‌درز داده در پلتفرم‌ها.',
+    
+    // Skills Categories
+    mobileEngineeringTitle: 'مهندسی موبایل',
+    mobileEngineeringDescription: 'از ساخت اپلیکیشن‌های React Native با TypeScript لذت می‌برم و به دنبال تجربه‌های روان و قابل پیش‌بینی هستم. صفحات را ساده نگه می‌دارم و منطق را به hooks/services قابل استفاده مجدد منتقل می‌کنم. هدف عملکرد پایدار، کد واضح و شگفتی‌های کمتر در تولید است.',
+    mobileEngineeringSkills: ['React Native', 'TypeScript', 'Expo', 'EAS', 'React Query', 'Redux/Zustand', 'Flipper', 'Sentry'],
+    
+    frontendEngineeringTitle: 'مهندسی فرانت‌اند (React)',
+    frontendEngineeringDescription: 'فرانت‌اندهای React که واضح، سریع و قابل دسترسی هستند می‌سازم.',
+    frontendEngineeringSkills: ['React', 'TypeScript', 'Next.js', 'Vite', 'CSS/Tailwind', 'React Query', 'Redux Toolkit', 'Jest/RTL', 'Cypress'],
+    
+    integrationsTitle: 'یکپارچه‌سازی و جریان داده',
+    integrationsDescription: 'زمان زیادی صرف اتصال اپلیکیشن‌ها به سیستم‌های دیگر و اطمینان از حرکت روان و امن داده بین آن‌ها کرده‌ام.',
+    integrationsSkills: ['Node.js', 'TypeScript', 'AWS', 'GraphQL', 'Xero', 'MYOB', 'Dynamics', 'HubSpot', 'Netsuite'],
+    
+    observabilityTitle: 'قابلیت مشاهده و پشتیبانی',
+    observabilityDescription: 'مهم است که سیستم‌هایی که می‌سازم به راحتی قابل مشاهده، درک و تعمیر باشند وقتی مشکلی پیش می‌آید.',
+    observabilitySkills: ['ثبت رویداد', 'مانیتورینگ', 'Sentry', 'پشتیبانی مشتری'],
+    
+    // Skill Details
+    uiuxTitle: 'UI/UX',
+    uiuxDescription: 'سیستم‌های طراحی، تم‌های تاریک/روشن، کامپوننت‌های قابل دسترسی، ناوبری دوستانه با ژست، حالت‌های خالی/خطای فکر شده.',
+    
+    patternsTitle: 'الگوها',
+    patternsDescription: 'پوشه‌های مبتنی بر ویژگی، تقسیم کانتینر/ارائه، hooks سفارشی برای اثرات جانبی، "سرویس‌ها" برای API/ذخیره‌سازی و آداپتور مخزن ساده هنگام صحبت با چندین بک‌اند.',
+    
+    performanceTitle: 'عملکرد',
+    performanceDescription: 'لیست‌های مموایز شده (FlatList/FlashList)، کلیدهای پایدار، کش تصاویر، اجتناب از re-render با memo/useCallback و پروفایلینگ با Flipper/React Profiler.',
+    
+    stateDataTitle: 'وضعیت و داده',
+    stateDataDescription: 'React Query برای داده‌های سرور، Redux/Zustand وقتی وضعیت سراسری نیاز است، موجودیت‌های نرمال شده، به‌روزرسانی‌های خوشبینانه و کش آفلاین برای شبکه‌های ناپایدار.',
+    
+    nativeSensorsTitle: 'بومی و سنسورها',
+    nativeSensorsDescription: 'Expo + ماژول‌های سفارشی در صورت نیاز، Keychain/Secure Store، دوربین، BLE/Wi-Fi/UDP برای IoT، وظایف پس‌زمینه در صورت مناسب بودن.',
+    
+    qualityTitle: 'کیفیت',
+    qualityDescription: 'تست‌های واحد (Jest)، تست‌های ساده کامپوننت، گزارش‌گیری خرابی (Sentry)، تحلیل‌های پایه برای شناسایی اصطکاک.',
+    
+    stylingTitle: 'استایل',
+    stylingDescription: 'پایه محکم در HTML5، CSS3، SCSS و Bootstrap برای چیدمان‌های سریع و سازگار.',
+    
+    largeFormsTitle: 'فرم‌های بزرگ',
+    largeFormsDescription: 'تقسیم به مراحل، اعتبارسنجی با schemaها، ذخیره خودکار پیش‌نویس‌ها و استفاده از React Hook Form برای نگه داشتن سرعت.',
+    
+    toolingTitle: 'ابزارها',
+    toolingDescription: 'TypeScript، Next.js (React Router)، ESLint & Prettier',
+    
+    nextjsRenderingTitle: 'رندرینگ Next.js',
+    nextjsRenderingDescription: 'انتخاب حالت درست: SSR (رندر سمت سرور) برای داده‌هایی که باید تازه باشند، SSG (استاتیک) برای صفحات عمدتاً استاتیک و CSR (کلاینت) وقتی بسیار تعاملی یا خاص کاربر است.',
+    
+    testingTitle: 'تست',
+    testingDescription: 'Jest + React Testing Library برای واحدها/کامپوننت‌ها',
+    
+    servicesTitle: 'سرویس‌ها',
+    servicesDescription: 'جریان‌های رویداد-محور روی AWS (Lambda، SQS/SNS، API Gateway) ساخته شد.',
+    
+    securityTitle: 'امنیت',
+    securityDescription: 'ورودها، توکن‌ها و داده‌های حساس را با دقت مدیریت کردم.',
+    
+    syncTitle: 'همگام‌سازی',
+    syncDescription: 'داده‌های مشتری، فاکتور و ادعا را در سیستم‌ها همگام نگه داشتم.',
+    
+    vendorsTitle: 'فروشندگان',
+    vendorsDescription: 'با Xero، MYOB، Sage، Dynamics، HubSpot و سرویس‌های NDIS کار کردم.',
+    
+    intakeTitle: 'دریافت',
+    intakeDescription: 'در مورد آنچه انتظار می‌رفت در مقابل آنچه اتفاق افتاد صحبت کنم و جزئیات درست را ضبط کنم.',
+    
+    reproduceTitle: 'تولید مجدد',
+    reproduceDescription: 'یک مثال ساده تنظیم کنم تا مشکل را تأیید کنم و تست‌ها را اضافه کنم تا ثابت بماند.',
+    
+    fixTitle: 'تعمیر',
+    fixDescription: 'پیام‌های خطا را بهبود دهم، شبکه‌های ایمنی اضافه کنم و مشکلات را راحت‌تر قابل ردیابی کنم.',
+    
+    documentTitle: 'مستندسازی',
+    documentDescription: 'راهنماها و یادداشت‌ها را به اشتراک بگذارم تا نفر بعدی بتواند چیزها را سریع‌تر حل کند.',
+    
+    outcomeText: 'نتیجه: تعمیرات سریع‌تر، مشکلات تکراری کمتر و تصویر واضح‌تری از نحوه عملکرد سیستم.',
     
     // Projects Section
     projectsTitle: 'پروژه‌های منتخب اپلیکیشن موبایل',
