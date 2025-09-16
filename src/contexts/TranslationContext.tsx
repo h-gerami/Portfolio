@@ -9,7 +9,7 @@ export const translations = {
     // Header
     name: 'Hossein Gerami',
     title: 'Mobile & Software Engineer',
-    subtitle: 'React Native • Integrations • Data Flows • AI-Assisted Engineering',
+    subtitle: 'Mobile & Frontend Engineering • System Integrations • Data Flows • Observability & Support',
     
     // About Section
     aboutTitle: 'About & Core Expertise',
@@ -170,7 +170,7 @@ export const translations = {
     // Header
     name: 'Hossein Gerami',
     title: 'Mobile & Software Ingenieur',
-    subtitle: 'React Native • Integrationen • Datenflüsse • KI-unterstütztes Engineering',
+    subtitle: 'Mobile & Frontend Engineering • Systemintegrationen • Datenflüsse • Beobachtbarkeit & Support',
     
     // About Section
     aboutTitle: 'Über mich & Kernkompetenzen',
@@ -331,7 +331,7 @@ export const translations = {
     // Header
     name: 'Hossein Gerami',
     title: 'Мобильный и программный инженер',
-    subtitle: 'React Native • Интеграции • Потоки данных • ИИ-помощь в разработке',
+    subtitle: 'Мобильная и Frontend разработка • Интеграция систем • Потоки данных • Наблюдаемость и поддержка',
     
     // About Section
     aboutTitle: 'Обо мне и основные компетенции',
@@ -492,7 +492,7 @@ export const translations = {
     // Header
     name: 'حسین گرامی',
     title: 'مهندس موبایل و نرم‌افزار',
-    subtitle: 'React Native • یکپارچه‌سازی • جریان داده • مهندسی با کمک هوش مصنوعی',
+    subtitle: 'مهندسی موبایل و فرانت‌اند • یکپارچه‌سازی سیستم‌ها • جریان داده • قابلیت مشاهده و پشتیبانی',
     
     // About Section
     aboutTitle: 'درباره من و تخصص‌های اصلی',
