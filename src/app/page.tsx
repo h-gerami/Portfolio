@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import About from '@/components/About'
 import Projects from '@/components/Projects'
+import Repositories from '@/components/Repositories'
 import ThemeToggle from '@/components/ThemeToggle'
 import ScrollToTop from '@/components/ScrollToTop'
 
@@ -15,6 +16,7 @@ export default function Home() {
         <About />
         <Projects />
       </div>
+      <Repositories />
     </>
   )
 }
