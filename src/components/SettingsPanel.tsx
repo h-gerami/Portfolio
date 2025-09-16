@@ -203,32 +203,6 @@ export default function SettingsPanel() {
               {/* Icon Theme Selection */}
               <div className="setting-group">
                 <label className="setting-label">
-                  <i className={getIcon('palette')}></i>
-                  {t.language === 'en' ? 'Icon Style' : 'Icon Style'}
-                </label>
-                <div className="icon-theme-grid">
-                  {iconThemeOptions.map((theme) => (
-                    <button
-                      key={theme.id}
-                      className={`icon-theme-option ${iconTheme === theme.id ? 'active' : ''}`}
-                      onClick={() => setIconTheme(theme.id as IconTheme)}
-                    >
-                      <div className="icon-preview">
-                        {theme.id === 'fontawesome' ? (
-                          <i className={theme.preview}></i>
-                        ) : (
-                          <span style={{ fontSize: '1.2rem' }}>{theme.preview}</span>
-                        )}
-                      </div>
-                      <span className="icon-theme-name">{theme.name}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Icon Theme Selection */}
-              <div className="setting-group">
-                <label className="setting-label">
                   {getIcon('palette').startsWith('fas') || getIcon('palette').startsWith('fab') ? (
                     <i className={getIcon('palette')}></i>
                   ) : (
@@ -255,6 +229,7 @@ export default function SettingsPanel() {
                   ))}
                 </div>
               </div>
+
 
             </div>
 
