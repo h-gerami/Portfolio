@@ -22,6 +22,7 @@ export default function Repositories() {
         aria-label="Toggle GitHub sidebar"
         title="GitHub"
       >
+        <i className="fab fa-github"></i>
         <i className={`fas ${isOpen ? 'fa-chevron-right' : 'fa-chevron-left'}`}></i>
       </button>
 
