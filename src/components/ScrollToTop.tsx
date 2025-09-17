@@ -11,7 +11,8 @@ export default function ScrollToTop() {
     };
 
     document.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // Check initial state
+    // Don't check initial state - start hidden
+    setIsVisible(false);
 
     return () => document.removeEventListener('scroll', onScroll);
   }, []);

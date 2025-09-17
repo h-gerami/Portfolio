@@ -740,24 +740,28 @@ body.dark .dark-toggle-btn {
   top: 50%;
   right: 20px;
   transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 60px;
   background: var(--brand-1);
   border: none;
-  border-radius: 50%;
+  border-radius: 8px 0 0 8px;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
   cursor: pointer;
   z-index: 200;
   transition: all 0.3s ease;
   opacity: 1;
   visibility: visible;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .github-toggle-btn:hover {
   background: var(--brand-2);
-  transform: translateY(-50%) scale(1.1);
+  transform: translateY(-50%) scale(1.05);
+  width: 45px;
 }
 
 /* Floating Sidebar */
