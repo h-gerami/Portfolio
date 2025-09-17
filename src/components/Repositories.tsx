@@ -7,23 +7,7 @@ import { useTranslation } from '@/contexts/TranslationContext';
 
 export default function Repositories() {
   const { t } = useTranslation();
-  const [isVisible, setIsVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      
-      // Show sidebar when user has scrolled past 15% of the page (sooner)
-      const threshold = documentHeight * 0.15;
-      setIsVisible(scrollPosition > threshold);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -33,16 +17,16 @@ export default function Repositories() {
     <>
       {/* GitHub Toggle Button */}
       <button 
-        className={`github-toggle-btn ${isVisible ? 'visible' : ''}`}
+        className="github-toggle-btn"
         onClick={toggleSidebar}
         aria-label="Toggle GitHub sidebar"
         title="GitHub"
       >
-        <i className="fab fa-github"></i>
+        <i className="fas fa-chevron-left"></i>
       </button>
 
       {/* GitHub Sidebar */}
-      <div className={`floating-sidebar ${isVisible ? 'visible' : ''} ${isOpen ? 'open' : ''}`}>
+      <div className={`floating-sidebar ${isOpen ? 'open' : ''}`}>
         <div className="sidebar-content">
           <div className="section-header">
             <h2 id="repositories-title">

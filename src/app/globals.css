@@ -728,6 +728,12 @@ body.dark .dark-toggle-btn {
   filter: brightness(1.05);
 }
 
+.scroll-top-btn.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 /* GitHub Toggle Button */
 .github-toggle-btn {
   position: fixed;
@@ -744,19 +750,14 @@ body.dark .dark-toggle-btn {
   cursor: pointer;
   z-index: 200;
   transition: all 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
+  visibility: visible;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .github-toggle-btn:hover {
   background: var(--brand-2);
   transform: translateY(-50%) scale(1.1);
-}
-
-.github-toggle-btn.visible {
-  opacity: 1;
-  visibility: visible;
 }
 
 /* Floating Sidebar */
@@ -781,11 +782,6 @@ body.dark .floating-sidebar {
   background: rgba(30, 30, 30, 0.95);
   border-color: var(--card-border-dark);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.floating-sidebar.visible {
-  transform: translateX(0);
-  opacity: 1;
 }
 
 .floating-sidebar.open {
