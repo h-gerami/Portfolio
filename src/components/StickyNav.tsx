@@ -27,8 +27,20 @@ const StickyNav = () => {
       setActiveSection(current);
     };
 
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest('.floating-nav-item-wrapper')) {
+        setIsProjectsMenuOpen(false);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.addEventListener('click', handleClickOutside);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('click', handleClickOutside);
+    };
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -97,7 +109,14 @@ const StickyNav = () => {
           return (
             <div key={item.id} className="floating-nav-item-wrapper">
               <button
-                onClick={() => item.hasMegaMenu ? toggleProjectsMenu() : scrollToSection(item.id)}
+                onClick={() => {
+                  if (item.hasMegaMenu) {
+                    // For projects, show mega menu
+                    toggleProjectsMenu();
+                  } else {
+                    scrollToSection(item.id);
+                  }
+                }}
                 className={`floating-nav-item ${isActive ? 'active' : ''} ${item.hasMegaMenu ? 'has-mega-menu' : ''}`}
                 title={item.label}
               >
@@ -119,6 +138,11 @@ const StickyNav = () => {
               {item.hasMegaMenu && isProjectsMenuOpen && (
                 <div className="floating-mega-menu">
                   <div className="mega-menu-content">
+                    <div className="mega-menu-item mega-menu-header" onClick={() => scrollToSection('projects')}>
+                      <i className="fas fa-arrow-right"></i>
+                      <span>Go to Projects</span>
+                    </div>
+                    <div className="mega-menu-divider"></div>
                     <div className="mega-menu-item" onClick={() => scrollToProjectCategory('all')}>
                       <i className="fas fa-th"></i>
                       <span>All Projects</span>

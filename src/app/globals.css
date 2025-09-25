@@ -2498,6 +2498,28 @@ body.dark .floating-mega-menu {
   text-align: center;
 }
 
+.mega-menu-header {
+  background: rgba(96, 165, 250, 0.1) !important;
+  color: var(--brand-1) !important;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+.mega-menu-header:hover {
+  background: rgba(96, 165, 250, 0.2) !important;
+  color: var(--brand-1) !important;
+}
+
+.mega-menu-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0.25rem 0;
+}
+
+body.dark .mega-menu-divider {
+  background: rgba(255, 255, 255, 0.05);
+}
+
 body.dark .mega-menu-item {
   color: var(--text-muted-dark);
 }
