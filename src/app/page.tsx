@@ -6,6 +6,7 @@ import MobileGitHub from '@/components/MobileGitHub'
 import ThemeToggle from '@/components/ThemeToggle'
 import ScrollToTop from '@/components/ScrollToTop'
 import SettingsPanel from '@/components/SettingsPanel'
+import StickyNav from '@/components/StickyNav'
 
 export default function Home() {
   return (
@@ -13,12 +14,21 @@ export default function Home() {
       <ThemeToggle />
       <ScrollToTop />
       <SettingsPanel />
+      <StickyNav />
       
       <div className="container">
-        <Header />
-        <About />
-        <Projects />
-        <MobileGitHub />
+        <section id="header">
+          <Header />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="repositories">
+          <MobileGitHub />
+        </section>
       </div>
       <Repositories />
     </>

@@ -734,37 +734,9 @@ body.dark .dark-toggle-btn {
   pointer-events: none;
 }
 
-/* GitHub Toggle Button */
+/* GitHub Toggle Button - Hidden (integrated into floating nav) */
 .github-toggle-btn {
-  position: fixed;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  width: 60px;
-  height: 50px;
-  background: var(--brand-1);
-  border: none;
-  border-radius: 8px 0 0 8px;
-  color: white;
-  font-size: 0.9rem;
-  cursor: pointer;
-  z-index: 200;
-  transition: all 0.3s ease;
-  opacity: 1;
-  visibility: visible;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  padding: 0 8px;
-}
-
-.github-toggle-btn:hover {
-  background: var(--brand-2);
-  transform: translateY(-50%) scale(1.05);
-  width: 65px;
+  display: none;
 }
 
 /* Floating Sidebar */
@@ -2272,5 +2244,391 @@ body.dark .btn-secondary {
     max-width: 100% !important;
     overflow-x: hidden !important;
     word-wrap: break-word;
+  }
+}
+
+/* Floating Navigation */
+.floating-nav {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.floating-nav:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-50%) scale(1.05);
+}
+
+body.dark .floating-nav {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .floating-nav:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.floating-nav-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem 0.5rem;
+}
+
+.floating-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-muted);
+  font-size: 1rem;
+  position: relative;
+}
+
+.floating-nav-item:hover {
+  background: rgba(96, 165, 250, 0.2);
+  color: var(--brand-1);
+  transform: scale(1.1);
+}
+
+.floating-nav-item.active {
+  background: rgba(96, 165, 250, 0.3);
+  color: var(--brand-1);
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.3);
+}
+
+body.dark .floating-nav-item {
+  color: var(--text-muted-dark);
+}
+
+body.dark .floating-nav-item:hover {
+  background: rgba(96, 165, 250, 0.3);
+  color: var(--accent);
+}
+
+body.dark .floating-nav-item.active {
+  background: rgba(96, 165, 250, 0.4);
+  color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.4);
+}
+
+.floating-nav-icon {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* GitHub Button - Different Style */
+.floating-nav-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0.5rem 0;
+  border-radius: 1px;
+}
+
+body.dark .floating-nav-divider {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.floating-nav-github {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(96, 165, 250, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--brand-1);
+  font-size: 1rem;
+  position: relative;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+.floating-nav-github:hover {
+  background: rgba(96, 165, 250, 0.2);
+  color: var(--brand-1);
+  transform: scale(1.05);
+  border-color: rgba(96, 165, 250, 0.4);
+}
+
+.floating-nav-github.active {
+  background: rgba(96, 165, 250, 0.3);
+  color: var(--brand-1);
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.3);
+  border-color: rgba(96, 165, 250, 0.5);
+}
+
+body.dark .floating-nav-github {
+  background: rgba(96, 165, 250, 0.15);
+  border-color: rgba(96, 165, 250, 0.3);
+}
+
+body.dark .floating-nav-github:hover {
+  background: rgba(96, 165, 250, 0.25);
+  border-color: rgba(96, 165, 250, 0.5);
+}
+
+body.dark .floating-nav-github.active {
+  background: rgba(96, 165, 250, 0.35);
+  border-color: rgba(96, 165, 250, 0.6);
+}
+
+.floating-nav-arrow {
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  color: var(--brand-1);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .floating-nav-arrow {
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--accent);
+}
+
+/* Mega Menu Styles */
+.floating-nav-item-wrapper {
+  position: relative;
+}
+
+.floating-nav-item.has-mega-menu {
+  position: relative;
+}
+
+.floating-nav-arrow-small {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  font-size: 0.6rem;
+  color: var(--brand-1);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .floating-nav-arrow-small {
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--accent);
+}
+
+.floating-mega-menu {
+  position: absolute;
+  right: 50px;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  min-width: 200px;
+  overflow: hidden;
+}
+
+body.dark .floating-mega-menu {
+  background: rgba(0, 0, 0, 0.9);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.mega-menu-content {
+  padding: 0.5rem 0;
+}
+
+.mega-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+}
+
+.mega-menu-item:hover {
+  background: rgba(96, 165, 250, 0.1);
+  color: var(--brand-1);
+}
+
+.mega-menu-item i {
+  font-size: 1rem;
+  width: 16px;
+  text-align: center;
+}
+
+body.dark .mega-menu-item {
+  color: var(--text-muted-dark);
+}
+
+body.dark .mega-menu-item:hover {
+  background: rgba(96, 165, 250, 0.2);
+  color: var(--accent);
+}
+
+/* Tooltip for navigation items */
+.floating-nav-item::after {
+  content: attr(title);
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+body.dark .floating-nav-item::after {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark);
+}
+
+.floating-nav-item:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile responsive for floating nav */
+@media (max-width: 768px) {
+  .floating-nav {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+  }
+  
+  .floating-nav-content {
+    gap: 0.3rem;
+    padding: 0.5rem 0.3rem;
+  }
+  
+  .floating-nav-item {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .floating-nav-icon {
+    font-size: 0.9rem;
+  }
+  
+  .floating-nav-item::after {
+    right: 35px;
+    font-size: 0.65rem;
+    padding: 0.3rem 0.5rem;
+  }
+  
+  .floating-nav-github {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .floating-nav-arrow {
+    right: -6px;
+    width: 14px;
+    height: 14px;
+    font-size: 0.6rem;
+  }
+  
+  .floating-nav-divider {
+    margin: 0.3rem 0;
+  }
+  
+  .floating-mega-menu {
+    right: 35px;
+    min-width: 180px;
+  }
+  
+  .mega-menu-item {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .mega-menu-item i {
+    font-size: 0.9rem;
+    width: 14px;
+  }
+}
+
+/* RTL Support for floating nav */
+[dir="rtl"] .floating-nav {
+  right: auto;
+  left: 20px;
+}
+
+[dir="rtl"] .floating-nav-item::after {
+  right: auto;
+  left: 50px;
+}
+
+[dir="rtl"] .floating-mega-menu {
+  right: auto;
+  left: 50px;
+}
+
+[dir="rtl"] .floating-nav-arrow-small {
+  right: auto;
+  left: -2px;
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .floating-nav {
+    left: 10px;
+  }
+  
+  [dir="rtl"] .floating-nav-item::after {
+    left: 35px;
+  }
+  
+  [dir="rtl"] .floating-mega-menu {
+    left: 35px;
   }
 }

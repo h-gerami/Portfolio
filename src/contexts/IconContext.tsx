@@ -39,6 +39,7 @@ export interface IconMapping {
   sitemap: string;
   globe: string;
   palette: string;
+  home: string;
 }
 
 const iconMappings: Record<IconTheme, IconMapping> = {
@@ -76,7 +77,8 @@ const iconMappings: Record<IconTheme, IconMapping> = {
     arrows: 'fa-solid fa-arrows-spin',
     sitemap: 'fa-solid fa-sitemap',
     globe: 'fas fa-globe',
-    palette: 'fas fa-palette'
+    palette: 'fas fa-palette',
+    home: 'fas fa-home'
   },
   doodle: {
     settings: '⚙️',
@@ -112,7 +114,8 @@ const iconMappings: Record<IconTheme, IconMapping> = {
     arrows: '🔄',
     sitemap: '🗺️',
     globe: '🌍',
-    palette: '🎨'
+    palette: '🎨',
+    home: '🏠'
   }
 };
 

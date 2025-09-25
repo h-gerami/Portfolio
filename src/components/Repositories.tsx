@@ -9,23 +9,24 @@ export default function Repositories() {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
+  // Listen for GitHub toggle from StickyNav
+  useEffect(() => {
+    const handleGitHubToggle = (event: CustomEvent) => {
+      setIsOpen(event.detail.isOpen);
+    };
+
+    window.addEventListener('github-toggle', handleGitHubToggle as EventListener);
+    return () => window.removeEventListener('github-toggle', handleGitHubToggle as EventListener);
+  }, []);
+
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
+    // Dispatch event to StickyNav
+    window.dispatchEvent(new CustomEvent('github-toggle', { detail: { isOpen: !isOpen } }));
   };
 
   return (
     <>
-      {/* GitHub Toggle Button */}
-      <button 
-        className="github-toggle-btn"
-        onClick={toggleSidebar}
-        aria-label="Toggle GitHub sidebar"
-        title="GitHub"
-      >
-        <i className="fab fa-github"></i>
-        <i className={`fas ${isOpen ? 'fa-chevron-right' : 'fa-chevron-left'}`}></i>
-      </button>
-
       {/* GitHub Sidebar */}
       <div className={`floating-sidebar ${isOpen ? 'open' : ''}`}>
         <div className="sidebar-content">
