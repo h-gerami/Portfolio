@@ -66,9 +66,9 @@ const StickyNav = () => {
     const categoryToProject: { [key: string]: string } = {
       'IoT': 'gardenia',
       'NDIS': 'quickclaim',
-      'Education': 'education-project', // You may need to update this based on actual project IDs
-      'Wellness': 'wellness-project',   // You may need to update this based on actual project IDs
-      'Internal': 'internal-project'    // You may need to update this based on actual project IDs
+      'Education': 'lerne-24',
+      'Wellness': 'hihab',
+      'Internal': 'hoom-qc'
     };
 
     const projectId = categoryToProject[category];
