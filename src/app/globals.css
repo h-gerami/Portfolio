@@ -2618,6 +2618,15 @@ body.dark .floating-nav-item::after {
     font-size: 0.9rem;
     width: 14px;
   }
+  
+  /* Hide GitHub button on mobile */
+  .floating-nav-github {
+    display: none;
+  }
+  
+  .floating-nav-divider {
+    display: none;
+  }
 }
 
 /* RTL Support for floating nav */

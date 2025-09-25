@@ -62,13 +62,41 @@ const StickyNav = () => {
   };
 
   const scrollToProjectCategory = (category: string) => {
-    // Scroll to projects section and filter by category
-    const projectsSection = document.getElementById('projects');
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' });
-      // Dispatch event to filter projects by category
-      window.dispatchEvent(new CustomEvent('filter-projects', { detail: { category } }));
+    // Map categories to specific project IDs
+    const categoryToProject: { [key: string]: string } = {
+      'IoT': 'gardenia',
+      'NDIS': 'quickclaim',
+      'Education': 'education-project', // You may need to update this based on actual project IDs
+      'Wellness': 'wellness-project',   // You may need to update this based on actual project IDs
+      'Internal': 'internal-project'    // You may need to update this based on actual project IDs
+    };
+
+    const projectId = categoryToProject[category];
+    
+    if (projectId) {
+      // First scroll to projects section
+      const projectsSection = document.getElementById('projects');
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: 'smooth' });
+        
+        // Then scroll to specific project after a short delay
+        setTimeout(() => {
+          const projectElement = document.getElementById(projectId);
+          if (projectElement) {
+            projectElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 500);
+      }
+    } else {
+      // For 'all' or unknown categories, just scroll to projects section
+      const projectsSection = document.getElementById('projects');
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: 'smooth' });
+        // Dispatch event to filter projects by category
+        window.dispatchEvent(new CustomEvent('filter-projects', { detail: { category } }));
+      }
     }
+    
     setIsProjectsMenuOpen(false);
   };
 

@@ -77,7 +77,7 @@ export default function ProjectCard({ project, onImageClick }: ProjectCardProps)
 
   return (
     <>
-      <div className="project" data-project={project.id}>
+      <div className="project" id={project.id} data-project={project.id}>
         <div className="project-content">
           <div className="card">
             <h2>
