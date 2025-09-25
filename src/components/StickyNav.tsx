@@ -13,7 +13,7 @@ const StickyNav = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['header', 'about', 'projects', 'repositories'];
+      const sections = ['header', 'about', 'projects'];
       const scrollY = window.scrollY;
       let current = 'header';
       
@@ -129,7 +129,6 @@ const StickyNav = () => {
           { id: 'header', label: navLabels.header, icon: 'home' },
           { id: 'about', label: navLabels.about, icon: 'info' },
           { id: 'projects', label: navLabels.projects, icon: 'diagram', hasMegaMenu: true },
-          { id: 'repositories', label: navLabels.repositories, icon: 'code' },
         ].map((item) => {
           const iconString = getIcon(item.icon as keyof typeof getIcon);
           const isActive = activeSection === item.id;
