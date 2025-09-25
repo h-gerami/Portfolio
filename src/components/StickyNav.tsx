@@ -66,9 +66,9 @@ const StickyNav = () => {
     const categoryToProject: { [key: string]: string } = {
       'IoT': 'gardenia',
       'NDIS': 'quickclaim',
-      'Education': 'lerne-24',
+      'Education': 'lerne24',
       'Wellness': 'hihab',
-      'Internal': 'hoom-qc'
+      'Internal': 'hoomqc'
     };
 
     const projectId = categoryToProject[category];
