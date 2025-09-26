@@ -122,26 +122,9 @@ const StickyNav = () => {
 
   const navLabels = getNavLabels();
 
-  console.log('StickyNav rendering...', { isProjectsMenuOpen, activeSection });
-
   return (
-    <>
-      {/* Debug element - remove this later */}
-      <div style={{
-        position: 'fixed',
-        top: '10px',
-        left: '10px',
-        background: 'red',
-        color: 'white',
-        padding: '10px',
-        zIndex: 9999,
-        fontSize: '12px'
-      }}>
-        StickyNav is rendering!
-      </div>
-      
-      <nav className="floating-nav">
-        <div className="floating-nav-content">
+    <nav className="floating-nav">
+      <div className="floating-nav-content">
         {[
           { id: 'header', label: navLabels.header, icon: 'home' },
           { id: 'about', label: navLabels.about, icon: 'info' },
@@ -234,7 +217,6 @@ const StickyNav = () => {
         </button>
       </div>
     </nav>
-    </>
   );
 };
 
